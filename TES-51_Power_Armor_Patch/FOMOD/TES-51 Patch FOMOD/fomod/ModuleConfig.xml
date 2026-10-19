@@ -1,0 +1,306 @@
+<?xml version="1.0" encoding="utf-8"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="http://qconsulting.ca/fo3/ModConfig5.0.xsd">
+  <moduleName>TES-51 Power Armor - Fix Patch</moduleName>
+
+  <installSteps order="Explicit">
+
+    <installStep name="Components">
+      <optionalFileGroups order="Explicit">
+        <group name="What do you want to install?" type="SelectAtLeastOne">
+          <plugins order="Explicit">
+
+            <plugin name="Plugin Fixes">
+              <description>Fixes the Bethesda Comics map marker so it starts undiscovered, repairs all six trophies (which granted nothing at all), corrects the Torso Model C health value and the Hot Rod paint rate, renames 38 loose upgrade items, and adds six missing descriptions.
+
+Also adds eight new armour tiers above Model F, for late-game play: Iron Reinforcement, Steel Reinforcement, Bonemold, Dwarven, Orcish, Ebony, Dragonplate and Daedric. Models A-F are unchanged.</description>
+              <conditionFlags><flag name="plugin">on</flag></conditionFlags>
+              <typeDescriptor><type name="Recommended"/></typeDescriptor>
+            </plugin>
+
+            <plugin name="Textures">
+              <description>All 72 of the mod's textures re-encoded with full mipmap chains, and six normal maps moved from DXT1 to BC5. Stops the armour shimmering at distance and fixes the blocky lighting. Nothing is upscaled or repainted. Must overwrite the TES-51 Power Armor mod's own textures.</description>
+              <files><folder source="textures" destination="textures" priority="0"/></files>
+              <typeDescriptor><type name="Recommended"/></typeDescriptor>
+            </plugin>
+
+            <plugin name="More Power Armour Mods patch">
+              <description>TES-51 / More Power Armour Mods compatibility patch. Adds the second misc-mod slot to the six TES-51 armour pieces, plus 25 slot-two copies of the utility mods.
+
+The correct version is chosen automatically from your answer on the next page. Requires More Power Armour Mods.esp.</description>
+              <conditionFlags><flag name="mpam">on</flag></conditionFlags>
+              <typeDescriptor>
+                <dependencyType>
+                  <defaultType name="Optional"/>
+                  <patterns>
+                    <pattern>
+                      <dependencies operator="And">
+                        <fileDependency file="More Power Armour Mods.esp" state="Active"/>
+                      </dependencies>
+                      <type name="Recommended"/>
+                    </pattern>
+                  </patterns>
+                </dependencyType>
+              </typeDescriptor>
+            </plugin>
+
+            <plugin name="FIS / FallUI power armour tags">
+              <description>For FIS - The NEW FallUI Item Sorter (Nexus 60580) with the FallUI Icon Library. Tags every TES-51 armour piece as power armour, so FallUI sorts it with your other power armour and gives it the power armour icon.
+
+TES-51 uses its own naming rule rather than vanilla's, which is why FIS can't see it on its own.
+
+Needs Plugin Fixes. Do not tick this without FIS installed - the tag would show as raw text, e.g. "[PowerArmor] TES-51 Torso".</description>
+              <conditionFlags><flag name="fis">on</flag></conditionFlags>
+              <typeDescriptor><type name="Optional"/></typeDescriptor>
+            </plugin>
+
+            <plugin name="Kat's Power Armor Repair Kits patch">
+              <description>For Kat's Power Armor Repair Kits (Nexus 53558). Adds a TES-51 Repair Kit, crafted at a chemistry station under REPAIR KITS (Science! 1, Armorer 2, same as Kat's T-60 kit), and makes every TES-51 piece repair with it: 1 kit per piece, 2 for the torso. Covers all seven pieces, including the Helm Mk II.
+
+The correct version is chosen automatically from your answer on the next page. Requires Some_Assembly_Required_Repair_Kits.esp.</description>
+              <conditionFlags><flag name="kat">on</flag></conditionFlags>
+              <typeDescriptor>
+                <dependencyType>
+                  <defaultType name="Optional"/>
+                  <patterns>
+                    <pattern>
+                      <dependencies operator="And">
+                        <fileDependency file="Some_Assembly_Required_Repair_Kits.esp" state="Active"/>
+                      </dependencies>
+                      <type name="Recommended"/>
+                    </pattern>
+                  </patterns>
+                </dependencyType>
+              </typeDescriptor>
+            </plugin>
+
+          </plugins>
+        </group>
+      </optionalFileGroups>
+    </installStep>
+
+    <installStep name="Base Plugin">
+      <visible operator="Or">
+        <flagDependency flag="plugin" value="on"/>
+        <flagDependency flag="mpam" value="on"/>
+        <flagDependency flag="kat" value="on"/>
+      </visible>
+      <optionalFileGroups order="Explicit">
+        <group name="Which TES-51 plugin are you running?" type="SelectExactlyOne">
+          <plugins order="Explicit">
+
+            <plugin name="SkyrimInspiredPowerArmor.esl  (4estGimp's ESL)">
+              <description>4estGimp's ESL conversion, Nexus 85030. The recommended option.
+
+It is light-flagged so it costs no plugin slot, it already removes a deleted vanilla reference that causes crashes, and it drops an identical-to-master edit the original carries.
+
+Only ONE of the .esl and the .esp may be enabled. With both on, the game loads two complete copies of the mod - two sets of armour, two shops, and two map markers, which is why the shop keeps appearing on the map.</description>
+              <conditionFlags><flag name="base">esl</flag></conditionFlags>
+              <typeDescriptor><type name="Recommended"/></typeDescriptor>
+            </plugin>
+
+            <plugin name="SkyrimInspiredPowerArmor.esp  (original)">
+              <description>The original .esp from the 1.2 Update / Hot Fix.
+
+Pick this only if you are running the .esp and have the .esl disabled. Note the .esp still contains the deleted vanilla reference and the identical-to-master edit that 4estGimp's version fixes - this patch does not address either.
+
+Make sure the 1.2 HOT FIX overwrites the 1.2 Update, or you lose the Helm Mk II crafting recipe.</description>
+              <conditionFlags><flag name="base">esp</flag></conditionFlags>
+              <typeDescriptor><type name="Optional"/></typeDescriptor>
+            </plugin>
+
+          </plugins>
+        </group>
+      </optionalFileGroups>
+    </installStep>
+
+    <installStep name="Trophy Effects">
+      <visible><flagDependency flag="plugin" value="on"/></visible>
+      <optionalFileGroups order="Explicit">
+        <group name="How should the six hunting trophies behave?" type="SelectExactlyOne">
+          <plugins order="Explicit">
+
+            <plugin name="Unique Legendaries">
+              <description>Each trophy becomes a distinct named legendary rather than a straight upgrade ladder. The armour piece is renamed to match, e.g. "TES-51 Left Arm of Brahmin's Endurance".
+
+  Brahmin's Endurance      END +2, LCK +1, regenerates 5 health every 3 seconds, resistances rise as health drops
+  Hunter's Calling         STR +2, CHA +1, reflects melee damage, 15% less from ghouls / super mutants / animals
+  Yao Guai's Gaze          STR +2, PER +1, less damage while standing still, faster AP regen
+  Deathclaw's Persistence  AGI +2, STR +1, less damage while sprinting, cheaper sprinting
+  Forsworn's Rejection     PER +2, STR +1, CHA -1, 15% less from humans and robots
+  Briarheart's Denial      AGI +2, END +1, CHA -1, chameleon, time slows at low health</description>
+              <conditionFlags><flag name="trophies">uniq</flag></conditionFlags>
+              <typeDescriptor><type name="Recommended"/></typeDescriptor>
+            </plugin>
+
+            <plugin name="Original Tiered">
+              <description>Keeps the mod's original design, where each trophy is simply better than the last. Fixes the underlying bug only: the trophies promised Strength and Charisma but granted neither.
+
+  Brahmin / Yao Guai       STR +1, CHA +1
+  Deathclaw / Great        STR +2, CHA +2
+  Both Forsworn trophies   STR +2, END +1, CHA -1</description>
+              <conditionFlags><flag name="trophies">orig</flag></conditionFlags>
+              <typeDescriptor><type name="Optional"/></typeDescriptor>
+            </plugin>
+
+          </plugins>
+        </group>
+      </optionalFileGroups>
+    </installStep>
+
+    <installStep name="Debug">
+      <visible><flagDependency flag="plugin" value="on"/></visible>
+      <optionalFileGroups order="Explicit">
+        <group name="Testing options" type="SelectAny">
+          <plugins order="Explicit">
+            <plugin name="Craft everything at a chemistry station">
+              <description>Adds fifteen recipes to the chemistry station, each costing a single Steel:
+
+  All seven armour pieces - Helm, Helm Mk II, Torso, both arms, both legs
+  All eight trophy items
+
+They appear under the UTILITY category. Testing convenience - leave off for normal play.</description>
+              <conditionFlags><flag name="debug">on</flag></conditionFlags>
+              <typeDescriptor><type name="Optional"/></typeDescriptor>
+            </plugin>
+          </plugins>
+        </group>
+      </optionalFileGroups>
+    </installStep>
+
+  </installSteps>
+
+  <conditionalFileInstalls>
+    <patterns>
+      <pattern>
+        <dependencies operator="And">
+          <flagDependency flag="base" value="esl"/>
+          <flagDependency flag="trophies" value="uniq"/>
+          <flagDependency flag="debug" value="on"/>
+        </dependencies>
+        <files><folder source="Plugin - Unique Legendaries + Debug" destination="" priority="0"/></files>
+      </pattern>
+      <pattern>
+        <dependencies operator="And">
+          <flagDependency flag="base" value="esl"/>
+          <flagDependency flag="trophies" value="uniq"/>
+          <flagDependency flag="debug" value=""/>
+        </dependencies>
+        <files><folder source="Plugin - Unique Legendaries" destination="" priority="0"/></files>
+      </pattern>
+      <pattern>
+        <dependencies operator="And">
+          <flagDependency flag="base" value="esl"/>
+          <flagDependency flag="trophies" value="orig"/>
+          <flagDependency flag="debug" value="on"/>
+        </dependencies>
+        <files><folder source="Plugin - Fixes Only + Debug" destination="" priority="0"/></files>
+      </pattern>
+      <pattern>
+        <dependencies operator="And">
+          <flagDependency flag="base" value="esl"/>
+          <flagDependency flag="trophies" value="orig"/>
+          <flagDependency flag="debug" value=""/>
+        </dependencies>
+        <files><folder source="Plugin - Fixes Only" destination="" priority="0"/></files>
+      </pattern>
+      <pattern>
+        <dependencies operator="And">
+          <flagDependency flag="base" value="esp"/>
+          <flagDependency flag="trophies" value="uniq"/>
+          <flagDependency flag="debug" value="on"/>
+        </dependencies>
+        <files><folder source="Plugin (ESP) - Unique Legendaries + Debug" destination="" priority="0"/></files>
+      </pattern>
+      <pattern>
+        <dependencies operator="And">
+          <flagDependency flag="base" value="esp"/>
+          <flagDependency flag="trophies" value="uniq"/>
+          <flagDependency flag="debug" value=""/>
+        </dependencies>
+        <files><folder source="Plugin (ESP) - Unique Legendaries" destination="" priority="0"/></files>
+      </pattern>
+      <pattern>
+        <dependencies operator="And">
+          <flagDependency flag="base" value="esp"/>
+          <flagDependency flag="trophies" value="orig"/>
+          <flagDependency flag="debug" value="on"/>
+        </dependencies>
+        <files><folder source="Plugin (ESP) - Fixes Only + Debug" destination="" priority="0"/></files>
+      </pattern>
+      <pattern>
+        <dependencies operator="And">
+          <flagDependency flag="base" value="esp"/>
+          <flagDependency flag="trophies" value="orig"/>
+          <flagDependency flag="debug" value=""/>
+        </dependencies>
+        <files><folder source="Plugin (ESP) - Fixes Only" destination="" priority="0"/></files>
+      </pattern>
+      <pattern>
+        <dependencies operator="And">
+          <flagDependency flag="mpam" value="on"/>
+          <flagDependency flag="base" value="esl"/>
+        </dependencies>
+        <files><folder source="Patch - More Power Armour Mods" destination="" priority="0"/></files>
+      </pattern>
+      <pattern>
+        <dependencies operator="And">
+          <flagDependency flag="mpam" value="on"/>
+          <flagDependency flag="base" value="esp"/>
+        </dependencies>
+        <files><folder source="Patch (ESP) - More Power Armour Mods" destination="" priority="0"/></files>
+      </pattern>
+      <pattern>
+        <dependencies operator="And">
+          <flagDependency flag="fis" value="on"/>
+          <flagDependency flag="plugin" value="on"/>
+          <flagDependency flag="base" value="esl"/>
+          <flagDependency flag="trophies" value="uniq"/>
+        </dependencies>
+        <files><folder source="Addon - FIS Tags - Unique Legendaries" destination="" priority="0"/></files>
+      </pattern>
+      <pattern>
+        <dependencies operator="And">
+          <flagDependency flag="fis" value="on"/>
+          <flagDependency flag="plugin" value="on"/>
+          <flagDependency flag="base" value="esl"/>
+          <flagDependency flag="trophies" value="orig"/>
+        </dependencies>
+        <files><folder source="Addon - FIS Tags - Fixes Only" destination="" priority="0"/></files>
+      </pattern>
+      <pattern>
+        <dependencies operator="And">
+          <flagDependency flag="fis" value="on"/>
+          <flagDependency flag="plugin" value="on"/>
+          <flagDependency flag="base" value="esp"/>
+          <flagDependency flag="trophies" value="uniq"/>
+        </dependencies>
+        <files><folder source="Addon (ESP) - FIS Tags - Unique Legendaries" destination="" priority="0"/></files>
+      </pattern>
+      <pattern>
+        <dependencies operator="And">
+          <flagDependency flag="fis" value="on"/>
+          <flagDependency flag="plugin" value="on"/>
+          <flagDependency flag="base" value="esp"/>
+          <flagDependency flag="trophies" value="orig"/>
+        </dependencies>
+        <files><folder source="Addon (ESP) - FIS Tags - Fixes Only" destination="" priority="0"/></files>
+      </pattern>
+      <pattern>
+        <dependencies operator="And">
+          <flagDependency flag="kat" value="on"/>
+          <flagDependency flag="base" value="esl"/>
+        </dependencies>
+        <files><folder source="Patch - Kat's Repair Kits" destination="" priority="0"/></files>
+      </pattern>
+      <pattern>
+        <dependencies operator="And">
+          <flagDependency flag="kat" value="on"/>
+          <flagDependency flag="base" value="esp"/>
+        </dependencies>
+        <files><folder source="Patch (ESP) - Kat's Repair Kits" destination="" priority="0"/></files>
+      </pattern>
+    </patterns>
+  </conditionalFileInstalls>
+
+</config>

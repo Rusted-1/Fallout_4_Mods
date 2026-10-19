@@ -1,0 +1,47 @@
+Enchantments: 
+
+Note: Only ONE of these can be applied at once to any armor
+
+Note: When you receive a enchantment, you will get a popup that will tell you a little bit about it with a lore blurb and sound effect.
+
+
+
+1: Phoenixes Rise: You get this enchantment by completing the quest “The nuclear Option.” This enchantment, when the piece of armor it is equipped to reaches 25 health or lower, releases a Fire Blast that deals 600 fire damage and immediately heals all armor pieces to full health; it can only happen every 4 minutes.
+
+2: Forbidden Knowledge: You get this enchantment by completing the quest "Public Knowledge". When applied to a piece of armor, when you kill an enemy there is a Radom chance to receive 10X the normal XP amount, they will also explode in a poison blast, poisoning enemy's around them.  
+
+3: Ancestors Foresight: You get this enchantment by completing the quest "Restoring Order". When equipped to armor, when your armor health gets to below 50%, summon 2 friendly Legendary Protectron guardians that will use the institute Teleporter effect to appear next to you. They will aid you in combat and will follow you for three minutes before vanishing. 
+
+4: Cleansing Pyre: You get this enchantment by completing the quest "Cleansing the Land (Side with The children of atom)". When equipped onto a piece of armor, there is a chance when killing an enemy they will explode in a minnuke explosion.
+
+5: Cleansing Faith: You get this enchantment by completing the quest "Cleansing the Land (Side with Far Harbor). When equipped onto a piece of armor, 
+
+6: Death's Gaze: You get this enchantment by completing the quest
+
+7: Flaming Rage: Out of the Fire
+
+8: Master of the wild: The Devil's Due
+
+9: Clad in steel: Hull Breach 3
+
+10: Paladin: Open Season
+
+11: Arise: The Secret of Cabot House
+
+12: Infestation: High Noon at the Gulch 
+
+13: Ironside: Last Voyage of the U.S.S. Constitution 
+
+14: 
+
+15:
+
+16:
+
+17:
+
+18:
+
+19:
+
+20:

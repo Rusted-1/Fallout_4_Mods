@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<fomod>
+  <Name>TES-51 Power Armor - Fix Patch</Name>
+  <Author>patch for SovereignWalrus' mod, built on 4estGimp's ESL conversion</Author>
+  <Version MachineVersion="1.1">1.1</Version>
+  <Description>Bug fixes, re-encoded textures, and eight new late-game armour tiers, FIS / FallUI support, and optional unique trophy legendaries for TES-51 Power Armor -Skyrim Inspired-.</Description>
+</fomod>

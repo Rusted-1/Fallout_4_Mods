@@ -1,0 +1,23 @@
+Note: This is all based off of the best armor rank of the current TES armor, it is simply adding to the original value.
+
+
+1. Iron reinforcement: Using some iron you have scrounged up your able to reenforce some of the thinner parts of the metal that have been bothering you.
+Increases, Physical resistance: 20, Energy:5, Radiation: 0, Armor Health: 15 (Max Armorer, Scrapper 1,)
+
+2. Steel reinforcement: Using old bars of steel, you added further improvements to the weak parts of the armor. Increases, Physical resistance: 40, Energy:20, Radiation: 5, Armor Health: 25 (Max Armorer, Scrapper 2)
+
+3. Bonemold: After experimenting with bones of the various mammals of the post-war, you find that it is actually better then the steel you have been using. Increases. Physical resistance: 50 , Energy:25, Radiation: 10, Armor Health: 30 (Max Armorer, Scrapper 2, Medic 1)
+
+4. Dwarven: This odd metal washed up on the beach, after some experimentation it is found that it is super useful for your armor. Increases. Physical resistance: 70 , Energy:40, Radiation: 25, Armor Health: 45 (Max Armorer, Scrapper 3, blacksmith 1)
+
+5. Orcish: This odd metal was recovered from a Super Mutant camp, it is ugly, yet very, very sturdy. Increases. Physical resistance: 75 , Energy:50, Radiation: 20, Armor Health: 55 (Max Armorer, Scrapper 3, blacksmith 2,) 
+
+6. Ebony: This beautiful looking material was discovered in the glowing sea by the original detonation site. It's shear strength and durability is amazing. Physical resistance: 85 , Energy:60, Radiation: 35, Armor Health: 105 (Max Armorer, Scrapper 3, blacksmith 3,)
+
+7. Dragonplate: An odd type of bone was found after a bunch of raiders blew up an old burial site to find some chem's, its old, very very old. Yet somehow familiar, and strong. Physical resistance: 90 , Energy:65, Radiation: 45, Armor Health: 120 (Max Armorer, Scrapper 3, blacksmith 3, Chemist 1)
+
+8. Daedric: You found the bars in your room, you don't know how they got there, there is an ominous feeling about it, but it's strength, oh the strength. Physical resistance: 90 , Energy:65, Radiation: 45, Armor Health: 120 (Max Armorer, Blacksmith Max, Nuclear Physicist)  
+
+
+
+
