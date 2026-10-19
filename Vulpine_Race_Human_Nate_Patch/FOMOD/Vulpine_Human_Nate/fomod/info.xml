@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<fomod>
+	<Name>Vulpine Race - Human Nate Patch</Name>
+	<Author>VulpineNateHuman</Author>
+	<Version>1.0.0</Version>
+	<Description>Keeps the player character human while the rest of Vulpine Race is left alone. Overrides one record - the Player record - and points it back at vanilla HumanRace. The pre-war spouse NPC keeps her Vulpine race, so playing as Nate gives you a human Sole Survivor and a Vulpine Nora in the intro. ESL-flagged, so it does not use a regular plugin slot. Requires Vulpine Race V5.1. Start a new game after installing.</Description>
+	<Groups><element>Races, Classes and Birthsigns</element></Groups>
+</fomod>
