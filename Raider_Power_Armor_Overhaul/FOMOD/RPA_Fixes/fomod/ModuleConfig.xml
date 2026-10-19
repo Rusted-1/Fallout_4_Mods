@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://qconsulting.ca/fo3/ModConfig5.0.xsd">
+	<moduleName>RPA Fixes - Raider Power Armor Ladder</moduleName>
+	<requiredInstallFiles>
+		<file source="Main\RPA_Fixes.esp" destination="RPA_Fixes.esp" />
+	</requiredInstallFiles>
+	<installSteps order="Explicit">
+		<installStep name="Options">
+			<optionalFileGroups order="Explicit">
+				<group name="Debug" type="SelectAny">
+					<plugins order="Explicit">
+						<plugin name="Debug: Craft all raider PA at the Chem Station">
+							<description>Adds free recipes under the Chem Station's Utility category for all 18 pieces (Scrapper, Raider T-45 and Raider Brute) so you can test them quickly. Meant for testing - leave unchecked for a normal playthrough. Requires the three armor mods.</description>
+							<files>
+								<file source="Debug\RPA_Fixes - Debug Chem Station.esp" destination="RPA_Fixes - Debug Chem Station.esp" />
+							</files>
+							<typeDescriptor><type name="Optional" /></typeDescriptor>
+						</plugin>
+					</plugins>
+				</group>
+			</optionalFileGroups>
+		</installStep>
+	</installSteps>
+</config>
