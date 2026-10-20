@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://qconsulting.ca/fo3/ModConfig5.0.xsd">
+  <moduleName>Nora and Nora</moduleName>
+  <moduleDependencies operator="And">
+    <fileDependency file="NoraSpouse.esm" state="Active"/>
+    <fileDependency file="p865_SyntheticLove.esp" state="Active"/>
+  </moduleDependencies>
+  <installSteps order="Explicit">
+    <installStep name="Companion Framework">
+      <optionalFileGroups order="Explicit">
+        <group name="Are you using Unlimited Companion Framework (EFF.esp)?" type="SelectExactlyOne">
+          <plugins order="Explicit">
+            <plugin name="Yes - I use Unlimited Companion Framework">
+              <description>Installs the version that merges UCF's changes to the vanilla Followers quest with Synthetic Love's custom affinity events (loves/likes/dislikes/hates). Without this merge, whichever of the two loads last wipes out the other's changes. Requires EFF.esp.</description>
+              <files><folder source="UCF" destination="" priority="0"/></files>
+              <typeDescriptor>
+                <dependencyType>
+                  <defaultType name="Optional"/>
+                  <patterns>
+                    <pattern><dependencies operator="And"><fileDependency file="EFF.esp" state="Active"/></dependencies><type name="Recommended"/></pattern>
+                    <pattern><dependencies operator="And"><fileDependency file="EFF.esp" state="Missing"/></dependencies><type name="NotUsable"/></pattern>
+                  </patterns>
+                </dependencyType>
+              </typeDescriptor>
+            </plugin>
+            <plugin name="No - I don't use UCF">
+              <description>Installs the version without UCF as a requirement. Nora Spouse is an .esm, so it can't overwrite Synthetic Love's Followers changes on its own; this version currently carries no record changes and is a placeholder for the Kellogg fix and the upcoming interaction content.</description>
+              <files><folder source="NoUCF" destination="" priority="0"/></files>
+              <typeDescriptor>
+                <dependencyType>
+                  <defaultType name="Optional"/>
+                  <patterns>
+                    <pattern><dependencies operator="And"><fileDependency file="EFF.esp" state="Missing"/></dependencies><type name="Recommended"/></pattern>
+                  </patterns>
+                </dependencyType>
+              </typeDescriptor>
+            </plugin>
+          </plugins>
+        </group>
+      </optionalFileGroups>
+    </installStep>
+  </installSteps>
+</config>
