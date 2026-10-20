@@ -45,7 +45,7 @@ def record(t,fid,flags,data,fv=131):
 def grup(label,content):
     return b'GRUP'+struct.pack('<I',24+len(content))+label.encode()+struct.pack('<IHHHH',0,0,0,0,0)+content
 def tes4(masters,nrec,desc):
-    d=sub('HEDR',struct.pack('<fII',1.0,nrec,0x802))
+    d=sub('HEDR',struct.pack('<fII',1.0,nrec,0x808))
     d+=sub('CNAM',b'Rusted-1\0')+sub('SNAM',desc.encode('cp1252')+b'\0')
     for m in masters: d+=sub('MAST',m.encode()+b'\0')+sub('DATA',b'\0'*8)
     return record('TES4',0,0x200,d)  # ESL-flagged ESP (light plugin)
@@ -94,14 +94,67 @@ def kellogg_records(own,sl_idx):
        +sub('NEXT',b'')+sub('ANAM',struct.pack('<I',0)))
     return g,record('QUST',(own<<24)|QUST_ID,0,q)
 
+# --- Phase 1 systems (v0.3) ---
+PH1_ID=0x802;WAITQ_ID=0x803;TIER_ID=0x804;IMPATIENT_ID=0x805;WAITNOTE_ID=0x806;FINALNOTE_ID=0x807
+VAULT_ANCHOR=0x0006FA30          # MQ102SpouseCorpseFemaleREF: floor in front of Nora's pod (disabled by Nora Spouse, position still valid)
+SPOUSE_POD=0x0004A012            # MQPlayerSpousePodREF
+SANDBOX_CURRENT=0x00089605       # DefaultSandboxCurrentLocation
+FOLLOWERS=0x000289E4
+WAIT_NOTE_TEXT="I waited. I understand.\r\n\r\nI'm going to find my own way to be useful.\r\n\r\nTake care of her."
+FINAL_NOTE_TEXT=("I'm not a real person, am I? I've come to accept this. I know my husband, if I can call him that, is still out there with the real me. "
+ "I hope they can find happiness in this horrid world.\r\n\r\nI won't stop looking for my son. Even though I know he isn't my organic son, he is still mine in my heart, "
+ "or whatever I have. I've acquired some new gear and have been tracking some of the disappearances and other synth sightings related to the Institute. "
+ "If I've mapped out the sightings and disappearances right, the next one will be a local farm's wife. Connie, out at Abernathy Farm.\r\n\r\n"
+ "Not again. I won't let them do it to another family like the half-assed try they did to mine. I'm going to stop them. "
+ "They will regret messing with my family and all the others they have destroyed.\r\n\r\nI'm coming for you, Institute, if it's the last thing I do.")
+def zs(t): return t.encode('cp1252')+b'\0'
+def glob(fid,edid,val): return record('GLOB',fid,0,sub('EDID',zs(edid))+sub('FLTV',struct.pack('<f',val)))
+def stages(nums): return b''.join(sub('INDX',struct.pack('<HBB',n,0,0))+sub('QSDT',b'\0') for n in nums)
+def book(fid,edid,title,text,ns_path):
+    # template: Nora Spouse's own note (NorasJournal): paper-note model, sounds and inventory art are vanilla forms
+    tmpl=[x for x in load(ns_path) if x[0]=='BOOK'][0]
+    out=b''
+    for k,x in subs(tmpl[3]):
+        if k=='EDID': x=zs(edid)
+        elif k=='FULL': x=zs(title)
+        elif k=='DESC': x=zs(text)
+        out+=sub(k,x)
+    return record('BOOK',fid,0,out)
+def phase1_records(own,sl_idx,ns_path):
+    O=lambda i:(own<<24)|i
+    props=[('SynthNoraRef',vm_obj((sl_idx<<24)|SL_NORA_REF)),('Followers',vm_obj(FOLLOWERS)),('WaitQuest',vm_obj(O(WAITQ_ID))),
+           ('VaultAnchor',vm_obj(VAULT_ANCHOR)),('RelationTier',vm_obj(O(TIER_ID))),('Impatient',vm_obj(O(IMPATIENT_ID))),
+           ('WaitNote',vm_obj(O(WAITNOTE_ID))),('NoteAnchor',vm_obj(SPOUSE_POD))]
+    vm=struct.pack('<hhH',6,2,1)+ws('NN_Phase1Script')+struct.pack('<BH',0,len(props))+b''.join(ws(n)+b for n,b in props)
+    ph1=record('QUST',O(PH1_ID),0,sub('EDID',zs('NN_Phase1'))+sub('VMAD',vm)+sub('DNAM',bytes.fromhex('110100000000000000000000'))
+               +sub('NEXT',b'')+stages([100,200,300,400,410,420])+sub('ANAM',struct.pack('<I',0)))
+    alias=(sub('ALST',struct.pack('<I',0))+sub('ALID',zs('SynthNora'))+sub('FNAM',struct.pack('<I',0x282))
+           +sub('ALFR',struct.pack('<I',(sl_idx<<24)|SL_NORA_REF))+sub('ALPC',struct.pack('<I',SANDBOX_CURRENT))
+           +sub('VTCK',struct.pack('<I',0))+sub('ALED',b''))
+    waitq=record('QUST',O(WAITQ_ID),0,sub('EDID',zs('NN_SynthNoraWaits'))+sub('DNAM',bytes(12))
+                 +sub('NEXT',b'')+sub('ANAM',struct.pack('<I',1))+alias)
+    globs=[glob(O(TIER_ID),'NN_NoraRelationTier',0.0),glob(O(IMPATIENT_ID),'NN_SynthNoraImpatient',0.0)]
+    books=[book(O(WAITNOTE_ID),'NN_SynthNoraWaitNote','Note on a Cryo Pod',WAIT_NOTE_TEXT,ns_path),
+           book(O(FINALNOTE_ID),'NN_SynthNoraFinalWish',"Nora's Final Wish",FINAL_NOTE_TEXT,ns_path)]
+    return globs,[ph1,waitq],books
+
+def build_impatient(outdir):
+    """FOMOD option 'Synth Nora leaves after a while': flips NN_SynthNoraImpatient to 1."""
+    masters=['Fallout4.esm','NoraAndNora.esp']
+    g=glob((1<<24)|IMPATIENT_ID,'NN_SynthNoraImpatient',1.0)
+    os.makedirs(outdir,exist_ok=True);p=os.path.join(outdir,'NoraAndNora - Impatient.esp')
+    open(p,'wb').write(tes4(masters,1,'Nora & Nora option: synth Nora leaves Vault 111 after 7 days')+grup('GLOB',g));return p
+
 def build(sl,ns,eff,outdir,ucf):
     masters=['Fallout4.esm','NoraSpouse.esm','p865_SyntheticLove.esp']+(['EFF.esp'] if ucf else [])
-    own=len(masters);glob,gate=kellogg_records(own,2)
-    qrecs=[gate]
+    own=len(masters);kglob,gate=kellogg_records(own,2)
+    pglobs,pquests,books=phase1_records(own,2,ns)
+    qrecs=[gate]+pquests
     if ucf: qrecs.insert(0,followers_merge(sl,eff,2,3))
-    body=grup('GLOB',glob)+grup('QUST',b''.join(qrecs))
-    recs=[glob]+qrecs
-    desc='Nora & Nora 0.2.0 - Nora Spouse + Synthetic Love patch'+(' + UCF' if ucf else '')
+    globs=[kglob]+pglobs
+    body=grup('GLOB',b''.join(globs))+grup('QUST',b''.join(qrecs))+grup('BOOK',b''.join(books))
+    recs=globs+qrecs+books
+    desc='Nora & Nora 0.3.0 - Nora Spouse + Synthetic Love patch'+(' + UCF' if ucf else '')
     os.makedirs(outdir,exist_ok=True)
     p=os.path.join(outdir,PLUGIN)
     open(p,'wb').write(tes4(masters,len(recs),desc)+body)
@@ -111,3 +164,4 @@ if __name__=='__main__':
     sl,ns,eff,out=sys.argv[1:5]
     print(build(sl,ns,eff,os.path.join(out,'UCF'),True))
     print(build(sl,ns,eff,os.path.join(out,'NoUCF'),False))
+    print(build_impatient(os.path.join(out,'Impatient')))

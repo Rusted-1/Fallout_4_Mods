@@ -1,8 +1,8 @@
 # Nora and Nora: Phase 1 Voice Guide
 
 `Phase 1 voice sheet.csv` lists **89 lines**:
-- **Synth Nora:** 56 lines
-- **Organic Nora:** 33 lines
+- **Synth Nora:** 55 lines
+- **Organic Nora:** 34 lines
 - **Nate:** none. He's text only, and XDI shows his lines in full.
 
 ## The sheet's columns

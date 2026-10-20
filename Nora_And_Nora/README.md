@@ -9,8 +9,8 @@ interactions and actions from their first meeting to the late game. The full des
 **Needs the original mods.** This repo holds only my own work. It does not include Nora Spouse,
 Synthetic Love, Unlimited Companion Framework, Random Encounter Framework or any of their files.
 
-## Status: v0.2.0 — compatibility fixes
-- **Done:** Followers quest merge for UCF users (v0.1). Kellogg fix for synth Nora's Admiration scene (v0.2). Both verified at the file level, not yet tested in game.
+## Status: v0.3.0 — fixes + Phase 1 systems
+- **Done:** Followers quest merge for UCF users (v0.1). Kellogg fix (v0.2). Phase 1 outcome system, console-driven until the scenes exist (v0.3). All verified at the file level, not yet tested in game.
 - **Writing:** Phase 1 script, draft 3 (`docs/script/phase1-script.md`).
 - **Planned:** first meeting, Vault 111 breakdown and choice, relationship tiers, Shaun/faction reactions, romance, death-site encounter.
 
@@ -18,8 +18,8 @@ Synthetic Love, Unlimited Companion Framework, Random Encounter Framework or any
 
 | Folder | Contents |
 |---|---|
-| `FOMOD/Nora and Nora/` | The installer: `fomod/` config, `UCF/NoraAndNora.esp`, `NoUCF/NoraAndNora.esp`, `Scripts/NN_KelloggGateScript.pex` |
-| `tools/` | `esp.py` (plugin reader), `vmad.py` (script-data parser), `ba2.py` (archive reader), `lines.py` (dialogue dump), `build.py` (builds the plugins), `verify.py` (checks them), `pex.py` / `pexw.py` (Papyrus bytecode reader and writer), `kellogg_gate.py` (builds the Kellogg script), `voice_sheet.py` (script → voice sheet CSV) |
+| `FOMOD/Nora and Nora/` | The installer: `fomod/` config, `UCF/NoraAndNora.esp`, `NoUCF/NoraAndNora.esp`, `Scripts/` (`NN_KelloggGateScript.pex`, `NN_Phase1Script.pex`), `Impatient/NoraAndNora - Impatient.esp` |
+| `tools/` | `esp.py` (plugin reader), `vmad.py` (script-data parser), `ba2.py` (archive reader), `lines.py` (dialogue dump), `build.py` (builds the plugins), `verify.py` (checks them), `pex.py` / `pexw.py` (Papyrus bytecode reader and writer), `kellogg_gate.py` (builds the Kellogg script), `voice_sheet.py` (script → voice sheet CSV), `pexasm.py` (structured Papyrus assembler), `phase1_scripts.py` (builds the Phase 1 script), `verify_refs.py` (checks plugins against masters and scripts), `esmscan.py` (Fallout4.esm scanner), `gen_sigs.py` (regenerates `sigs.json`, the vanilla signature list; not committed) |
 | `docs/analysis/` | Findings about the source mods: how each Nora works, the Followers conflict, the Kellogg bug, game-version checks |
 | `docs/patch/` | Design and changelog per version |
 | `docs/script/` | Dialogue scripts (also the AI voice sheet). `phase1-script.md`: first meeting through the Vault 111 choice. `phase1-voice-sheet.csv` + `voice-guide.md`: AI voice sheet (89 lines, reserved file names 0x900–0x958) |
@@ -38,8 +38,9 @@ The patch masters every mod it touches, so LOOT always sorts it after them. It i
 
 ## Installing
 Zip the **contents** of `FOMOD/Nora and Nora/` (so `fomod/` sits at the top of the zip) and drag the
-zip into Vortex. The installer asks one question: do you use UCF? It pre-selects the answer from
-whether `EFF.esp` is active.
+zip into Vortex. The installer asks:
+1. Do you use UCF? Pre-selected from whether `EFF.esp` is active.
+2. Synth Nora's patience: does she wait forever, or leave after 7 days if left in Vault 111?
 
 ## Rebuilding
 From inside `tools/`, with Python 3:
@@ -47,7 +48,10 @@ From inside `tools/`, with Python 3:
 ```
 python3 -I build.py <p865_SyntheticLove.esp> <NoraSpouse.esm> <EFF.esp> <out dir>
 python3 -I verify.py <out dir>/UCF/NoraAndNora.esp <EFF.esp> <p865_SyntheticLove.esp>
+python3 -I gen_sigs.py <extracted vanilla scripts folder>
 python3 -I kellogg_gate.py <out dir>/Scripts/NN_KelloggGateScript.pex
+python3 -I phase1_scripts.py <out dir>/Scripts/NN_Phase1Script.pex
+python3 -I verify_refs.py <out dir>/UCF/NoraAndNora.esp <out dir>/Scripts Fallout4.esm=<path> NoraSpouse.esm=<path> p865_SyntheticLove.esp=<path> EFF.esp=<path>
 ```
 
 Any Synthetic Love version works as the input. The scripts take every path as an argument; nothing is hard-coded.

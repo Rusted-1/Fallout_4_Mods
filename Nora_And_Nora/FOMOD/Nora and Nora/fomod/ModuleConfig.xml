@@ -42,5 +42,22 @@
         </group>
       </optionalFileGroups>
     </installStep>
+    <installStep name="Synth Nora's Patience">
+      <optionalFileGroups order="Explicit">
+        <group name="If you leave synth Nora waiting in Vault 111 (&quot;I need time&quot;)..." type="SelectExactlyOne">
+          <plugins order="Explicit">
+            <plugin name="She waits forever">
+              <description>Synth Nora stays in Vault 111 until you come back and decide. No extra file.</description>
+              <typeDescriptor><type name="Recommended"/></typeDescriptor>
+            </plugin>
+            <plugin name="She leaves after a while">
+              <description>If you don't come back within 7 in-game days, she leaves a note on her pod and goes off on her own, the same path as choosing "Go your own way". Installs NoraAndNora - Impatient.esp (light plugin).</description>
+              <files><folder source="Impatient" destination="" priority="0"/></files>
+              <typeDescriptor><type name="Optional"/></typeDescriptor>
+            </plugin>
+          </plugins>
+        </group>
+      </optionalFileGroups>
+    </installStep>
   </installSteps>
 </config>
