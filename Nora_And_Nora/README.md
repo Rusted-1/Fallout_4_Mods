@@ -9,17 +9,16 @@ interactions and actions from their first meeting to the late game. The full des
 **Needs the original mods.** This repo holds only my own work. It does not include Nora Spouse,
 Synthetic Love, Unlimited Companion Framework, Random Encounter Framework or any of their files.
 
-## Status: v0.1.0 — compatibility groundwork only
-- **Done:** Followers quest merge for UCF users (see below). Verified at the file level, not yet tested in game.
-- **Next:** Kellogg affinity-scene fix for synth Nora (waiting on vanilla `Fallout4.esm` / companion script to confirm details).
+## Status: v0.2.0 — compatibility fixes
+- **Done:** Followers quest merge for UCF users (v0.1). Kellogg fix for synth Nora's Admiration scene (v0.2). Both verified at the file level, not yet tested in game.
 - **Planned:** first meeting, Vault 111 breakdown and choice, relationship tiers, Shaun/faction reactions, romance, death-site encounter.
 
 ## What's here
 
 | Folder | Contents |
 |---|---|
-| `FOMOD/Nora and Nora/` | The installer: `fomod/` config, `UCF/NoraAndNora.esp`, `NoUCF/NoraAndNora.esp` |
-| `tools/` | `esp.py` (plugin reader), `vmad.py` (script-data parser), `ba2.py` (archive reader), `lines.py` (dialogue dump), `build.py` (builds the plugins), `verify.py` (checks them) |
+| `FOMOD/Nora and Nora/` | The installer: `fomod/` config, `UCF/NoraAndNora.esp`, `NoUCF/NoraAndNora.esp`, `Scripts/NN_KelloggGateScript.pex` |
+| `tools/` | `esp.py` (plugin reader), `vmad.py` (script-data parser), `ba2.py` (archive reader), `lines.py` (dialogue dump), `build.py` (builds the plugins), `verify.py` (checks them), `pex.py` / `pexw.py` (Papyrus bytecode reader and writer), `kellogg_gate.py` (builds the Kellogg script) |
 | `docs/analysis/` | Findings about the source mods: how each Nora works, the Followers conflict, the Kellogg bug, game-version checks |
 | `docs/patch/` | Design and changelog per version |
 | `notes/` | My design ideas for the interactions |
@@ -44,6 +43,7 @@ From inside `tools/`, with Python 3:
 ```
 python3 -I build.py <p865_SyntheticLove.esp> <NoraSpouse.esm> <EFF.esp> <out dir>
 python3 -I verify.py <out dir>/UCF/NoraAndNora.esp <EFF.esp> <p865_SyntheticLove.esp>
+python3 -I kellogg_gate.py <out dir>/Scripts/NN_KelloggGateScript.pex
 ```
 
 Any Synthetic Love version works as the input. The scripts take every path as an argument; nothing is hard-coded.

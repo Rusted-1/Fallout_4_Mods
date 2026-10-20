@@ -8,7 +8,7 @@ uninitialised padding bytes in `DNAM` / `CTDA`):
 
 | Mod | Real change to Followers |
 |---|---|
-| Nora Spouse | None. Its copy matches the shared baseline. |
+| Nora Spouse | None. Its copy matches vanilla `Fallout4.esm` (checked in v0.2). |
 | Synthetic Love | Adds **4 entries to `FollowersScript.AffinityEvents`**: `p865_CustomEventNoraLoves`, `…Likes`, `…Dislikes`, `…Hates` (keywords `26CB`–`26CE`). These are synth Nora's custom affinity reactions. |
 | UCF (`EFF.esp`) | Adds alias 17 `DismissMessageTarget` (ANAM 17 → 18) and two script properties: `ExtensionHooks` → `EFF.esp:000FFF`, `DismissMessageTarget` → alias 17. |
 

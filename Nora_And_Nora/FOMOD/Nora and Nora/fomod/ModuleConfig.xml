@@ -5,13 +5,16 @@
     <fileDependency file="NoraSpouse.esm" state="Active"/>
     <fileDependency file="p865_SyntheticLove.esp" state="Active"/>
   </moduleDependencies>
+  <requiredInstallFiles>
+    <folder source="Scripts" destination="Scripts"/>
+  </requiredInstallFiles>
   <installSteps order="Explicit">
     <installStep name="Companion Framework">
       <optionalFileGroups order="Explicit">
         <group name="Are you using Unlimited Companion Framework (EFF.esp)?" type="SelectExactlyOne">
           <plugins order="Explicit">
             <plugin name="Yes - I use Unlimited Companion Framework">
-              <description>Installs the version that merges UCF's changes to the vanilla Followers quest with Synthetic Love's custom affinity events (loves/likes/dislikes/hates). Without this merge, whichever of the two loads last wipes out the other's changes. Requires EFF.esp.</description>
+              <description>Installs the version that merges UCF's changes to the vanilla Followers quest with Synthetic Love's custom affinity events (loves/likes/dislikes/hates). Without this merge, whichever of the two loads last wipes out the other's changes. Also contains the Kellogg fix. Requires EFF.esp.</description>
               <files><folder source="UCF" destination="" priority="0"/></files>
               <typeDescriptor>
                 <dependencyType>
@@ -24,7 +27,7 @@
               </typeDescriptor>
             </plugin>
             <plugin name="No - I don't use UCF">
-              <description>Installs the version without UCF as a requirement. Nora Spouse is an .esm, so it can't overwrite Synthetic Love's Followers changes on its own; this version currently carries no record changes and is a placeholder for the Kellogg fix and the upcoming interaction content.</description>
+              <description>Installs the version without UCF as a requirement. Without UCF there is no Followers conflict to fix (Nora Spouse is an .esm and doesn't change that quest). Contains the Kellogg fix only.</description>
               <files><folder source="NoUCF" destination="" priority="0"/></files>
               <typeDescriptor>
                 <dependencyType>
