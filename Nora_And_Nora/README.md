@@ -11,6 +11,7 @@ Synthetic Love, Unlimited Companion Framework, Random Encounter Framework or any
 
 ## Status: v0.2.0 — compatibility fixes
 - **Done:** Followers quest merge for UCF users (v0.1). Kellogg fix for synth Nora's Admiration scene (v0.2). Both verified at the file level, not yet tested in game.
+- **Writing:** Phase 1 script, draft 1 (`docs/script/phase1-script.md`).
 - **Planned:** first meeting, Vault 111 breakdown and choice, relationship tiers, Shaun/faction reactions, romance, death-site encounter.
 
 ## What's here
@@ -21,6 +22,7 @@ Synthetic Love, Unlimited Companion Framework, Random Encounter Framework or any
 | `tools/` | `esp.py` (plugin reader), `vmad.py` (script-data parser), `ba2.py` (archive reader), `lines.py` (dialogue dump), `build.py` (builds the plugins), `verify.py` (checks them), `pex.py` / `pexw.py` (Papyrus bytecode reader and writer), `kellogg_gate.py` (builds the Kellogg script) |
 | `docs/analysis/` | Findings about the source mods: how each Nora works, the Followers conflict, the Kellogg bug, game-version checks |
 | `docs/patch/` | Design and changelog per version |
+| `docs/script/` | Dialogue scripts (also the AI voice sheet). `phase1-script.md`: first meeting through the Vault 111 choice |
 | `notes/` | My design ideas for the interactions |
 
 ## Requirements and load order
