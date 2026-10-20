@@ -1,0 +1,90 @@
+﻿File name,Line ID,Speaker,Text,Emotion,Delivery,Scene
+00000900_1.wav,P1-S1-001,Synth Nora,"Oh my God... Nate? Nate! It's you, it's really you!",surprise,"Disbelief breaking into joy, running up",1A: NORA is following you
+00000901_1.wav,P1-S1-002,Synth Nora,I looked everywhere. I didn't think I'd ever see your face again.,happy,"Breathless, near tears, happy",1A: NORA is following you
+00000902_1.wav,P1-S1-003,Synth Nora,"We're together again. That's all that matters, honey. We can find Shaun together, just like we planned.",happy,"Clinging, relieved, words tumbling out",1A: NORA is following you
+00000903_1.wav,P1-S1-020,Synth Nora,"Yes, it's me! Why are you looking at me like that?",happy,Smile faltering,1A: NORA is following you
+00000904_1.wav,P1-S1-021,Synth Nora,"Who am I? Honey, it's me. It's Nora.",sad,"Hurt, laughing it off",1A: NORA is following you
+00000905_1.wav,P1-S1-022,Synth Nora,Seeing... what? What's that supposed to mean?,surprise,"Puzzled, a little stung",1A: NORA is following you
+00000906_1.wav,P1-S1-023,Synth Nora,I... I walked. I don't really remember. Does it matter? I'm here now.,neutral,Brushes it off too quickly,1A: NORA is following you
+00000907_1.wav,P1-S1-030,Organic Nora,Get away from him.,angry,"Cold, hard, stepping between them",1A: NORA is following you
+00000908_1.wav,P1-S1-031,Synth Nora,Excuse me? Who do you think you...,neutral,"Turning, irritated, then freezing",1A: NORA is following you
+00000909_1.wav,P1-S1-032,Synth Nora,"...No. No, that's not...",fear,"Stunned whisper, seeing her own face",1A: NORA is following you
+0000090A_1.wav,P1-S1-033,Organic Nora,Who are you? No. What are you?,angry,"Controlled anger, lawyer's cross-examination; stress: What",1A: NORA is following you
+0000090B_1.wav,P1-S1-034,Synth Nora,"I'm Nora. I'm his wife. I don't know who you are, or what kind of sick joke this is.",fear,"Shaking, defensive, voice rising",1A: NORA is following you
+0000090C_1.wav,P1-S1-035,Organic Nora,I'm his wife. I was in that pod. I've been standing next to him for weeks.,neutral,"Flat, certain",1A: NORA is following you
+0000090D_1.wav,P1-S1-036,Synth Nora,That's a lie. I was in that pod. I remember the cold. I remember the man with the scar. I remember... being shot.,fear,"Panicked, insisting, voice cracking",1A: NORA is following you
+0000090E_1.wav,P1-S1-037,Organic Nora,So do I.,sad,Quiet. That's what scares her,1A: NORA is following you
+0000090F_1.wav,P1-S1-038,Synth Nora,"Then you're the copy. You have to be. Nate, tell her!",fear,"Desperate, turning to Nate",1A: NORA is following you
+00000910_1.wav,P1-S1-050,Synth Nora,I can't breathe... I can't... okay. Okay.,fear,"Hyperventilating, forcing calm (after 040)",1A: NORA is following you
+00000911_1.wav,P1-S1-051,Synth Nora,Don't say that. Please don't say that to me.,sad,"Wounded, barely holding together (after 041)",1A: NORA is following you
+00000912_1.wav,P1-S1-052,Synth Nora,"This isn't funny, Nate. None of this is funny.",angry,Angry tears (after 042),1A: NORA is following you
+00000913_1.wav,P1-S1-053,Synth Nora,"Prove it? I... yes. Yes, I can prove it.",neutral,Seizing on the idea (after 043),1A: NORA is following you
+00000914_1.wav,P1-S1-060,Synth Nora,Vault 111. Take me back to the vault. My pod is there. I'll show you where it happened. I'll show you both.,fear,"Fixated, urgent, not quite rational",1A: NORA is following you
+00000915_1.wav,P1-S1-061,Organic Nora,"Hon, that thing is wearing my face and saying my words. You want to take it home?",angry,"Low, to Nate, appalled",1A: NORA is following you
+00000916_1.wav,P1-S1-062,Synth Nora,I'm not a thing.,angry,"Sharp, hurt; stress: thing",1A: NORA is following you
+00000917_1.wav,P1-S1-074,Organic Nora,I think we keep it where we can see it. Fine. The vault.,neutral,"Grudging, practical",1A: NORA is following you
+00000918_1.wav,P1-S1-075,Synth Nora,Thank you. You'll see. Both of you will see.,happy,Shaky relief,1A: NORA is following you
+00000919_1.wav,P1-S1-076,Organic Nora,It walks in front of me.,angry,"Final word, cold",1A: NORA is following you
+0000091A_1.wav,P1-S1B-002,Synth Nora,Settlement? What settlement? I've been searching for you since I woke up.,neutral,Genuinely lost,1B: NORA is not with you
+0000091B_1.wav,P1-S1B-004,Synth Nora,Of course. Anywhere. As long as I'm with you.,happy,"Trusting, happy",1B: NORA is not with you
+0000091C_1.wav,P1-S1C-001,Synth Nora,Nate... who is that? Why does she... why does she look like me?,surprise,"Slowing, confused, then frightened",1C: First time they stand together (after 1B)
+0000091D_1.wav,P1-S1C-002,Synth Nora,"No. No, no, no. That's not possible.",fear,"Backing away, breathing fast",1C: First time they stand together (after 1B)
+0000091E_1.wav,P1-AM-001,Synth Nora,I'm fine. I'm fine. I'll be fine when we get to the vault.,neutral,"Repeating, rushed","SYNTH: asked ""How are you holding up?"" / ""Your thoughts?"""
+0000091F_1.wav,P1-AM-002,Synth Nora,"I keep going over that morning. The coffee, the news. Codsworth. Shaun crying. I remember all of it. Why would I remember all of it if it wasn't mine?",neutral,"Pleading, half to herself","SYNTH: asked ""How are you holding up?"" / ""Your thoughts?"""
+00000920_1.wav,P1-AM-003,Synth Nora,Every time I close my eyes I'm back in that pod. Is that normal? Tell me that's normal.,fear,"Scared, small","SYNTH: asked ""How are you holding up?"" / ""Your thoughts?"""
+00000921_1.wav,P1-AM-004,Synth Nora,"She looks at me like I'm something on the bottom of her shoe. My own face, looking at me like that.",sad,"Hurt, bitter","SYNTH: asked ""How are you holding up?"" / ""Your thoughts?"""
+00000922_1.wav,P1-AM-005,Synth Nora,Can we walk faster? I need to see it. I need you to see it.,fear,Urgent,"SYNTH: asked ""How are you holding up?"" / ""Your thoughts?"""
+00000923_1.wav,P1-AM-010,Synth Nora,Vault 111 is north of Sanctuary. Up the hill. I know the way. Of course I know the way.,neutral,"Muttering, reassuring herself",SYNTH: idle remarks while travelling
+00000924_1.wav,P1-AM-011,Synth Nora,What if she's right? ...No. No.,sad,"Whisper, shutting it down",SYNTH: idle remarks while travelling
+00000925_1.wav,P1-AM-012,Synth Nora,I can feel my heartbeat. Real people have heartbeats.,sad,"Quiet, clutching at proof",SYNTH: idle remarks while travelling
+00000926_1.wav,P1-AM-013,Synth Nora,I remember our wedding. The rain. You dropped the ring.,neutral,"Soft, almost a question",SYNTH: idle remarks while travelling
+00000927_1.wav,P1-AM-014,Synth Nora,Why can't I remember waking up?,surprise,"Sudden, confused, almost a sob",SYNTH: idle remarks while travelling
+00000928_1.wav,P1-AM-020,Organic Nora,Remind me again why we're escorting an Institute machine to our front door.,neutral,"Dry, low to Nate","NORA: idle remarks and ""Your thoughts?"""
+00000929_1.wav,P1-AM-021,Organic Nora,It even fidgets like me. That's the worst part.,neutral,Unsettled,"NORA: idle remarks and ""Your thoughts?"""
+0000092A_1.wav,P1-AM-022,Organic Nora,"When we get to the vault, it's going to see an empty pod. My empty pod. And then what?",neutral,Grim; stress: My,"NORA: idle remarks and ""Your thoughts?"""
+0000092B_1.wav,P1-AM-023,Organic Nora,I keep waiting for it to slip up. It doesn't.,neutral,Uneasy,"NORA: idle remarks and ""Your thoughts?"""
+0000092C_1.wav,P1-AM-024,Organic Nora,"Don't let it walk behind you, hon.",neutral,Warning,"NORA: idle remarks and ""Your thoughts?"""
+0000092D_1.wav,P1-AM-030,Synth Nora,Do you remember the blue dress? The one with the buttons?,happy,"Testing, hopeful","Exchanges between them (rare, at most one per game day)"
+0000092E_1.wav,P1-AM-031,Organic Nora,It was green.,neutral,Flat,"Exchanges between them (rare, at most one per game day)"
+0000092F_1.wav,P1-AM-032,Synth Nora,...It was green.,sad,"Shaken, quietly","Exchanges between them (rare, at most one per game day)"
+00000930_1.wav,P1-AM-040,Synth Nora,You don't have to keep staring at me.,neutral,Uncomfortable,"Exchanges between them (rare, at most one per game day)"
+00000931_1.wav,P1-AM-041,Organic Nora,Someone has to.,angry,Cold,"Exchanges between them (rare, at most one per game day)"
+00000932_1.wav,P1-AM-050,Synth Nora,What did you study? At law school?,neutral,Trying to make conversation,"Exchanges between them (rare, at most one per game day)"
+00000933_1.wav,P1-AM-051,Organic Nora,You tell me.,angry,Challenge,"Exchanges between them (rare, at most one per game day)"
+00000934_1.wav,P1-AM-052,Synth Nora,...Contracts. You hated contracts. I hated contracts.,neutral,Unsure whose memory it is; stress: I,"Exchanges between them (rare, at most one per game day)"
+00000935_1.wav,P1-AM-053,Organic Nora,Don't.,sad,"Quiet, rattled","Exchanges between them (rare, at most one per game day)"
+00000936_1.wav,P1-S2-001,Synth Nora,Here. Here it is. This is where they put us.,neutral,"Rushing ahead, hushed",2A: The pods
+00000937_1.wav,P1-S2-002,Synth Nora,"That one's yours, honey. And this one... this is mine.",neutral,"Hand on the pod, certain",2A: The pods
+00000938_1.wav,P1-S2-003,Synth Nora,"It's empty. Of course it's empty, I'm right here. See? I told you.",happy,Triumphant for a second,2A: The pods
+00000939_1.wav,P1-S2-004,Organic Nora,It's empty because I climbed out of it.,sad,"Quiet, steady",2A: The pods
+0000093A_1.wav,P1-S2-005,Organic Nora,"The door opened. I was bleeding. I fell on the floor right there. I found stimpaks in the overseer's office, and I sat against that wall until I could stand.",neutral,"Each detail deliberate, looking at the spots",2A: The pods
+0000093B_1.wav,P1-S2-006,Organic Nora,So tell me. How did you get out?,neutral,Not cruel. Genuinely asking; stress: you,2A: The pods
+0000093C_1.wav,P1-S2-007,Synth Nora,I... I got out. I walked out. I...,neutral,"Reaching for it, nothing there",2A: The pods
+0000093D_1.wav,P1-S2-008,Synth Nora,I remember the cold. I remember the shot. And then I'm in Diamond City. There's nothing in between. Why is there nothing in between?,fear,Rising horror,2A: The pods
+0000093E_1.wav,P1-S2-009,Synth Nora,"Nate. Nate, why can't I remember?",sad,Breaking,2A: The pods
+0000093F_1.wav,P1-S2-020,Synth Nora,"No... no, no, no. She's real. She's the real one. She's been with you this whole time.",sad,"Collapse begins, sinking down against the pod",2B: The breakdown (all branches)
+00000940_1.wav,P1-S2-021,Synth Nora,Then what am I? Somebody built me. Somebody made me remember my baby.,sad,Sobbing; stress: made,2B: The breakdown (all branches)
+00000941_1.wav,P1-S2-022,Synth Nora,I'm not anybody. I'm a recording of somebody.,sad,"Hollow, crying",2B: The breakdown (all branches)
+00000942_1.wav,P1-S2-030,Organic Nora,Hon. Over here a second.,neutral,"Low, pulling him aside",2B: The breakdown (all branches)
+00000943_1.wav,P1-S2-031,Organic Nora,"I don't like this. I don't like it. I don't know what the Institute wants with a copy of me, and that scares the hell out of me.",neutral,"Honest, troubled; stress: it",2B: The breakdown (all branches)
+00000944_1.wav,P1-S2-032,Organic Nora,"But look at her. That isn't an act. Whatever she is, she's hurting.",neutral,Reluctant pity,2B: The breakdown (all branches)
+00000945_1.wav,P1-S2-033,Organic Nora,"I think she should come with us. If nothing else, so we can keep an eye on her.",neutral,"Decided, practical",2B: The breakdown (all branches)
+00000946_1.wav,P1-S2-034,Organic Nora,"It's your call, though. It always is.",neutral,Handing it over,2B: The breakdown (all branches)
+00000947_1.wav,P1-S3-001,Synth Nora,So. What happens to me now?,sad,"Small, bracing",Scene 3: The Choice
+00000948_1.wav,P1-S3-020,Synth Nora,"You mean it? You... thank you. Thank you, thank you. I'll be useful, I promise. You won't regret it.",happy,"Overwhelmed gratitude, tears and laughing",Choice 1: Come with us
+00000949_1.wav,P1-S3-021,Organic Nora,All right. Let's go. On your feet.,neutral,"Brisk, hand out to help her up",Choice 1: Come with us
+0000094A_1.wav,P1-S3-022,Synth Nora,...Thank you. Both of you.,surprise,"Taking the hand, surprised",Choice 1: Come with us
+0000094B_1.wav,P1-S3-030,Synth Nora,I understand. I'd need time too. I'll be here. I don't really have anywhere else.,sad,"Quiet, resigned, not bitter",Choice 2: I need time
+0000094C_1.wav,P1-S3-031,Organic Nora,Fair enough. We'll come back.,neutral,Neutral,Choice 2: I need time
+0000094D_1.wav,P1-S3-040,Organic Nora,Nate... Fine. Let's get this over with.,angry,"Disgusted with all of it, looking away",Choice 3: Abomination
+0000094E_1.wav,P1-S3-041,Synth Nora,Maybe I'm not the original. But I'm a person! I'm a person!,angry,"Scream, standing, rage and terror; stress: person",Choice 3: Abomination
+0000094F_1.wav,P1-S3-045,Organic Nora,That's that.,sad,"Flat, quiet, not looking at the body",Choice 3: Abomination
+00000950_1.wav,P1-S3-046,Organic Nora,Can we get out of here now? Please.,sad,"Tired, wanting to leave the vault behind",Choice 3: Abomination
+00000951_1.wav,P1-S3-050,Synth Nora,"Please. Please don't do this. I won't get in the way, I won't say a word, I'll just... please.",fear,"Desperate, begging",Choice 4: Go your own way
+00000952_1.wav,P1-S3-051,Synth Nora,Please reconsider.,sad,Barely audible,Choice 4: Go your own way
+00000953_1.wav,P1-S3-060,Organic Nora,Good riddance.,angry,"Clipped, but she doesn't look back at her",Choice 4: Go your own way
+00000954_1.wav,P1-S3-061,Synth Nora,...Okay.,sad,Hollow,Choice 4: Go your own way
+00000955_1.wav,P1-NT-001,Organic Nora,She went after them. On her own.,surprise,Stunned,Reactions when the note is read (if NORA is with you)
+00000956_1.wav,P1-NT-002,Organic Nora,"Connie Abernathy. That's where you found me, hon. She was trying to protect the place we found each other again.",sad,"Reading it again, voice catching",Reactions when the note is read (if NORA is with you)
+00000957_1.wav,P1-NT-003,Organic Nora,...She really did think like me.,sad,"Quiet, guilty",Reactions when the note is read (if NORA is with you)
+00000958_1.wav,P1-NT-020,Organic Nora,"I sent her away. ""Good riddance."" That's what I said.",sad,Regret (after 013),Reactions when the note is read (if NORA is with you)
