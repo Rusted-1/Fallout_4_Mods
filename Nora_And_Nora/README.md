@@ -27,6 +27,7 @@ Synthetic Love, Unlimited Companion Framework, Random Encounter Framework or any
 - Nora Spouse Companion 1.2 (`NoraSpouse.esm`)
 - Synthetic Love (`p865_SyntheticLove.esp`), **any of its 8 installer versions**: they share identical record IDs, so one patch plugin covers all of them
 - Optional: Unlimited Companion Framework (`EFF.esp`)
+- Compatible as-is, no patch needed: Nora Spouse Far Harbor Support, Nora Spouse CTO Patch, SS2 Nora Spouse Patch (see `docs/analysis/05-…`)
 - Old-runtime game (1.10.163) is fine. Synthetic Love's archive is BA2 v8, which the old game reads only with BASS (Backported Archive2 Support System); the patch itself has no archive.
 
 The patch masters every mod it touches, so LOOT always sorts it after them. It is an ESL-flagged
