@@ -4,7 +4,7 @@ import sys,os,json
 sys.path.insert(0,os.path.dirname(os.path.abspath(__file__)))
 import pex
 WANT={'actor','objectreference','quest','form','scriptobject','globalvariable','game','utility','debug','actorbase','referencealias',
-      'alias','scene','topicinfo','faction','companionactorscript','followersscript','book','message','weapon','armor','potion','furniture'}
+      'alias','scene','topicinfo','faction','companionactorscript','followersscript','book','message','weapon','armor','potion','furniture','formlist','rescript','retriggerscript','cell','location','keyword'}
 db={}
 for r,_,fs in os.walk(sys.argv[1]):
     for f in fs:

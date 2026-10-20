@@ -110,12 +110,15 @@ FINAL_NOTE_TEXT=("I'm not a real person, am I? I've come to accept this. I know 
 def zs(t): return t.encode('cp1252')+b'\0'
 def glob(fid,edid,val): return record('GLOB',fid,0,sub('EDID',zs(edid))+sub('FLTV',struct.pack('<f',val)))
 def stages(nums): return b''.join(sub('INDX',struct.pack('<HBB',n,0,0))+sub('QSDT',b'\0') for n in nums)
-def book(fid,edid,title,text,ns_path):
+def book(fid,edid,title,text,ns_path,vmad=None):
     # template: Nora Spouse's own note (NorasJournal): paper-note model, sounds and inventory art are vanilla forms
     tmpl=[x for x in load(ns_path) if x[0]=='BOOK'][0]
     out=b''
     for k,x in subs(tmpl[3]):
-        if k=='EDID': x=zs(edid)
+        if k=='EDID':
+            out+=sub(k,zs(edid))
+            if vmad: out+=sub('VMAD',vmad)
+            continue
         elif k=='FULL': x=zs(title)
         elif k=='DESC': x=zs(text)
         out+=sub(k,x)
@@ -127,7 +130,7 @@ def phase1_records(own,sl_idx,ns_path):
            ('WaitNote',vm_obj(O(WAITNOTE_ID))),('NoteAnchor',vm_obj(SPOUSE_POD))]
     vm=struct.pack('<hhH',6,2,1)+ws('NN_Phase1Script')+struct.pack('<BH',0,len(props))+b''.join(ws(n)+b for n,b in props)
     ph1=record('QUST',O(PH1_ID),0,sub('EDID',zs('NN_Phase1'))+sub('VMAD',vm)+sub('DNAM',bytes.fromhex('110100000000000000000000'))
-               +sub('NEXT',b'')+stages([100,200,300,400,410,420])+sub('ANAM',struct.pack('<I',0)))
+               +sub('NEXT',b'')+stages([100,200,300,400,410,420,430])+sub('ANAM',struct.pack('<I',0)))
     alias=(sub('ALST',struct.pack('<I',0))+sub('ALID',zs('SynthNora'))+sub('FNAM',struct.pack('<I',0x282))
            +sub('ALFR',struct.pack('<I',(sl_idx<<24)|SL_NORA_REF))+sub('ALPC',struct.pack('<I',SANDBOX_CURRENT))
            +sub('VTCK',struct.pack('<I',0))+sub('ALED',b''))
@@ -135,7 +138,8 @@ def phase1_records(own,sl_idx,ns_path):
                  +sub('NEXT',b'')+sub('ANAM',struct.pack('<I',1))+alias)
     globs=[glob(O(TIER_ID),'NN_NoraRelationTier',0.0),glob(O(IMPATIENT_ID),'NN_SynthNoraImpatient',0.0)]
     books=[book(O(WAITNOTE_ID),'NN_SynthNoraWaitNote','Note on a Cryo Pod',WAIT_NOTE_TEXT,ns_path),
-           book(O(FINALNOTE_ID),'NN_SynthNoraFinalWish',"Nora's Final Wish",FINAL_NOTE_TEXT,ns_path)]
+           book(O(FINALNOTE_ID),'NN_SynthNoraFinalWish',"Nora's Final Wish",FINAL_NOTE_TEXT,ns_path,
+                vmad=struct.pack('<hhH',6,2,1)+ws('NN_FinalWishScript')+struct.pack('<BH',0,1)+ws('Phase1')+vm_obj(O(PH1_ID)))]
     return globs,[ph1,waitq],books
 
 def build_impatient(outdir):

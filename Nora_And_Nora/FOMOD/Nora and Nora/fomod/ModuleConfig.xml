@@ -59,5 +59,30 @@
         </group>
       </optionalFileGroups>
     </installStep>
+    <installStep name="Battle Site">
+      <optionalFileGroups order="Explicit">
+        <group name="Synth Nora's battle site (if she is sent away)" type="SelectExactlyOne">
+          <plugins order="Explicit">
+            <plugin name="Install the battle site">
+              <description>If synth Nora leaves Vault 111, she can later be found dead at a random-encounter spot in T-51c power armor, among dead coursers and synths, carrying "Nora's Final Wish". Installs NoraAndNora - Battle Site.esp (light plugin). Requires Random Encounter Framework and all three DLCs (Automatron, Far Harbor, Nuka-World).</description>
+              <files><folder source="BattleSite" destination="" priority="0"/></files>
+              <typeDescriptor>
+                <dependencyType>
+                  <defaultType name="Optional"/>
+                  <patterns>
+                    <pattern><dependencies operator="And"><fileDependency file="REFramework.esm" state="Active"/></dependencies><type name="Recommended"/></pattern>
+                    <pattern><dependencies operator="Or"><fileDependency file="REFramework.esm" state="Missing"/><fileDependency file="DLCCoast.esm" state="Missing"/><fileDependency file="DLCNukaWorld.esm" state="Missing"/><fileDependency file="DLCRobot.esm" state="Missing"/></dependencies><type name="NotUsable"/></pattern>
+                  </patterns>
+                </dependencyType>
+              </typeDescriptor>
+            </plugin>
+            <plugin name="Skip it">
+              <description>No battle site. If she leaves the vault, she is simply gone.</description>
+              <typeDescriptor><type name="Optional"/></typeDescriptor>
+            </plugin>
+          </plugins>
+        </group>
+      </optionalFileGroups>
+    </installStep>
   </installSteps>
 </config>
