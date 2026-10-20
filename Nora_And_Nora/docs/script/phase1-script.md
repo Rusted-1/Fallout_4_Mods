@@ -1,5 +1,5 @@
 # Nora and Nora: Phase 1 Script
-**From the first meeting to the Vault 111 choice.** Draft 1, built from `notes/interaction-ideas.md`.
+**From the first meeting to the Vault 111 choice.** Draft 2, built from `notes/interaction-ideas.md` and the answers to draft 1's questions.
 
 ## How to read this
 **Speakers**
@@ -11,11 +11,11 @@
   - **[X]** sarcastic
   - **[A]** ask
   
-  Each choice has a short label (what the wheel shows) and the full spoken line.
+  Each choice has a short label (the vanilla wheel) and the full line (shown by XDI). XDI also allows more than four choices, which is used where noted.
 
 **Voicing**
 - NORA and SYNTH both use the vanilla female player voice (`PlayerVoiceFemale01`).
-- NATE uses the male player voice (`PlayerVoiceMale01`).
+- **NATE is text-only.** No audio is recorded for him. With **Extended Dialogue Interface (XDI)** installed, the wheel shows his full line. Without it, players see the short label. Either way the dialogue works. XDI 1.3.6 matches the old-runtime game (1.10.163).
 - The **Delivery** column is the direction for the AI voice tool.
 - Lines that might be swapped for a vanilla recording are checked separately (voice catalog task). Treat every line here as needing new audio until then.
 
@@ -34,7 +34,7 @@
 
 **Two versions**
 - **1A: NORA is with you.** The main version below.
-- **1B: NORA is not with you.** Short version. The full confrontation is held back until the two Noras first stand together (Scene 1C).
+- **1B: NORA is not with you.** SYNTH joins you happily. She panics the first time she sees NORA, whether NORA catches up with you or you go back to her (Scene 1C).
 
 ### 1A: NORA is following you
 SYNTH spots Nate first and runs to him. She doesn't notice NORA yet.
@@ -117,13 +117,20 @@ Short version. SYNTH runs to Nate the same way (001–003). Then:
 |---|---|---|---|
 | P1-S1B-001 | NATE | Nora... I left you at the settlement. How did you get here before me? | Confused, wary |
 | P1-S1B-002 | SYNTH | Settlement? What settlement? I've been searching for you since I woke up. | Genuinely lost |
-| P1-S1B-003 | NATE | Come with me. There's someone you need to meet. | Careful, decided |
-| P1-S1B-004 | SYNTH | Someone...? Okay. As long as I'm with you. | Trusting |
+| P1-S1B-003 | NATE | Come with me. We need to talk. | Careful, decided (text only) |
+| P1-S1B-004 | SYNTH | Of course. Anywhere. As long as I'm with you. | Trusting, happy |
 
-SYNTH follows. **Scene 1C** plays the first time she and NORA are in the same place.
+SYNTH joins as a follower. Until she meets NORA, she uses her normal Synthetic Love lines. She is cheerful and doesn't yet know anything is wrong. **Scene 1C** plays the first time she and NORA are near each other: NORA reaching you, or you bringing SYNTH to wherever NORA is waiting.
 
 ### 1C: First time they stand together (after 1B)
-Plays the 1A lines from **P1-S1-030 to P1-S1-076** without SYNTH's opening run-up. It starts on NORA's "Get away from him." The line works whether SYNTH is beside Nate or not.
+SYNTH sees NORA first, and the panic starts:
+
+| ID | Speaker | Line | Delivery |
+|---|---|---|---|
+| P1-S1C-001 | SYNTH | Nate... who is that? Why does she... why does she look like me? | Slowing, confused, then frightened |
+| P1-S1C-002 | SYNTH | No. No, no, no. That's not possible. | Backing away, breathing fast |
+
+Then the 1A lines from **P1-S1-030 to P1-S1-076** play as normal, starting with NORA's "Get away from him." The vault trip and the ambient lines below start from here.
 
 ---
 
@@ -257,7 +264,15 @@ The X button is used for choice 4 because it's the odd one out. Swap it with B i
 | P1-S3-030 | SYNTH | I understand. I'd need time too. I'll be here. I don't really have anywhere else. | Quiet, resigned, not bitter |
 | P1-S3-031 | NORA | Fair enough. We'll come back. | Neutral |
 
-**Result:** SYNTH stays in Vault 111 (sandbox near the pods). Talking to her again offers the same four choices, without the breakdown. Leaving her waiting has no time limit.
+**Result:** SYNTH stays in Vault 111 (sandbox near the pods). Talking to her again offers the same four choices, without the breakdown.
+
+**FOMOD option: "Synth Nora's patience"**
+- **Waits forever** (default): she stays until you decide.
+- **Leaves after a while:** if you don't come back within 7 in-game days, she leaves the vault the same way as choice 4. That starts the 3-day timer and the battle-site encounter.
+
+| ID | Speaker | Line | Delivery |
+|---|---|---|---|
+| P1-S3-032 | SYNTH | (Note left on her pod, "leaves" option only) I waited. I understand. I'm going to find my own way to be useful. Take care of her. | Written, calm, sad |
 
 ### Choice 3: Abomination
 
@@ -268,6 +283,13 @@ The X button is used for choice 4 because it's the odd one out. Swap it with B i
 
 **Result:** SYNTH turns hostile and can be killed. Synthetic Love's own murder and hatred handling applies from here. Killing her still counts as murder for companions who care about that.
 
+After she's dead:
+
+| ID | Speaker | Line | Delivery |
+|---|---|---|---|
+| P1-S3-045 | NORA | That's that. | Flat, quiet, not looking at the body |
+| P1-S3-046 | NORA | Can we get out of here now? Please. | Tired, wanting to leave the vault behind |
+
 ### Choice 4: Go your own way
 First, a confirmation:
 
@@ -276,7 +298,7 @@ First, a confirmation:
 | P1-S3-050 | SYNTH | Please. Please don't do this. I won't get in the way, I won't say a word, I'll just... please. | Desperate, begging |
 | P1-S3-051 | SYNTH | Please reconsider. | Barely audible |
 
-The same four choices are offered again (010–013). Picking **X** again confirms choice 4. Any other button switches to that choice.
+The same four choices are offered again (010–013). Picking **X** again confirms choice 4. Any other button switches to that choice. With XDI, the confirmation can be a fifth option instead: **"I'm sure." / "I'm sorry. I've made up my mind."**
 
 On confirmation:
 
@@ -335,9 +357,9 @@ On confirmation:
 
 ---
 
-## Open questions for the user
-1. **1B:** when NORA isn't with Nate in Diamond City, is the held-back confrontation (1C) right? Or should synth Nora refuse to follow until he brings NORA to her?
-2. **Choice 2:** should waiting have no time limit, or should she eventually leave on her own after a while?
-3. **Choice 3:** does killing her give NORA any lines afterwards (guilt, anger at Nate)?
-4. **The note:** "a local farm's wife" could point somewhere. Abernathy Farm is where you found the real Nora, which could be a nice echo, but Mary Abernathy's story already exists. Use it, invent a farm, or leave it vague?
-5. **Nate's lines:** these need male player voice audio too. Keep them, or cut Nate down to short wheel labels and let the Noras carry the voice work?
+## Decisions (from draft 1 review)
+1. **1B:** she follows; the panic plays when she first meets NORA (1C).
+2. **Choice 2:** waiting forever or leaving after a while is a **FOMOD option**.
+3. **Choice 3:** NORA says "That's that" and asks to leave.
+4. **The note's farm:** the user is choosing from the farm list (see chat).
+5. **Nate:** text only, with XDI showing full lines.

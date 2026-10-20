@@ -11,7 +11,7 @@ Synthetic Love, Unlimited Companion Framework, Random Encounter Framework or any
 
 ## Status: v0.2.0 — compatibility fixes
 - **Done:** Followers quest merge for UCF users (v0.1). Kellogg fix for synth Nora's Admiration scene (v0.2). Both verified at the file level, not yet tested in game.
-- **Writing:** Phase 1 script, draft 1 (`docs/script/phase1-script.md`).
+- **Writing:** Phase 1 script, draft 2 (`docs/script/phase1-script.md`).
 - **Planned:** first meeting, Vault 111 breakdown and choice, relationship tiers, Shaun/faction reactions, romance, death-site encounter.
 
 ## What's here
@@ -29,6 +29,7 @@ Synthetic Love, Unlimited Companion Framework, Random Encounter Framework or any
 - Nora Spouse Companion 1.2 (`NoraSpouse.esm`)
 - Synthetic Love (`p865_SyntheticLove.esp`), **any of its 8 installer versions**: they share identical record IDs, so one patch plugin covers all of them
 - Optional: Unlimited Companion Framework (`EFF.esp`)
+- Recommended: Extended Dialogue Interface (XDI) for full-text player lines
 - Compatible as-is, no patch needed: Nora Spouse Far Harbor Support, Nora Spouse CTO Patch, SS2 Nora Spouse Patch (see `docs/analysis/05-…`)
 - Old-runtime game (1.10.163) is fine. Synthetic Love's archive is BA2 v8, which the old game reads only with BASS (Backported Archive2 Support System); the patch itself has no archive.
 
