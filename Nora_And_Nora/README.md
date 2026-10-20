@@ -11,7 +11,7 @@ Synthetic Love, Unlimited Companion Framework, Random Encounter Framework or any
 
 ## Status: v0.2.0 — compatibility fixes
 - **Done:** Followers quest merge for UCF users (v0.1). Kellogg fix for synth Nora's Admiration scene (v0.2). Both verified at the file level, not yet tested in game.
-- **Writing:** Phase 1 script, draft 2 (`docs/script/phase1-script.md`).
+- **Writing:** Phase 1 script, draft 3 (`docs/script/phase1-script.md`).
 - **Planned:** first meeting, Vault 111 breakdown and choice, relationship tiers, Shaun/faction reactions, romance, death-site encounter.
 
 ## What's here

@@ -1,5 +1,5 @@
 # Nora and Nora: Phase 1 Script
-**From the first meeting to the Vault 111 choice.** Draft 2, built from `notes/interaction-ideas.md` and the answers to draft 1's questions.
+**From the first meeting to the Vault 111 choice.** Draft 3, built from `notes/interaction-ideas.md` and the answers to draft 1's questions.
 
 ## How to read this
 **Speakers**
@@ -327,11 +327,11 @@ On confirmation:
 - When the encounter loads, a small quest starts: **"Investigate the battle site."** It stays loaded until the note is read, and reading the note completes it.
 
 ### Note: "Nora's Final Wish"
-*The user's text, typos fixed, wording kept.*
+*The user's text, typos fixed, wording kept. Draft 3 adds the farm (Abernathy Farm, Connie Abernathy).*
 
 > I'm not a real person, am I? I've come to accept this. I know my husband, if I can call him that, is still out there with the real me. I hope they can find happiness in this horrid world.
 >
-> I won't stop looking for my son. Even though I know he isn't my organic son, he is still mine in my heart, or whatever I have. I've acquired some new gear and have been tracking some of the disappearances and other synth sightings related to the Institute. If I've mapped out the sightings and disappearances right, the next one will be a local farm's wife.
+> I won't stop looking for my son. Even though I know he isn't my organic son, he is still mine in my heart, or whatever I have. I've acquired some new gear and have been tracking some of the disappearances and other synth sightings related to the Institute. If I've mapped out the sightings and disappearances right, the next one will be a local farm's wife. Connie, out at Abernathy Farm.
 >
 > Not again. I won't let them do it to another family like the half-assed try they did to mine. I'm going to stop them. They will regret messing with my family and all the others they have destroyed.
 >
@@ -342,7 +342,7 @@ On confirmation:
 | ID | Speaker | Line | Delivery |
 |---|---|---|---|
 | P1-NT-001 | NORA | She went after them. On her own. | Stunned |
-| P1-NT-002 | NORA | "A local farm's wife." She was trying to save someone. | Reading it again, voice catching |
+| P1-NT-002 | NORA | Connie Abernathy. That's where you found me, hon. She was trying to protect the place we found each other again. | Reading it again, voice catching |
 | P1-NT-003 | NORA | ...She really did think like me. | Quiet, guilty |
 
 **NATE choices**
@@ -361,5 +361,5 @@ On confirmation:
 1. **1B:** she follows; the panic plays when she first meets NORA (1C).
 2. **Choice 2:** waiting forever or leaving after a while is a **FOMOD option**.
 3. **Choice 3:** NORA says "That's that" and asks to leave.
-4. **The note's farm:** the user is choosing from the farm list (see chat).
+4. **The note's farm:** Abernathy Farm. The target is Connie Abernathy, and the note names her.
 5. **Nate:** text only, with XDI showing full lines.
