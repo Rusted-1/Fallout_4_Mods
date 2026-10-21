@@ -161,13 +161,15 @@ def build(sl,ns,eff,outdir,ucf):
         import phase1_scenes
         blob,nscene,info=phase1_scenes.build_records(own,1,2,SCRIPT_MD,VOICE_CSV)
         qrecs.append(blob);print('  phase 1 dialogue:',info)
+    import names
+    msgs,nq=names.records(own,2);qrecs.append(nq)
     globs=[kglob]+pglobs
-    body=grup('GLOB',b''.join(globs))+grup('QUST',b''.join(qrecs))+grup('BOOK',b''.join(books))
-    recs=globs+qrecs+books+[b'']*max(nscene-1,0)
-    desc='Nora & Nora 0.3.0 - Nora Spouse + Synthetic Love patch'+(' + UCF' if ucf else '')
+    body=grup('GLOB',b''.join(globs))+grup('MESG',b''.join(msgs))+grup('QUST',b''.join(qrecs))+grup('BOOK',b''.join(books))
+    recs=globs+msgs+qrecs+books+[b'']*max(nscene-1,0)
+    desc='Nora & Nora 0.5.2 - Nora Spouse + Synthetic Love patch'+(' + UCF' if ucf else '')
     os.makedirs(outdir,exist_ok=True)
     p=os.path.join(outdir,PLUGIN)
-    open(p,'wb').write(tes4(masters,len(recs),desc)+body)
+    open(p,'wb').write(tes4(masters,len(recs),desc,next_id=0xB10)+body)
     return p
 
 if __name__=='__main__':

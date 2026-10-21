@@ -28,7 +28,7 @@
               </typeDescriptor>
             </plugin>
             <plugin name="No - I don't use UCF">
-              <description>Installs the version without UCF as a requirement. Without UCF there is no Followers conflict to fix (Nora Spouse is an .esm and doesn't change that quest). Contains the Kellogg fix only.</description>
+              <description>Installs the version without UCF as a requirement. Without UCF there is no Followers conflict to fix (Nora Spouse's copy of that quest is unchanged from vanilla). Contains the Kellogg fix only.</description>
               <files><folder source="NoUCF" destination="" priority="0"/></files>
               <typeDescriptor>
                 <dependencyType>

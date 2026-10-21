@@ -15,20 +15,43 @@ COMPANION_FACTION=0x00023C01; STAY_PACKAGE=0x00019AA2
 PH1=0x802
 A_SYNTH,A_NORA=0,1
 TIF='NN_P1S_TIF'
-FRAGS=['Frag_31','Frag_32','Frag_33','Frag_34','Frag_41','Frag_42','Frag_43','Frag_44','Frag_73','Frag_13',
+# affinity events: Synthetic Love's keywords (registered in Followers by SL) and Nora Spouse's (registered at runtime by NS)
+SL_KW={'Likes':0x26CD,'Loves':0x26CE,'Dislikes':0x26CB,'Hates':0x26CC}
+NS_KW={'Likes':0x1F32,'Loves':0x1F35,'Dislikes':0x1F33,'Hates':0x1F34}
+# what each choice fragment sends (from the Effect column of phase1-script.md)
+AFF={31:[('Nora','Likes'),('Synth','Loves')],41:[('Nora','Likes'),('Synth','Loves')],
+     33:[('Nora','Dislikes'),('Synth','Hates')],43:[('Nora','Dislikes'),('Synth','Hates')],
+     44:[('Nora','Likes'),('Synth','Dislikes')]}
+AFF_FRAGS={'Aff_S2_010':[('Synth','Likes')],'Aff_S2_011':[('Synth','Dislikes')],
+           'Aff_NT_010':[('Nora','Likes')],'Aff_NT_011':[('Nora','Dislikes')],'Aff_NT_012':[('Nora','Dislikes')]}
+# Diamond City choices come before synth Nora is recruited: held as stages, sent once she has joined
+PENDING={51:('Synth','Dislikes'),52:('Synth','Likes'),53:('Synth','Dislikes')}
+FRAGS=['Frag_51','Frag_52','Frag_53','Aff_S2_010','Aff_S2_011','Aff_NT_010','Aff_NT_011','Aff_NT_012','Frag_31','Frag_32','Frag_33','Frag_34','Frag_41','Frag_42','Frag_43','Frag_44','Frag_73','Frag_13',
        'Frag_Met','Frag_MetAlone','Frag_AtVault','Frag_Out100','Frag_Out200','Frag_Out300','Frag_Out400']
 
 def tif_script(out):
     """One shared TopicInfo fragment script; each INFO points at one function."""
     sc=Script(TIF,'TopicInfo','Nora and Nora: Phase 1 dialogue fragments.')
     PH=sc.prop('Phase1','quest');SLQ=sc.prop('SLQuest','quest')
-    for st in (31,32,33,34,41,42,43,44,73,13):
-        f=sc.func('Frag_%d'%st,[('akSpeakerRef','objectreference')]);q=f.call('self','GetOwningQuest');f.call(q,'SetStage',st)
+    KW={(who,k):sc.prop(who+k,'keyword') for who in ('Synth','Nora') for k in ('Likes','Loves','Dislikes','Hates')}
+    f=sc.func('React',[('akEvent','keyword')])          # shows "<name> liked that." and changes affinity
+    so=f.cast('self','ScriptObject');f.callstatic('followersscript','SendAffinityEvent',so,'akEvent',None,None,True,True,False,1.0)
+    def react(f,lst):
+        for who,k in lst: f.callself('React',KW[(who,k)])
+    for st in (31,32,33,34,41,42,43,44,73,13,51,52,53):
+        f=sc.func('Frag_%d'%st,[('akSpeakerRef','objectreference')])
+        react(f,AFF.get(st,[]))
+        q=f.call('self','GetOwningQuest');f.call(q,'SetStage',st)
+    for name,lst in AFF_FRAGS.items():
+        f=sc.func(name,[('akSpeakerRef','objectreference')]);react(f,lst)
     def met(f,stage):
         q=f.call('self','GetOwningQuest')
         f.call(SLQ,'SetStage',10);f.call(SLQ,'SetStage',20)                    # Synthetic Love's own recruit stages
         f.call(SLQ,'SetObjectiveDisplayed',20,False,False)                    # hide "...examine the corpse"
         f.call(q,'SetStage',stage);f.call(q,'SetObjectiveDisplayed',10,True,False)   # show "Travel with Nora to Vault 111"
+        f.callstatic('utility','Wait',2.0)                                    # let her join the companion system first
+        for st,(who,k) in PENDING.items():
+            d=f.call(q,'GetStageDone',st);f.jmpf(d,'skip%d'%st);f.callself('React',KW[(who,k)]);f.label('skip%d'%st)
     f=sc.func('Frag_Met',[('akSpeakerRef','objectreference')]);met(f,100)
     f=sc.func('Frag_MetAlone',[('akSpeakerRef','objectreference')]);met(f,110)
     f=sc.func('Frag_AtVault',[('akSpeakerRef','objectreference')]);q=f.call('self','GetOwningQuest');f.call(q,'SetStage',150)
@@ -91,6 +114,7 @@ def build_records(own,ns_idx,sl_idx,script_md,voice_csv):
     nxt={'topic':0x809,'nate':0xA00,'scene':0x8E0}
     def alloc(k): v=nxt[k];nxt[k]+=1;return O(v)
     props=[('Phase1',vm_obj(O(PH1))),('SLQuest',vm_obj((sl_idx<<24)|SL_QUEST))]
+    props+=[('Synth'+k,vm_obj((sl_idx<<24)|v)) for k,v in SL_KW.items()]+[('Nora'+k,vm_obj((ns_idx<<24)|v)) for k,v in NS_KW.items()]
     def fr(func): return frag_vmad(TIF,func,props)
     npc_topic={}
     def npc(lid,frag=None):
@@ -116,10 +140,10 @@ def build_records(own,ns_idx,sl_idx,script_md,voice_csv):
         say(s,NO,'P1-S1-030',first_cond)
         for lid,al in [('P1-S1-031',SY),('P1-S1-032',SY),('P1-S1-033',NO),('P1-S1-034',SY),('P1-S1-035',NO),('P1-S1-036',SY),('P1-S1-037',NO),('P1-S1-038',SY)]:
             say(s,al,lid,first_cond)
-        ph=s.phase('Choice2',first_cond);s.choice(SY,ph,[player(x) for x in ('P1-S1-040','P1-S1-041','P1-S1-042','P1-S1-043')],[npc(x) for x in ('P1-S1-050','P1-S1-051','P1-S1-052','P1-S1-053')])
+        ph=s.phase('Choice2',first_cond);s.choice(SY,ph,[player('P1-S1-040'),player('P1-S1-041','Frag_51'),player('P1-S1-042'),player('P1-S1-043')],[npc(x) for x in ('P1-S1-050','P1-S1-051','P1-S1-052','P1-S1-053')])
         for lid,al in [('P1-S1-060',SY),('P1-S1-061',NO),('P1-S1-062',SY)]: say(s,al,lid,first_cond)
         ph=s.phase('Choice3',first_cond)
-        s.choice(SY,ph,[player('P1-S1-070'),player('P1-S1-071'),player('P1-S1-072'),player('P1-S1-073','Frag_73')],[npc('P1-S1-075'),npc('P1-S1-075'),npc('P1-S1-075'),0])
+        s.choice(SY,ph,[player('P1-S1-070','Frag_52'),player('P1-S1-071','Frag_53'),player('P1-S1-072'),player('P1-S1-073','Frag_73')],[npc('P1-S1-075'),npc('P1-S1-075'),npc('P1-S1-075'),0])
         say(s,NO,'P1-S1-074',first_cond+done(73),name='AskNora')
         say(s,SY,'P1-S1-075',first_cond+done(73),name='AskNoraThanks')
         say(s,NO,'P1-S1-076',first_cond,frag=end_frag)
@@ -144,7 +168,7 @@ def build_records(own,ns_idx,sl_idx,script_md,voice_csv):
     s2=new_scene('NN_P1_S2_Vault111')
     say(s2,SY,'P1-S2-002',name='Start')
     for lid,al in [('P1-S2-003',SY),('P1-S2-004',NO),('P1-S2-005',NO),('P1-S2-006',NO),('P1-S2-007',SY),('P1-S2-008',SY),('P1-S2-009',SY)]: say(s2,al,lid)
-    ph=s2.phase('Comfort');s2.choice(SY,ph,[player(x) for x in ('P1-S2-010','P1-S2-011','P1-S2-012','P1-S2-013')])
+    ph=s2.phase('Comfort');s2.choice(SY,ph,[player('P1-S2-010','Aff_S2_010'),player('P1-S2-011','Aff_S2_011'),player('P1-S2-012'),player('P1-S2-013')])
     for lid,al in [('P1-S2-020',SY),('P1-S2-021',SY),('P1-S2-022',SY),('P1-S2-030',NO),('P1-S2-031',NO),('P1-S2-032',NO),('P1-S2-033',NO),('P1-S2-034',NO),('P1-S3-001',SY)]: say(s2,al,lid)
     ph=s2.phase('TheChoice')
     s2.choice(SY,ph,[player('P1-S3-010','Frag_31'),player('P1-S3-012','Frag_33'),player('P1-S3-013','Frag_34'),player('P1-S3-011','Frag_32')])
@@ -169,7 +193,7 @@ def build_records(own,ns_idx,sl_idx,script_md,voice_csv):
     sk=new_scene('NN_P1_SK_AfterKill',actors=(A_NORA,));say(sk,NO,'P1-S3-045',name='Start');say(sk,NO,'P1-S3-046')
     snt=new_scene('NN_P1_SNT_Note',actors=(A_NORA,))
     say(snt,NO,'P1-NT-001',name='Start');say(snt,NO,'P1-NT-002');say(snt,NO,'P1-NT-003')
-    ph=snt.phase('Answer');snt.choice(NO,ph,[player('P1-NT-010'),player('P1-NT-011'),player('P1-NT-012'),player('P1-NT-013','Frag_13')])
+    ph=snt.phase('Answer');snt.choice(NO,ph,[player('P1-NT-010','Aff_NT_010'),player('P1-NT-011','Aff_NT_011'),player('P1-NT-012','Aff_NT_012'),player('P1-NT-013','Frag_13')])
     say(snt,NO,'P1-NT-020',done(13),name='Regret')
     # ---------- Greetings (quest priority 90 beats Synthetic Love's 71) ----------
     syn_is=cond(GetIsID,(sl_idx<<24)|SL_NORA_NPC,0,'==',1.0)
@@ -194,7 +218,7 @@ def build_records(own,ns_idx,sl_idx,script_md,voice_csv):
     qprops=[('SynthNoraRef',vm_obj((sl_idx<<24)|SL_NORA_REF)),('NoraRef',vm_obj((ns_idx<<24)|NS_NORA_REF)),('Phase1',vm_obj(O(PH1))),
             ('CompanionFaction',vm_obj(COMPANION_FACTION)),('SceneFirstTogether',vm_obj(s1c.fid)),('SceneAfterKill',vm_obj(sk.fid)),('SceneNote',vm_obj(snt.fid))]+[('SceneExchange%d'%(i+1),vm_obj(x.fid)) for i,x in enumerate(exch)]
     vm=struct.pack('<hhH',6,2,1)+ws('NN_P1ScenesScript')+struct.pack('<BH',0,len(qprops))+b''.join(ws(n)+v for n,v in qprops)
-    stages=[13,31,32,33,34,41,42,43,44,73,100,110,150,500]
+    stages=[13,31,32,33,34,41,42,43,44,51,52,53,73,100,110,150,500]
     q=sub('EDID',zs('NN_P1Scenes'))+sub('VMAD',vm)+sub('FULL',zs('Two Noras'))
     q+=sub('DNAM',struct.pack('<HBBII',0x0111,90,0,0,7))+sub('NEXT',b'')
     q+=b''.join(sub('INDX',struct.pack('<HBB',n,0,0))+sub('QSDT',b'\0') for n in stages)

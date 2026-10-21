@@ -20,3 +20,6 @@ uninitialised padding bytes in `DNAM` / `CTDA`):
 The UCF variant of `NoraAndNora.esp` carries UCF's record byte-for-byte, with Synthetic Love's four
 events appended (renumbered to the patch's Synthetic Love master slot) and UCF's hook renumbered to the
 patch's UCF slot. `tools/verify.py` checks that nothing else differs.
+
+
+**Correction (v0.5.2):** Nora Spouse.esm does contain a copy of the Followers quest, but it is unchanged from vanilla (only string format and padding bytes differ). Nora Spouse registers its four affinity events at runtime (`NoraFollowerDataScript` on `COMNoraAffinityQuest`), so no Followers edit is needed for them.
