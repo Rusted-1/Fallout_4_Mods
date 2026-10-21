@@ -150,6 +150,7 @@ def build_impatient(outdir):
     open(p,'wb').write(tes4(masters,1,'Nora & Nora option: synth Nora leaves Vault 111 after 7 days')+grup('GLOB',g));return p
 
 SCRIPT_MD=None;VOICE_CSV=None          # set by __main__ (phase 1 dialogue source files)
+P2_SCRIPT_MD=None;P2_VOICE_CSV=None;P2_INFO=None
 def build(sl,ns,eff,outdir,ucf):
     masters=['Fallout4.esm','NoraSpouse.esm','p865_SyntheticLove.esp']+(['EFF.esp'] if ucf else [])
     own=len(masters);kglob,gate=kellogg_records(own,2)
@@ -163,18 +164,24 @@ def build(sl,ns,eff,outdir,ucf):
         qrecs.append(blob);print('  phase 1 dialogue:',info)
     import names
     msgs,nq=names.records(own,2);qrecs.append(nq)
-    globs=[kglob]+pglobs
-    body=grup('GLOB',b''.join(globs))+grup('MESG',b''.join(msgs))+grup('QUST',b''.join(qrecs))+grup('BOOK',b''.join(books))
-    recs=globs+msgs+qrecs+books+[b'']*max(nscene-1,0)
-    desc='Nora & Nora 0.5.2 - Nora Spouse + Synthetic Love patch'+(' + UCF' if ucf else '')
+    globs=[kglob]+pglobs;flsts=[];p2count=0
+    if P2_SCRIPT_MD:
+        import phase2
+        r=phase2.build_records(own,1,2,P2_SCRIPT_MD,P2_VOICE_CSV,SCRIPT_MD,VOICE_CSV,ns)
+        qrecs+=[r['quest'],r['walk']];globs+=r['globs'];flsts=r['flsts'];msgs+=r['msgs'];books+=r['books'];p2count=r['qcount']
+        global P2_INFO;P2_INFO=r['info'];print('  phase 2:',{k:v for k,v in r['info'].items() if k!='copies'},'voice copies',len(r['info']['copies']))
+    body=grup('GLOB',b''.join(globs))+(grup('FLST',b''.join(flsts)) if flsts else b'')+grup('MESG',b''.join(msgs))+grup('QUST',b''.join(qrecs))+grup('BOOK',b''.join(books))
+    recs=globs+flsts+msgs+qrecs+books+[b'']*max(nscene-1,0)+[b'']*max(p2count-1,0)
+    desc='Nora & Nora 0.6.0 - Nora Spouse + Synthetic Love patch'+(' + UCF' if ucf else '')
     os.makedirs(outdir,exist_ok=True)
     p=os.path.join(outdir,PLUGIN)
-    open(p,'wb').write(tes4(masters,len(recs),desc,next_id=0xB10)+body)
+    open(p,'wb').write(tes4(masters,len(recs),desc,next_id=0xE00)+body)
     return p
 
 if __name__=='__main__':
     sl,ns,eff,out=sys.argv[1:5]
     if len(sys.argv)>6: SCRIPT_MD,VOICE_CSV=sys.argv[5:7]
+    if len(sys.argv)>8: P2_SCRIPT_MD,P2_VOICE_CSV=sys.argv[7:9]
     print(build(sl,ns,eff,os.path.join(out,'UCF'),True))
     print(build(sl,ns,eff,os.path.join(out,'NoUCF'),False))
     print(build_impatient(os.path.join(out,'Impatient')))

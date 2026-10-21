@@ -85,5 +85,18 @@
         </group>
       </optionalFileGroups>
     </installStep>
+    <installStep name="Testing">
+      <optionalFileGroups order="Explicit">
+        <group name="Testing tools" type="SelectAny">
+          <plugins order="Explicit">
+            <plugin name="Test tape">
+              <description>Puts "Nora and Nora: Test Tape" in your inventory. Reading it opens a menu: status, advance to the next relationship tier, set tier 1-5, skip the current wait, bring both Noras to you, and reset the relationship. For testing; leave it unticked for a normal playthrough. Installs NoraAndNora - Test Tape.esp (light plugin).</description>
+              <files><folder source="TestTape" destination="" priority="0"/></files>
+              <typeDescriptor><type name="Optional"/></typeDescriptor>
+            </plugin>
+          </plugins>
+        </group>
+      </optionalFileGroups>
+    </installStep>
   </installSteps>
 </config>

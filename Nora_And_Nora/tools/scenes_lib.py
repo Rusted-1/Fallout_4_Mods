@@ -21,7 +21,7 @@ OPS={'==':0x00,'!=':0x20,'>':0x40,'>=':0x60,'<':0x80,'<=':0xA0}
 RUN_SUBJECT,RUN_REF=0,2
 def cond(fn,p1=0,p2=0,op='==',val=1.0,run=RUN_SUBJECT,ref=0,OR=False):
     return sub('CTDA',struct.pack('<B3xfH2xIIIIi',OPS[op]|(1 if OR else 0),val,fn,p1,p2,run,ref,-1))
-GetStage,GetStageDone,GetInFaction,GetIsID=58,59,71,72
+GetStage,GetStageDone,GetInFaction,GetIsID,GetGlobalValue=58,59,71,72,74
 def ws(s): b=s.encode('cp1252');return struct.pack('<H',len(b))+b
 def frag_vmad(script,func,props):
     """INFO VMAD with an End fragment (layout from Synthetic Love's TIF_p865_COMNoraTalk_01001764)."""
@@ -82,9 +82,9 @@ def parse_script(path):
     """Lines from phase1-script.md: id -> dict(speaker,text,delivery) and choices id -> dict(button,label,line)."""
     lines={};choices={}
     for l in open(path,encoding='utf-8'):
-        m=re.match(r'\|\s*(P1-[A-Z0-9-]+)\s*\|\s*(NORA|SYNTH|NATE)\s*\|\s*(.*?)\s*\|\s*(.*?)\s*\|\s*$',l)
+        m=re.match(r'\|\s*(P\d-[A-Z0-9-]+)\s*\|\s*(NORA|SYNTH|NATE)\s*\|\s*(.*?)\s*\|\s*(.*?)\s*\|\s*$',l)
         if m: lines[m.group(1)]={'speaker':m.group(2),'text':re.sub(r'\*(.*?)\*',r'\1',m.group(3)),'delivery':m.group(4)};continue
-        m=re.match(r'\|\s*(P1-[A-Z0-9-]+)\s*\|\s*([YBXA])\s*\|\s*(.*?)\s*\|\s*(.*?)\s*\|\s*(.*?)\s*\|\s*$',l)
+        m=re.match(r'\|\s*(P\d-[A-Z0-9-]+)\s*\|\s*([YBXA])\s*\|\s*(.*?)\s*\|\s*(.*?)\s*\|\s*(.*?)\s*\|\s*$',l)
         if m: choices[m.group(1)]={'button':m.group(2),'label':m.group(3),'line':m.group(4)}
     return lines,choices
 def voice_ids(csv_path):
