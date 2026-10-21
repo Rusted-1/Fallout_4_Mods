@@ -1,5 +1,5 @@
 # Nora and Nora: Phase 2 Script
-**Relationship tiers 1 to 3, from the Vault 111 choice to "acceptance and basic friendship".** Draft 1, built from `notes/interaction-ideas.md` and the answers of 2026-10-21.
+**Relationship tiers 1 to 3, from the Vault 111 choice to "acceptance and basic friendship".** Draft 2, built from `notes/interaction-ideas.md` and the answers of 2026-10-21.
 
 ## How to read this
 Same conventions as `phase1-script.md`:
@@ -17,7 +17,7 @@ Same conventions as `phase1-script.md`:
 | Tier 1 starts | Choice 1 in Vault 111 | Tense ambient lines. SYNTH starts bringing a gift once per game day |
 | Gift check-in | After the 5th gift | SYNTH asks "Am I doing well?" (4 choices) |
 | NORA's first talk | 2 game days after the check-in | NORA talks about SYNTH. What she says depends on the check-in choice |
-| Tier 2 starts | 4 game days after NORA's first talk | Calmer ambient lines. NORA asks "Can I talk to you about... her?" |
+| Tier 2 starts | 2 game days after NORA's first talk | Calmer ambient lines. NORA asks "Can I talk to you about... her?" |
 | Tier 3 starts | 3 game days after NORA's tier 2 talk, adjusted by your choices (2 to 5 days) | Friendly ambient lines, compliments, stimpak aid. SYNTH asks "Can I talk to you?" |
 
 **Timer changes from your choices** (all applied to the 3-day wait for tier 3):
@@ -153,8 +153,8 @@ Then one of these, matching the check-in choice:
 |---|---|---|---|
 | P2-N1-030 | NORA | Fair enough. I just think she's got more in her than either of us expected. Room to grow. | Understanding, closing the topic |
 
-**Result:** tier 1 is complete. Tier 2 starts **4 game days later**.
-If CK-012 was chosen, NORA now brings an occasional gift too:
+**Result:** tier 1 is complete. Tier 2 starts **2 game days later**.
+If CK-012 was chosen, NORA now brings a gift too, **every 2 game days**:
 
 | ID | Speaker | Line | Delivery |
 |---|---|---|---|
@@ -196,7 +196,7 @@ The two work together more easily. NORA is still cautious, but her guard is lowe
 | P2-N2-010 | Y | Sure, what's up? | Sure. What's up? | none. Talk continues |
 | P2-N2-011 | A | Is something wrong? | Is something wrong? | none. Talk continues |
 | P2-N2-012 | B | Not right now. | Not right now. | none. NORA asks again next time you talk to her |
-| P2-N2-013 | X | Yep. | Yep. | none. Talk continues |
+| P2-N2-013 | X | Yep. | Yep. | none. Talk continues (NORA carries straight on) |
 
 | ID | Speaker | Line | Delivery |
 |---|---|---|---|
@@ -391,9 +391,10 @@ Plays the next time she's near Nate after the third Hate in Phase 2 scenes.
 
 ---
 
-## Open questions (draft 1)
-1. **Tier 2 timing:** I read "after four in-game days" as 4 days after NORA's tier 1 talk. Is that right?
-2. **"Yep." in the tier 2 talk:** no reaction, as you asked. Should NORA notice the curt answer (a small sigh, no audio), or carry straight on?
-3. **NORA's gifts after CK-012:** how often? I've assumed every 3 days, against SYNTH's daily gifts.
-4. **The kind-branch "useful machine" (S3-062):** it starts the cruel path late. It's the only cruel-path start outside tier 2. Keep it?
-5. **The leaving note:** OK to add it, or should she go without a word?
+## Decisions (draft 1 review)
+1. **Tier 2** starts **2 game days** after NORA's tier 1 talk.
+2. **"Yep."** in the tier 2 talk: no reaction. NORA carries straight on.
+3. **NORA's gifts** (after CK-012): every **2 game days**.
+4. **"A useful machine"** in the kind branch (S3-062) **starts the cruel path**.
+5. **The leaving note** stays.
+6. **Cut:** the rifle exchange (P2-T1-040 to 042).
