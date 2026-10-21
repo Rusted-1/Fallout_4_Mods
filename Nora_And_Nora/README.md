@@ -9,9 +9,9 @@ interactions and actions from their first meeting to the late game. The full des
 **Needs the original mods.** This repo holds only my own work. It does not include Nora Spouse,
 Synthetic Love, Unlimited Companion Framework, Random Encounter Framework or any of their files.
 
-## Status: v0.4.0 — fixes + Phase 1 systems
-- **Done:** Followers quest merge for UCF users (v0.1). Kellogg fix (v0.2). Phase 1 outcome system, console-driven until the scenes exist (v0.3). Battle-site add-on (v0.4). All verified at the file level, not yet tested in game.
-- **Writing:** Phase 1 script, draft 3 (`docs/script/phase1-script.md`).
+## Status: v0.5.0 — Phase 1 playable
+- **Done:** Followers quest merge for UCF users (v0.1). Kellogg fix (v0.2). Phase 1 outcome system (v0.3). Battle-site add-on (v0.4). Phase 1 dialogue scenes (v0.5). All verified at the file level, not yet tested in game.
+- **Waiting on:** voice recordings (xVASynth batch file ready).
 - **Planned:** first meeting, Vault 111 breakdown and choice, relationship tiers, Shaun/faction reactions, romance, death-site encounter.
 
 ## What's here
@@ -19,10 +19,10 @@ Synthetic Love, Unlimited Companion Framework, Random Encounter Framework or any
 | Folder | Contents |
 |---|---|
 | `FOMOD/Nora and Nora/` | The installer: `fomod/` config, `UCF/NoraAndNora.esp`, `NoUCF/NoraAndNora.esp`, `Scripts/` (`NN_KelloggGateScript.pex`, `NN_Phase1Script.pex`, `NN_FinalWishScript.pex`, `NN_BattleSiteScript.pex`), `Impatient/NoraAndNora - Impatient.esp`, `BattleSite/NoraAndNora - Battle Site.esp` |
-| `tools/` | `esp.py` (plugin reader), `vmad.py` (script-data parser), `ba2.py` (archive reader), `lines.py` (dialogue dump), `build.py` (builds the plugins), `verify.py` (checks them), `pex.py` / `pexw.py` (Papyrus bytecode reader and writer), `kellogg_gate.py` (builds the Kellogg script), `voice_sheet.py` (script → voice sheet CSV), `xva_batch.py` (voice sheet → xVASynth batch CSV), `pexasm.py` (structured Papyrus assembler), `phase1_scripts.py` (builds the Phase 1 script), `verify_refs.py` (checks plugins against masters and scripts), `esmscan.py` (Fallout4.esm scanner), `battlesite_scripts.py` / `battlesite_build.py` (battle-site scripts and add-on plugin), `gen_sigs.py` (regenerates `sigs.json`, the vanilla signature list; not committed) |
+| `tools/` | `esp.py` (plugin reader), `vmad.py` (script-data parser), `ba2.py` (archive reader), `lines.py` (dialogue dump), `build.py` (builds the plugins), `verify.py` (checks them), `pex.py` / `pexw.py` (Papyrus bytecode reader and writer), `kellogg_gate.py` (builds the Kellogg script), `voice_sheet.py` (script → voice sheet CSV), `xva_batch.py` (voice sheet → xVASynth batch CSV), `pexasm.py` (structured Papyrus assembler), `phase1_scripts.py` (builds the Phase 1 script), `verify_refs.py` (checks plugins against masters and scripts), `esmscan.py` (Fallout4.esm scanner), `scenes_lib.py` / `phase1_scenes.py` (dialogue topics, lines and scenes), `verify_dialogue.py`, `scen.py` (scene dumper), `make_page.py` (overview page), `battlesite_scripts.py` / `battlesite_build.py` (battle-site scripts and add-on plugin), `gen_sigs.py` (regenerates `sigs.json`, the vanilla signature list; not committed) |
 | `docs/analysis/` | Findings about the source mods: how each Nora works, the Followers conflict, the Kellogg bug, game-version checks |
 | `docs/patch/` | Design and changelog per version |
-| `docs/script/` | Dialogue scripts (also the AI voice sheet). `phase1-script.md`: first meeting through the Vault 111 choice. `phase1-voice-sheet.csv` + `voice-guide.md`: AI voice sheet (89 lines, reserved file names 0x900–0x958). `phase1-xvasynth-batch.csv`: the same lines as an xVASynth batch file |
+| `docs/script/` | Dialogue scripts (also the AI voice sheet). `phase1-script.md`: first meeting through the Vault 111 choice. `phase1-voice-sheet.csv` + `voice-guide.md`: AI voice sheet (89 lines, reserved file names 0x900–0x958). `phase1-xvasynth-batch.csv`: the same lines as an xVASynth batch file. `phase1-scenes-overview.html`: visual overview of the built scenes |
 | `notes/` | My design ideas for the interactions |
 
 ## Requirements and load order
@@ -48,7 +48,8 @@ zip into Vortex. The installer asks:
 From inside `tools/`, with Python 3:
 
 ```
-python3 -I build.py <p865_SyntheticLove.esp> <NoraSpouse.esm> <EFF.esp> <out dir>
+python3 -I phase1_scenes.py <out dir>/Scripts
+python3 -I build.py <p865_SyntheticLove.esp> <NoraSpouse.esm> <EFF.esp> <out dir> ../docs/script/phase1-script.md ../docs/script/phase1-voice-sheet.csv
 python3 -I verify.py <out dir>/UCF/NoraAndNora.esp <EFF.esp> <p865_SyntheticLove.esp>
 python3 -I gen_sigs.py <extracted vanilla scripts folder>
 python3 -I kellogg_gate.py <out dir>/Scripts/NN_KelloggGateScript.pex

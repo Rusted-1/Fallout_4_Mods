@@ -26,7 +26,7 @@ def check(plugin,scripts_dir,master_paths):
     for t,fid,fl,d in R[1:]:
         if fid>>24==own: forms[(own,fid&0xFFFFFF)]=t
     def kind(fid): return forms.get((fid>>24,fid&0xFFFFFF),'MISSING')
-    expect={'referencealias':{'QUST'},'formlist':{'FLST'},'actorbase':{'NPC_'},'form':None,'quest':{'QUST'},'globalvariable':{'GLOB'},'objectreference':{'REFR','ACHR'},'actorvalue':{'AVIF'},'book':{'BOOK'},'followersscript':{'QUST'},'actor':{'ACHR'}}
+    expect={'scene':{'SCEN'},'faction':{'FACT'},'referencealias':{'QUST'},'formlist':{'FLST'},'actorbase':{'NPC_'},'form':None,'quest':{'QUST'},'globalvariable':{'GLOB'},'objectreference':{'REFR','ACHR'},'actorvalue':{'AVIF'},'book':{'BOOK'},'followersscript':{'QUST'},'actor':{'ACHR'}}
     problems=0;report=[]
     for t,fid,fl,d in R[1:]:
         s=dict(subs(d))

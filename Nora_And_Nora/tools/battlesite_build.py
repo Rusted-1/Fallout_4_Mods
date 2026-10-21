@@ -67,7 +67,6 @@ def build(example,outdir):
     node=record('SMQN',own(SMQN_ID),0,n)
     body=grup('GLOB',g)+grup('FLST',b''.join(lists))+grup('QUST',quest)+grup('SMQN',node)
     os.makedirs(outdir,exist_ok=True);p=os.path.join(outdir,PLUGIN)
-    h=tes4(MASTERS,5,"Nora & Nora add-on: synth Nora's battle site (needs all DLCs + Random Encounter Framework)")
-    h=h[:24]+h[24:].replace(struct.pack('<fII',1.0,5,0x808),struct.pack('<fII',1.0,5,0x805))
+    h=tes4(MASTERS,5,"Nora & Nora add-on: synth Nora's battle site (needs all DLCs + Random Encounter Framework)",next_id=0x805)
     open(p,'wb').write(h+body);return p
 if __name__=='__main__': print(build(sys.argv[1],sys.argv[2]))

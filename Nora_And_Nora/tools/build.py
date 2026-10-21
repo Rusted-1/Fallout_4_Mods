@@ -44,8 +44,8 @@ def record(t,fid,flags,data,fv=131):
     return t.encode()+struct.pack('<IIIIHH',len(data),flags,fid,0,fv,0)+data
 def grup(label,content):
     return b'GRUP'+struct.pack('<I',24+len(content))+label.encode()+struct.pack('<IHHHH',0,0,0,0,0)+content
-def tes4(masters,nrec,desc):
-    d=sub('HEDR',struct.pack('<fII',1.0,nrec,0x808))
+def tes4(masters,nrec,desc,next_id=0xB00):
+    d=sub('HEDR',struct.pack('<fII',1.0,nrec,next_id))
     d+=sub('CNAM',b'Rusted-1\0')+sub('SNAM',desc.encode('cp1252')+b'\0')
     for m in masters: d+=sub('MAST',m.encode()+b'\0')+sub('DATA',b'\0'*8)
     return record('TES4',0,0x200,d)  # ESL-flagged ESP (light plugin)
@@ -149,15 +149,21 @@ def build_impatient(outdir):
     os.makedirs(outdir,exist_ok=True);p=os.path.join(outdir,'NoraAndNora - Impatient.esp')
     open(p,'wb').write(tes4(masters,1,'Nora & Nora option: synth Nora leaves Vault 111 after 7 days')+grup('GLOB',g));return p
 
+SCRIPT_MD=None;VOICE_CSV=None          # set by __main__ (phase 1 dialogue source files)
 def build(sl,ns,eff,outdir,ucf):
     masters=['Fallout4.esm','NoraSpouse.esm','p865_SyntheticLove.esp']+(['EFF.esp'] if ucf else [])
     own=len(masters);kglob,gate=kellogg_records(own,2)
     pglobs,pquests,books=phase1_records(own,2,ns)
     qrecs=[gate]+pquests
     if ucf: qrecs.insert(0,followers_merge(sl,eff,2,3))
+    nscene=0
+    if SCRIPT_MD:
+        import phase1_scenes
+        blob,nscene,info=phase1_scenes.build_records(own,1,2,SCRIPT_MD,VOICE_CSV)
+        qrecs.append(blob);print('  phase 1 dialogue:',info)
     globs=[kglob]+pglobs
     body=grup('GLOB',b''.join(globs))+grup('QUST',b''.join(qrecs))+grup('BOOK',b''.join(books))
-    recs=globs+qrecs+books
+    recs=globs+qrecs+books+[b'']*max(nscene-1,0)
     desc='Nora & Nora 0.3.0 - Nora Spouse + Synthetic Love patch'+(' + UCF' if ucf else '')
     os.makedirs(outdir,exist_ok=True)
     p=os.path.join(outdir,PLUGIN)
@@ -166,6 +172,7 @@ def build(sl,ns,eff,outdir,ucf):
 
 if __name__=='__main__':
     sl,ns,eff,out=sys.argv[1:5]
+    if len(sys.argv)>6: SCRIPT_MD,VOICE_CSV=sys.argv[5:7]
     print(build(sl,ns,eff,os.path.join(out,'UCF'),True))
     print(build(sl,ns,eff,os.path.join(out,'NoUCF'),False))
     print(build_impatient(os.path.join(out,'Impatient')))
