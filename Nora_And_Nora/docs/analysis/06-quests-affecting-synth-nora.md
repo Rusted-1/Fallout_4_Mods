@@ -88,12 +88,13 @@ Quest reactions are planned as Phase 3, after the relationship tiers. Each react
 4. Memory Interrupted, Road to Freedom and the Institute quests.
 5. Far Harbor, once DLCCoast.esm is copied over.
 
-**Testing holotape** ("Nora and Nora: Test Tape"). An optional installer item that shows up in the inventory on load, so testing doesn't mean waiting days of game time. Menu:
+**Testing holotape** ("Nora and Nora: Test Tape"). An optional installer item you tick during install; it then shows up in the inventory on load, so testing doesn't mean waiting days of game time. Menu:
 
 - **Status:** current tier, which talks are done, and days left on the current timer.
 - **Advance to next tier:** plays that tier's talk right away.
 - **Set tier 1–5:** jumps straight to a tier, skipping the talks.
 - **Skip current wait:** ends the 7-day patience timer, the 3-day battle-site timer, or a tier timer.
+- **Bring both Noras to me:** teleports both of them to you, wherever they are.
 - **Reset relationship:** back to tier 1.
 
 Built together with tiers 2 and 3, since the tier talks it triggers don't exist yet.
