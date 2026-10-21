@@ -6,7 +6,7 @@
 
 
 
-*Note: All lines are approximations of what they should be.*
+*Note: All Voice lines are approximations of what they should be.*
 
 
 
@@ -78,7 +78,7 @@ Each part will have unique speech.
 
 
 
-After 5 times of giving you these items you will be prompted with a few diallage option.
+After 5 times of giving you these items you will be prompted with a few diallage option. After she asks you If she is doing well.
 
 
 
@@ -121,19 +121,93 @@ Organic Nora will understand all the choices, but tell you that she Thinks that 
 
 
 
-**Relationship Part 2:**
+**Relationship Part 2:** Synth Nora and Organic Nora will start to work well together and will have more speech with one another, still a little tense but more relaxed. This will happen after four in game days. There will be a small shift in how they talk to one another, although Organic Nora will still be apprehensive about Synth Nora but she will lower her guard a little. She will then take the player to the side again and will ask the player what they think about Synth Nora
 
 
 
-Synth Nora and Organic Nora will start to work well together and will have more speech with one another, still a little tense but more relaxed.
+"Hey Honey, Can I talk to you about...her?"
 
 
 
-**Relationship Part 3:**
+Player response:
+
+1. Sure what's up?
+2. Is something wrong?
+3. Not right now. (She will ask you again when you talk to her again. She will respond with something along the lines of. "Oh ok, just get back to me soon ok?")
+4. Yep.
 
 
 
-They will talk with each other more often, and start to give compliments to one another, they will also aid each other in combat, such as giving each other stimpacks if needed.
+All others allow you to talk to her.
+
+
+
+Organic Nora. She will talk about how the three of you have been traveling together for a while now and that Synth Nora seems ok, and has not hatted her company. Although she wants to know your thoughts.
+
+
+
+Player:
+
+
+
+1. She has been very helpful, but I don't fully trust her yet. (Organic likes this) 
+2. She's nice, I've talked to her a few times and I like her, I think we can trust her. (Both Like that) (Decreases Time of Relationship level 3 by one day.) 
+3. I'm still not convinced she's on our side. I'm keeping her at arms length. (Synth dislikes this, Organic is neutral) (Increases Time of Relationship level 3 by one day.)
+4. She's just a dumb machine, designed to serve, nothing more. (Organic dislikes this, Synth hates this.) (Increases Time of Relationship level 3 by two days.)
+
+
+
+Organic Nora: Reponses
+
+
+
+1. Hmm, my thoughts as well.
+2. I agree, I'm still a little uneasy with her but I do like her
+3. My thoughts exactly, I'll keep an eye on her.
+4. I don't trust her, but I also don't think she's a machine, she's something more.
+
+
+
+**Relationship Part 3:**They will talk with each other more often, and start to give compliments to one another, they will also aid each other in combat, such as giving each other stimpacks if needed. After 3 days this benchmark is reached. (Can be reached faster or slower depending on you choices). Synth Nora will then approach the player.  "Hello! Can I talk to you?"
+
+
+
+Player response:
+
+1. Sure what's up?
+2. Is something wrong?
+3. Not right now. (She will ask you again when you talk to her again. She will respond with something along the lines of. "Oh ok, just get back to me soon ok?")
+4. What do you want?
+
+
+
+If you choose 4. in R1, and/or 4. In R2. "Hey, I know you...uh. don't...think that highly of me...but I just want to say thank you for taking me along with you. Your...your still the person I married all those years ago. I love you...but...do you still...want to even be around me?
+
+
+
+
+
+Player response:
+
+1. I know I've been...mean, but I still want you around. I'm still working through all that has happened in this world. (Organic will like, Synth will love.) (Decreases Time of Relationship level 3 by one day.)
+2. I made a mistake in that vault. I don't even think your worth keeping around. (This will prompt the same lines in the vault.) (Organic will dislike, Synth will hate.) 
+3. Yeah your a useful machine, you watch my back and keep my wife alive, I think your useful. Other then that your not worth much. Just a poor copy. (Organic will dislike, Synth will hate.) (Increases Time of Relationship level 3 by two days.)
+4. 4\. I've been very cruel to you and I have no excuse for that, I have been very unfair in you treatment and I want to say sorry. You are who you say you are, just a little different. (Organic will like, Synth will love.) (Decreases Time of Relationship level 3 by two days.)
+
+
+
+
+
+If any other options were chosen: "Thanks! Look I know that it was weird seeing...me? Yeah me Twice, and now that I better understand this world a little better, I know how big of a chance you took with me. I don't want that to go unsaid, I still see you as my Husband. I...I don't really know what to think of...the other me. However I've enjoyed her company for a while now and I want to thank you both.
+
+
+
+1. Thanks for letting me know, I Respect you too, I trust you. (Both will like.)
+2. Of course I still like you, you may not be the original, but you are your own special person, never let that go. (Organic will love, synth will Love.) (Decreases Time of Relationship level 3 by one day.)
+3. Yeah your a useful machine, you watch my back and keep my wife alive, I think your useful. Other then that your not worth much. Just a poor copy.(Both Will hate)
+4. I made a mistake in that vault. I don't even think your worth keeping around. (This will prompt the same lines in the vault.) (Both Will hate)
+
+
 
 
 
@@ -179,7 +253,7 @@ Organic Nora will be a bit angry at Shawn for forcing Synth Nora through this. S
 
 
 
-##### **Minutemen:** 
+##### **Minutemen:**
 
 
 
@@ -187,7 +261,7 @@ When you first join the minutemen, Both Nora's will like this. Both will talk ab
 
 
 
-Helping them: Both Nora's like this. 
+Helping them: Both Nora's like this.
 
 
 
@@ -197,7 +271,7 @@ Ending with the minutemen: Both Nora's will love this. Both Nora's will talk abo
 
 
 
-##### **Rail Road:** 
+##### **Rail Road:**
 
 
 
@@ -205,7 +279,7 @@ Joining: Synth-Nora will love this, Organic will like. Organic will talk about h
 
 
 
-Helping: Both Nora's Like. 
+Helping: Both Nora's Like.
 
 
 
@@ -213,15 +287,15 @@ Ending: Organic will like, Synth will Love. Organic Nora will talk about how one
 
 
 
-##### **Brotherhood:** 
+##### **Brotherhood:**
 
 
 
-Joining: Synth will dislike this, Organic will like. Organic will say something like how the brotherhood is the best chance at finding her son. Synth will talk about how they worry her with there anti-synth beliefs. 
+Joining: Synth will dislike this, Organic will like. Organic will say something like how the brotherhood is the best chance at finding her son. Synth will talk about how they worry her with there anti-synth beliefs.
 
 
 
-Helping (Mission dependent) Synth Nora will dislike or like it. Organic will like. 
+Helping (Mission dependent) Synth Nora will dislike or like it. Organic will like.
 
 
 
@@ -237,7 +311,7 @@ Joining: Both will dislike. Both will say how they don't think this is a good id
 
 
 
-Helping: Both remain indifferent. 
+Helping: Both remain indifferent.
 
 
 
@@ -301,9 +375,5 @@ The romance is a big part of the final path of Synth Nora's Relationship with th
 
 
 
-If the player Romances her, she will say something like this. "Yes! YES! I love you too. I know I am not your original love, or am I, gosh this synth thing is so confusing. I will love you no matter what! Lets have the largest family the wasteland has ever seen! I love you so much. (Note if both Nora's relationship level is a 3 or lower, organic Nora will hate this, if it a 4, she will be confused and ask why Nate is marrying Synth Nora. If it is 5, she will love the idea and also promise to help with the large family. 
-
-
-
-
+If the player Romances her, she will say something like this. "Yes! YES! I love you too. I know I am not your original love, or am I, gosh this synth thing is so confusing. I will love you no matter what! Lets have the largest family the wasteland has ever seen! I love you so much. (Note if both Nora's relationship level is a 3 or lower, organic Nora will hate this, if it a 4, she will be confused and ask why Nate is marrying Synth Nora. If it is 5, she will love the idea and also promise to help with the large family.
 
