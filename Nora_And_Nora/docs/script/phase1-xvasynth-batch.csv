@@ -1,0 +1,90 @@
+game_id,voice_id,text,vocoder,out_path,pacing,pitch_amp
+fallout4,VOICE_ID_SYNTH_NORA,"Oh my God... Nate? Nate! It's you, it's really you!",,Nora and Nora/Sound/Voice/NoraAndNora.esp/PlayerVoiceFemale01/00000900_1.wav,1.0,1.15
+fallout4,VOICE_ID_SYNTH_NORA,I looked everywhere. I didn't think I'd ever see your face again.,,Nora and Nora/Sound/Voice/NoraAndNora.esp/PlayerVoiceFemale01/00000901_1.wav,1.0,1.15
+fallout4,VOICE_ID_SYNTH_NORA,"We're together again. That's all that matters, honey. We can find Shaun together, just like we planned.",,Nora and Nora/Sound/Voice/NoraAndNora.esp/PlayerVoiceFemale01/00000902_1.wav,1.0,1.15
+fallout4,VOICE_ID_SYNTH_NORA,"Yes, it's me! Why are you looking at me like that?",,Nora and Nora/Sound/Voice/NoraAndNora.esp/PlayerVoiceFemale01/00000903_1.wav,1.0,1.15
+fallout4,VOICE_ID_SYNTH_NORA,"Who am I? Honey, it's me. It's Nora.",,Nora and Nora/Sound/Voice/NoraAndNora.esp/PlayerVoiceFemale01/00000904_1.wav,1.0,0.9
+fallout4,VOICE_ID_SYNTH_NORA,Seeing... what? What's that supposed to mean?,,Nora and Nora/Sound/Voice/NoraAndNora.esp/PlayerVoiceFemale01/00000905_1.wav,1.0,1.15
+fallout4,VOICE_ID_SYNTH_NORA,I... I walked. I don't really remember. Does it matter? I'm here now.,,Nora and Nora/Sound/Voice/NoraAndNora.esp/PlayerVoiceFemale01/00000906_1.wav,1.0,1.0
+fallout4,VOICE_ID_ORGANIC_NORA,Get away from him.,,Nora and Nora/Sound/Voice/NoraAndNora.esp/PlayerVoiceFemale01/00000907_1.wav,1.0,1.2
+fallout4,VOICE_ID_SYNTH_NORA,Excuse me? Who do you think you...,,Nora and Nora/Sound/Voice/NoraAndNora.esp/PlayerVoiceFemale01/00000908_1.wav,1.0,1.0
+fallout4,VOICE_ID_SYNTH_NORA,"...No. No, that's not...",,Nora and Nora/Sound/Voice/NoraAndNora.esp/PlayerVoiceFemale01/00000909_1.wav,1.0,1.2
+fallout4,VOICE_ID_ORGANIC_NORA,Who are you? No. What are you?,,Nora and Nora/Sound/Voice/NoraAndNora.esp/PlayerVoiceFemale01/0000090A_1.wav,1.0,1.2
+fallout4,VOICE_ID_SYNTH_NORA,"I'm Nora. I'm his wife. I don't know who you are, or what kind of sick joke this is.",,Nora and Nora/Sound/Voice/NoraAndNora.esp/PlayerVoiceFemale01/0000090B_1.wav,1.0,1.2
+fallout4,VOICE_ID_ORGANIC_NORA,I'm his wife. I was in that pod. I've been standing next to him for weeks.,,Nora and Nora/Sound/Voice/NoraAndNora.esp/PlayerVoiceFemale01/0000090C_1.wav,1.0,1.0
+fallout4,VOICE_ID_SYNTH_NORA,That's a lie. I was in that pod. I remember the cold. I remember the man with the scar. I remember... being shot.,,Nora and Nora/Sound/Voice/NoraAndNora.esp/PlayerVoiceFemale01/0000090D_1.wav,1.0,1.2
+fallout4,VOICE_ID_ORGANIC_NORA,So do I.,,Nora and Nora/Sound/Voice/NoraAndNora.esp/PlayerVoiceFemale01/0000090E_1.wav,1.0,0.9
+fallout4,VOICE_ID_SYNTH_NORA,"Then you're the copy. You have to be. Nate, tell her!",,Nora and Nora/Sound/Voice/NoraAndNora.esp/PlayerVoiceFemale01/0000090F_1.wav,1.0,1.2
+fallout4,VOICE_ID_SYNTH_NORA,I can't breathe... I can't... okay. Okay.,,Nora and Nora/Sound/Voice/NoraAndNora.esp/PlayerVoiceFemale01/00000910_1.wav,1.0,1.2
+fallout4,VOICE_ID_SYNTH_NORA,Don't say that. Please don't say that to me.,,Nora and Nora/Sound/Voice/NoraAndNora.esp/PlayerVoiceFemale01/00000911_1.wav,1.0,0.9
+fallout4,VOICE_ID_SYNTH_NORA,"This isn't funny, Nate. None of this is funny.",,Nora and Nora/Sound/Voice/NoraAndNora.esp/PlayerVoiceFemale01/00000912_1.wav,1.0,1.2
+fallout4,VOICE_ID_SYNTH_NORA,"Prove it? I... yes. Yes, I can prove it.",,Nora and Nora/Sound/Voice/NoraAndNora.esp/PlayerVoiceFemale01/00000913_1.wav,1.0,1.0
+fallout4,VOICE_ID_SYNTH_NORA,Vault 111. Take me back to the vault. My pod is there. I'll show you where it happened. I'll show you both.,,Nora and Nora/Sound/Voice/NoraAndNora.esp/PlayerVoiceFemale01/00000914_1.wav,1.0,1.2
+fallout4,VOICE_ID_ORGANIC_NORA,"Hon, that thing is wearing my face and saying my words. You want to take it home?",,Nora and Nora/Sound/Voice/NoraAndNora.esp/PlayerVoiceFemale01/00000915_1.wav,1.0,1.2
+fallout4,VOICE_ID_SYNTH_NORA,I'm not a thing.,,Nora and Nora/Sound/Voice/NoraAndNora.esp/PlayerVoiceFemale01/00000916_1.wav,1.0,1.2
+fallout4,VOICE_ID_ORGANIC_NORA,I think we keep it where we can see it. Fine. The vault.,,Nora and Nora/Sound/Voice/NoraAndNora.esp/PlayerVoiceFemale01/00000917_1.wav,1.0,1.0
+fallout4,VOICE_ID_SYNTH_NORA,Thank you. You'll see. Both of you will see.,,Nora and Nora/Sound/Voice/NoraAndNora.esp/PlayerVoiceFemale01/00000918_1.wav,1.0,1.15
+fallout4,VOICE_ID_ORGANIC_NORA,It walks in front of me.,,Nora and Nora/Sound/Voice/NoraAndNora.esp/PlayerVoiceFemale01/00000919_1.wav,1.0,1.2
+fallout4,VOICE_ID_SYNTH_NORA,Settlement? What settlement? I've been searching for you since I woke up.,,Nora and Nora/Sound/Voice/NoraAndNora.esp/PlayerVoiceFemale01/0000091A_1.wav,1.0,1.0
+fallout4,VOICE_ID_SYNTH_NORA,Of course. Anywhere. As long as I'm with you.,,Nora and Nora/Sound/Voice/NoraAndNora.esp/PlayerVoiceFemale01/0000091B_1.wav,1.0,1.15
+fallout4,VOICE_ID_SYNTH_NORA,Nate... who is that? Why does she... why does she look like me?,,Nora and Nora/Sound/Voice/NoraAndNora.esp/PlayerVoiceFemale01/0000091C_1.wav,1.0,1.15
+fallout4,VOICE_ID_SYNTH_NORA,"No. No, no, no. That's not possible.",,Nora and Nora/Sound/Voice/NoraAndNora.esp/PlayerVoiceFemale01/0000091D_1.wav,1.0,1.2
+fallout4,VOICE_ID_SYNTH_NORA,I'm fine. I'm fine. I'll be fine when we get to the vault.,,Nora and Nora/Sound/Voice/NoraAndNora.esp/PlayerVoiceFemale01/0000091E_1.wav,1.0,1.0
+fallout4,VOICE_ID_SYNTH_NORA,"I keep going over that morning. The coffee, the news. Codsworth. Shaun crying. I remember all of it. Why would I remember all of it if it wasn't mine?",,Nora and Nora/Sound/Voice/NoraAndNora.esp/PlayerVoiceFemale01/0000091F_1.wav,1.0,1.0
+fallout4,VOICE_ID_SYNTH_NORA,Every time I close my eyes I'm back in that pod. Is that normal? Tell me that's normal.,,Nora and Nora/Sound/Voice/NoraAndNora.esp/PlayerVoiceFemale01/00000920_1.wav,1.0,1.2
+fallout4,VOICE_ID_SYNTH_NORA,"She looks at me like I'm something on the bottom of her shoe. My own face, looking at me like that.",,Nora and Nora/Sound/Voice/NoraAndNora.esp/PlayerVoiceFemale01/00000921_1.wav,1.0,0.9
+fallout4,VOICE_ID_SYNTH_NORA,Can we walk faster? I need to see it. I need you to see it.,,Nora and Nora/Sound/Voice/NoraAndNora.esp/PlayerVoiceFemale01/00000922_1.wav,1.0,1.2
+fallout4,VOICE_ID_SYNTH_NORA,Vault 111 is north of Sanctuary. Up the hill. I know the way. Of course I know the way.,,Nora and Nora/Sound/Voice/NoraAndNora.esp/PlayerVoiceFemale01/00000923_1.wav,1.0,1.0
+fallout4,VOICE_ID_SYNTH_NORA,What if she's right? ...No. No.,,Nora and Nora/Sound/Voice/NoraAndNora.esp/PlayerVoiceFemale01/00000924_1.wav,1.0,0.9
+fallout4,VOICE_ID_SYNTH_NORA,I can feel my heartbeat. Real people have heartbeats.,,Nora and Nora/Sound/Voice/NoraAndNora.esp/PlayerVoiceFemale01/00000925_1.wav,1.0,0.9
+fallout4,VOICE_ID_SYNTH_NORA,I remember our wedding. The rain. You dropped the ring.,,Nora and Nora/Sound/Voice/NoraAndNora.esp/PlayerVoiceFemale01/00000926_1.wav,1.0,1.0
+fallout4,VOICE_ID_SYNTH_NORA,Why can't I remember waking up?,,Nora and Nora/Sound/Voice/NoraAndNora.esp/PlayerVoiceFemale01/00000927_1.wav,1.0,1.15
+fallout4,VOICE_ID_ORGANIC_NORA,Remind me again why we're escorting an Institute machine to our front door.,,Nora and Nora/Sound/Voice/NoraAndNora.esp/PlayerVoiceFemale01/00000928_1.wav,1.0,1.0
+fallout4,VOICE_ID_ORGANIC_NORA,It even fidgets like me. That's the worst part.,,Nora and Nora/Sound/Voice/NoraAndNora.esp/PlayerVoiceFemale01/00000929_1.wav,1.0,1.0
+fallout4,VOICE_ID_ORGANIC_NORA,"When we get to the vault, it's going to see an empty pod. My empty pod. And then what?",,Nora and Nora/Sound/Voice/NoraAndNora.esp/PlayerVoiceFemale01/0000092A_1.wav,1.0,1.0
+fallout4,VOICE_ID_ORGANIC_NORA,I keep waiting for it to slip up. It doesn't.,,Nora and Nora/Sound/Voice/NoraAndNora.esp/PlayerVoiceFemale01/0000092B_1.wav,1.0,1.0
+fallout4,VOICE_ID_ORGANIC_NORA,"Don't let it walk behind you, hon.",,Nora and Nora/Sound/Voice/NoraAndNora.esp/PlayerVoiceFemale01/0000092C_1.wav,1.0,1.0
+fallout4,VOICE_ID_SYNTH_NORA,Do you remember the blue dress? The one with the buttons?,,Nora and Nora/Sound/Voice/NoraAndNora.esp/PlayerVoiceFemale01/0000092D_1.wav,1.0,1.15
+fallout4,VOICE_ID_ORGANIC_NORA,It was green.,,Nora and Nora/Sound/Voice/NoraAndNora.esp/PlayerVoiceFemale01/0000092E_1.wav,1.0,1.0
+fallout4,VOICE_ID_SYNTH_NORA,...It was green.,,Nora and Nora/Sound/Voice/NoraAndNora.esp/PlayerVoiceFemale01/0000092F_1.wav,1.0,0.9
+fallout4,VOICE_ID_SYNTH_NORA,You don't have to keep staring at me.,,Nora and Nora/Sound/Voice/NoraAndNora.esp/PlayerVoiceFemale01/00000930_1.wav,1.0,1.0
+fallout4,VOICE_ID_ORGANIC_NORA,Someone has to.,,Nora and Nora/Sound/Voice/NoraAndNora.esp/PlayerVoiceFemale01/00000931_1.wav,1.0,1.2
+fallout4,VOICE_ID_SYNTH_NORA,What did you study? At law school?,,Nora and Nora/Sound/Voice/NoraAndNora.esp/PlayerVoiceFemale01/00000932_1.wav,1.0,1.0
+fallout4,VOICE_ID_ORGANIC_NORA,You tell me.,,Nora and Nora/Sound/Voice/NoraAndNora.esp/PlayerVoiceFemale01/00000933_1.wav,1.0,1.2
+fallout4,VOICE_ID_SYNTH_NORA,...Contracts. You hated contracts. I hated contracts.,,Nora and Nora/Sound/Voice/NoraAndNora.esp/PlayerVoiceFemale01/00000934_1.wav,1.0,1.0
+fallout4,VOICE_ID_ORGANIC_NORA,Don't.,,Nora and Nora/Sound/Voice/NoraAndNora.esp/PlayerVoiceFemale01/00000935_1.wav,1.0,0.9
+fallout4,VOICE_ID_SYNTH_NORA,Here. Here it is. This is where they put us.,,Nora and Nora/Sound/Voice/NoraAndNora.esp/PlayerVoiceFemale01/00000936_1.wav,1.0,1.0
+fallout4,VOICE_ID_SYNTH_NORA,"That one's yours, honey. And this one... this is mine.",,Nora and Nora/Sound/Voice/NoraAndNora.esp/PlayerVoiceFemale01/00000937_1.wav,1.0,1.0
+fallout4,VOICE_ID_SYNTH_NORA,"It's empty. Of course it's empty, I'm right here. See? I told you.",,Nora and Nora/Sound/Voice/NoraAndNora.esp/PlayerVoiceFemale01/00000938_1.wav,1.0,1.15
+fallout4,VOICE_ID_ORGANIC_NORA,It's empty because I climbed out of it.,,Nora and Nora/Sound/Voice/NoraAndNora.esp/PlayerVoiceFemale01/00000939_1.wav,1.0,0.9
+fallout4,VOICE_ID_ORGANIC_NORA,"The door opened. I was bleeding. I fell on the floor right there. I found stimpaks in the overseer's office, and I sat against that wall until I could stand.",,Nora and Nora/Sound/Voice/NoraAndNora.esp/PlayerVoiceFemale01/0000093A_1.wav,1.0,1.0
+fallout4,VOICE_ID_ORGANIC_NORA,So tell me. How did you get out?,,Nora and Nora/Sound/Voice/NoraAndNora.esp/PlayerVoiceFemale01/0000093B_1.wav,1.0,1.0
+fallout4,VOICE_ID_SYNTH_NORA,I... I got out. I walked out. I...,,Nora and Nora/Sound/Voice/NoraAndNora.esp/PlayerVoiceFemale01/0000093C_1.wav,1.0,1.0
+fallout4,VOICE_ID_SYNTH_NORA,I remember the cold. I remember the shot. And then I'm in Diamond City. There's nothing in between. Why is there nothing in between?,,Nora and Nora/Sound/Voice/NoraAndNora.esp/PlayerVoiceFemale01/0000093D_1.wav,1.0,1.2
+fallout4,VOICE_ID_SYNTH_NORA,"Nate. Nate, why can't I remember?",,Nora and Nora/Sound/Voice/NoraAndNora.esp/PlayerVoiceFemale01/0000093E_1.wav,1.0,0.9
+fallout4,VOICE_ID_SYNTH_NORA,"No... no, no, no. She's real. She's the real one. She's been with you this whole time.",,Nora and Nora/Sound/Voice/NoraAndNora.esp/PlayerVoiceFemale01/0000093F_1.wav,1.0,0.9
+fallout4,VOICE_ID_SYNTH_NORA,Then what am I? Somebody built me. Somebody made me remember my baby.,,Nora and Nora/Sound/Voice/NoraAndNora.esp/PlayerVoiceFemale01/00000940_1.wav,1.0,0.9
+fallout4,VOICE_ID_SYNTH_NORA,I'm not anybody. I'm a recording of somebody.,,Nora and Nora/Sound/Voice/NoraAndNora.esp/PlayerVoiceFemale01/00000941_1.wav,1.0,0.9
+fallout4,VOICE_ID_ORGANIC_NORA,Hon. Over here a second.,,Nora and Nora/Sound/Voice/NoraAndNora.esp/PlayerVoiceFemale01/00000942_1.wav,1.0,1.0
+fallout4,VOICE_ID_ORGANIC_NORA,"I don't like this. I don't like it. I don't know what the Institute wants with a copy of me, and that scares the hell out of me.",,Nora and Nora/Sound/Voice/NoraAndNora.esp/PlayerVoiceFemale01/00000943_1.wav,1.0,1.0
+fallout4,VOICE_ID_ORGANIC_NORA,"But look at her. That isn't an act. Whatever she is, she's hurting.",,Nora and Nora/Sound/Voice/NoraAndNora.esp/PlayerVoiceFemale01/00000944_1.wav,1.0,1.0
+fallout4,VOICE_ID_ORGANIC_NORA,"I think she should come with us. If nothing else, so we can keep an eye on her.",,Nora and Nora/Sound/Voice/NoraAndNora.esp/PlayerVoiceFemale01/00000945_1.wav,1.0,1.0
+fallout4,VOICE_ID_ORGANIC_NORA,"It's your call, though. It always is.",,Nora and Nora/Sound/Voice/NoraAndNora.esp/PlayerVoiceFemale01/00000946_1.wav,1.0,1.0
+fallout4,VOICE_ID_SYNTH_NORA,So. What happens to me now?,,Nora and Nora/Sound/Voice/NoraAndNora.esp/PlayerVoiceFemale01/00000947_1.wav,1.0,0.9
+fallout4,VOICE_ID_SYNTH_NORA,"You mean it? You... thank you. Thank you, thank you. I'll be useful, I promise. You won't regret it.",,Nora and Nora/Sound/Voice/NoraAndNora.esp/PlayerVoiceFemale01/00000948_1.wav,1.0,1.15
+fallout4,VOICE_ID_ORGANIC_NORA,All right. Let's go. On your feet.,,Nora and Nora/Sound/Voice/NoraAndNora.esp/PlayerVoiceFemale01/00000949_1.wav,1.0,1.0
+fallout4,VOICE_ID_SYNTH_NORA,...Thank you. Both of you.,,Nora and Nora/Sound/Voice/NoraAndNora.esp/PlayerVoiceFemale01/0000094A_1.wav,1.0,1.15
+fallout4,VOICE_ID_SYNTH_NORA,I understand. I'd need time too. I'll be here. I don't really have anywhere else.,,Nora and Nora/Sound/Voice/NoraAndNora.esp/PlayerVoiceFemale01/0000094B_1.wav,1.0,0.9
+fallout4,VOICE_ID_ORGANIC_NORA,Fair enough. We'll come back.,,Nora and Nora/Sound/Voice/NoraAndNora.esp/PlayerVoiceFemale01/0000094C_1.wav,1.0,1.0
+fallout4,VOICE_ID_ORGANIC_NORA,Nate... Fine. Let's get this over with.,,Nora and Nora/Sound/Voice/NoraAndNora.esp/PlayerVoiceFemale01/0000094D_1.wav,1.0,1.2
+fallout4,VOICE_ID_SYNTH_NORA,Maybe I'm not the original. But I'm a person! I'm a person!,,Nora and Nora/Sound/Voice/NoraAndNora.esp/PlayerVoiceFemale01/0000094E_1.wav,1.0,1.2
+fallout4,VOICE_ID_ORGANIC_NORA,That's that.,,Nora and Nora/Sound/Voice/NoraAndNora.esp/PlayerVoiceFemale01/0000094F_1.wav,1.0,0.9
+fallout4,VOICE_ID_ORGANIC_NORA,Can we get out of here now? Please.,,Nora and Nora/Sound/Voice/NoraAndNora.esp/PlayerVoiceFemale01/00000950_1.wav,1.0,0.9
+fallout4,VOICE_ID_SYNTH_NORA,"Please. Please don't do this. I won't get in the way, I won't say a word, I'll just... please.",,Nora and Nora/Sound/Voice/NoraAndNora.esp/PlayerVoiceFemale01/00000951_1.wav,1.0,1.2
+fallout4,VOICE_ID_SYNTH_NORA,Please reconsider.,,Nora and Nora/Sound/Voice/NoraAndNora.esp/PlayerVoiceFemale01/00000952_1.wav,1.0,0.9
+fallout4,VOICE_ID_ORGANIC_NORA,Good riddance.,,Nora and Nora/Sound/Voice/NoraAndNora.esp/PlayerVoiceFemale01/00000953_1.wav,1.0,1.2
+fallout4,VOICE_ID_SYNTH_NORA,...Okay.,,Nora and Nora/Sound/Voice/NoraAndNora.esp/PlayerVoiceFemale01/00000954_1.wav,1.0,0.9
+fallout4,VOICE_ID_ORGANIC_NORA,She went after them. On her own.,,Nora and Nora/Sound/Voice/NoraAndNora.esp/PlayerVoiceFemale01/00000955_1.wav,1.0,1.15
+fallout4,VOICE_ID_ORGANIC_NORA,"Connie Abernathy. That's where you found me, hon. She was trying to protect the place we found each other again.",,Nora and Nora/Sound/Voice/NoraAndNora.esp/PlayerVoiceFemale01/00000956_1.wav,1.0,0.9
+fallout4,VOICE_ID_ORGANIC_NORA,...She really did think like me.,,Nora and Nora/Sound/Voice/NoraAndNora.esp/PlayerVoiceFemale01/00000957_1.wav,1.0,0.9
+fallout4,VOICE_ID_ORGANIC_NORA,"I sent her away. ""Good riddance."" That's what I said.",,Nora and Nora/Sound/Voice/NoraAndNora.esp/PlayerVoiceFemale01/00000958_1.wav,1.0,0.9

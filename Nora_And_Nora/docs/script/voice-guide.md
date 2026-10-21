@@ -37,3 +37,23 @@ The CSV opens in Excel or Google Sheets and sorts by any column. Sorting by **Sp
 - **Don't rename files.** If a line is rewritten later, it keeps its file name.
 - **New lines get new numbers.** Phase 1 uses `0x900`–`0x958`. The next lines start at `0x959`.
 - **Cutting a line just retires its number.** Nothing else shifts.
+
+## Batch generation in xVASynth (Steam)
+`Phase 1 xVASynth batch.csv` holds all 89 lines in xVASynth's batch format: `game_id, voice_id, text, vocoder, out_path, pacing, pitch_amp`.
+
+1. **Pick your voice model(s)** in xVASynth under the Fallout 4 game, and note each model's **voice ID**. It's shown in the model's details, and listed in the model's `.json` file in xVASynth's `models` folder.
+2. **Fill in the voices.** Open the CSV in Notepad (not Excel; Excel can change the format) and use Find and Replace:
+   - `VOICE_ID_SYNTH_NORA` → your synth Nora voice ID
+   - `VOICE_ID_ORGANIC_NORA` → your organic Nora voice ID (the same one if you want both to share a voice)
+3. **Turn on the "Lip and Fuz Generator" plugin** (Fallout 4 lip format) if you want `.lip`/`.fuz` files made at the same time.
+4. **Batch mode:** drag the CSV into xVASynth's batch window and click Synthesize.
+5. **Output:** every file goes to `Nora and Nora\Sound\Voice\NoraAndNora.esp\PlayerVoiceFemale01\` inside xVASynth's own folder, under its final name (`00000900_1.wav` …). That's the game's folder layout, so the `Sound` folder can be dropped straight into the mod.
+
+**Tuning**
+- **No emotion column:** batch mode doesn't read emotion. Each line's emotion is approximated with `pitch_amp` (pitch variation):
+  - 0.9 for sad or quiet lines
+  - 1.0 for neutral
+  - 1.15–1.2 for happy, surprised, scared or angry
+- **Pacing:** left at 1.0 everywhere.
+- **Fixing a line:** for lines that don't land, re-do them one at a time in xVASynth's normal editor using the Delivery notes, and save over the same file name.
+- **Vocoder:** blank, so xVASynth picks the best one the model supports.
