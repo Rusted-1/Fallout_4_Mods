@@ -1,8 +1,13 @@
 """Build the AI voice sheet (CSV) from a script markdown file.
-Usage: python3 -I voice_sheet.py <phaseN-script.md> <out.csv> <first INFO id hex>
+Usage: python3 -I voice_sheet.py <phaseN-script.md> <out.csv> <first INFO id hex> [<existing sheet.csv>]
+With an existing sheet, lines keep their file names; new lines get numbers after the highest one; cut lines retire theirs.
 Each voiced NORA/SYNTH line gets a reserved INFO form ID (ESL range); the file name is <ID>_1.wav."""
 import sys,csv,re
 src,out,first=sys.argv[1],sys.argv[2],int(sys.argv[3],16)
+KEEP={}
+if len(sys.argv)>4:
+    for r in csv.DictReader(open(sys.argv[4],encoding='utf-8-sig')): KEEP[r['Line ID']]=int(r['File name'][:8],16)
+    first=max([first-1]+list(KEEP.values()))+1
 EMO=[('angry',r'angr|cold|hard|sharp|rage|scream|disgust|clipped|challenge|bitter'),
      ('sad',r'sob|cry|tears|hurt|hollow|breaking down|wounded|sad|resign|regret|guilt|quiet|small|tired|whisper'),
      ('fear',r'panic|fright|scared|terror|horror|hyperventil|desperate|shak|urgent|stunned|breath'),
@@ -27,9 +32,10 @@ for line in open(src,encoding='utf-8'):
     plain=re.sub(r'\*(.*?)\*',r'\1',text)
     emph=re.findall(r'\*(.*?)\*',text)
     if emph: deliv+='; stress: '+', '.join(emph)
-    rows.append({'File name':'%08X_1.wav'%nid,'Line ID':lid,'Speaker':'Organic Nora' if spk=='NORA' else 'Synth Nora',
+    fid=KEEP.get(lid)
+    if fid is None: fid=nid;nid+=1
+    rows.append({'File name':'%08X_1.wav'%fid,'Line ID':lid,'Speaker':'Organic Nora' if spk=='NORA' else 'Synth Nora',
                  'Text':plain,'Emotion':OVERRIDE.get(lid) or emotion(deliv),'Delivery':deliv,'Scene':scene})
-    nid+=1
 with open(out,'w',newline='',encoding='utf-8-sig') as f:
     w=csv.DictWriter(f,fieldnames=list(rows[0]));w.writeheader();w.writerows(rows)
-print(len(rows),'lines, IDs %08X-%08X'%(first,nid-1))
+print(len(rows),'lines; new IDs from %08X, next free %08X'%(first,nid))

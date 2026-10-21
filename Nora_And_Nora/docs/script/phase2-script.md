@@ -68,11 +68,10 @@ NORA otherwise keeps her normal Nora Spouse lines in tier 1, as the design asks.
 |---|---|---|---|
 | P2-T1-030 | SYNTH | Coffee? Well. Something brown and hot, anyway. | Offering a cup, hopeful |
 | P2-T1-031 | NORA | ...Thanks. | Takes it, doesn't look at her |
-| P2-T1-040 | SYNTH | You hold your rifle the same way I do. | Trying to connect |
-| P2-T1-041 | NORA | You hold it the same way *I* do. | Correcting, not unkind |
-| P2-T1-042 | SYNTH | ...Right. | Deflating |
 | P2-T1-050 | SYNTH | Do you want me to take watch tonight? | Careful, polite |
 | P2-T1-051 | NORA | I'll take it. | Flat, firm |
+
+*Cut: the rifle exchange (P2-T1-040 to 042). Its files 00000963–00000965 are retired; delete them if you made them.*
 
 ### Gifts (once per game day, up to 5 before the check-in)
 SYNTH walks up to Nate and hands over an item. The game picks the item: ammo for Nate's equipped weapon, stimpaks or RadAway, a small pile of caps, or rare junk (screws, gears, adhesive, circuitry, nuclear material). No reply from Nate is needed.
