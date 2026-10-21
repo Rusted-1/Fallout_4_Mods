@@ -20,10 +20,10 @@ OVERRIDE={'P1-S1-002':'happy','P1-S1-033':'angry','P1-S1-061':'angry','P1-S1-075
 rows=[];scene='';nid=first
 for line in open(src,encoding='utf-8'):
     if line.startswith('## ') or line.startswith('### '): scene=line.strip('# \n')
-    m=re.match(r'\|\s*(P1-[A-Z0-9-]+)\s*\|\s*(NORA|SYNTH)\s*\|\s*(.*?)\s*\|\s*(.*?)\s*\|\s*$',line)
+    m=re.match(r'\|\s*(P\d-[A-Z0-9-]+)\s*\|\s*(NORA|SYNTH)\s*\|\s*(.*?)\s*\|\s*(.*?)\s*\|\s*$',line)
     if not m: continue
     lid,spk,text,deliv=m.groups()
-    if text.startswith('(Note'): continue          # written, not spoken
+    if text.startswith('(Note') or not re.search('[A-Za-z]',text): continue   # written or silent, not spoken
     plain=re.sub(r'\*(.*?)\*',r'\1',text)
     emph=re.findall(r'\*(.*?)\*',text)
     if emph: deliv+='; stress: '+', '.join(emph)

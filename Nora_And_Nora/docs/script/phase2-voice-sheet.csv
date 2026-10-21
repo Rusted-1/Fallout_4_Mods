@@ -1,0 +1,98 @@
+﻿File name,Line ID,Speaker,Text,Emotion,Delivery,Scene
+00000959_1.wav,P2-T1-001,Synth Nora,I'm okay. Really. I'm just... trying to figure out what I'm for.,neutral,Forced brightness that slips,"Ambient: SYNTH, asked ""How are you holding up?"""
+0000095A_1.wav,P2-T1-002,Synth Nora,She doesn't talk to me much. I don't blame her. I wouldn't talk to me either.,sad,"Rueful, small laugh","Ambient: SYNTH, asked ""How are you holding up?"""
+0000095B_1.wav,P2-T1-003,Synth Nora,I still reach for my wedding ring sometimes. Then I remember whose ring it is.,sad,"Quiet, hurt","Ambient: SYNTH, asked ""How are you holding up?"""
+0000095C_1.wav,P2-T1-010,Synth Nora,I'll keep an eye out for supplies. It's the least I can do.,neutral,Eager to help,Ambient: SYNTH idle remarks
+0000095D_1.wav,P2-T1-011,Synth Nora,"Nice weather. For the end of the world, I mean.",sad,Awkward attempt at small talk,Ambient: SYNTH idle remarks
+0000095E_1.wav,P2-T1-012,Synth Nora,I'm not going anywhere. Just so you know.,neutral,"Soft, reassuring herself as much as him",Ambient: SYNTH idle remarks
+0000095F_1.wav,P2-T1-020,Organic Nora,She's trying. I'll give her that. Doesn't mean I have to like it.,neutral,"Dry, grudging","Ambient: NORA, asked ""Your thoughts?"""
+00000960_1.wav,P2-T1-021,Organic Nora,"Every time she laughs, I hear myself. It's like hearing your voice on a tape recorder.",neutral,Unsettled,"Ambient: NORA, asked ""Your thoughts?"""
+00000961_1.wav,P2-T1-030,Synth Nora,"Coffee? Well. Something brown and hot, anyway.",happy,"Offering a cup, hopeful","Exchanges between them (rare, at most one per game day)"
+00000962_1.wav,P2-T1-031,Organic Nora,...Thanks.,neutral,"Takes it, doesn't look at her","Exchanges between them (rare, at most one per game day)"
+00000963_1.wav,P2-T1-040,Synth Nora,You hold your rifle the same way I do.,neutral,Trying to connect,"Exchanges between them (rare, at most one per game day)"
+00000964_1.wav,P2-T1-041,Organic Nora,You hold it the same way I do.,neutral,"Correcting, not unkind; stress: I","Exchanges between them (rare, at most one per game day)"
+00000965_1.wav,P2-T1-042,Synth Nora,...Right.,neutral,Deflating,"Exchanges between them (rare, at most one per game day)"
+00000966_1.wav,P2-T1-050,Synth Nora,Do you want me to take watch tonight?,neutral,"Careful, polite","Exchanges between them (rare, at most one per game day)"
+00000967_1.wav,P2-T1-051,Organic Nora,I'll take it.,neutral,"Flat, firm","Exchanges between them (rare, at most one per game day)"
+00000968_1.wav,P2-GF-001,Synth Nora,Found these. I think they fit your gun?,neutral,"Shy, holding them out","Gifts (once per game day, up to 5 before the check-in)"
+00000969_1.wav,P2-GF-002,Synth Nora,Here. Stimpaks. You get hurt more than you let on.,neutral,"Concerned, a little bossy","Gifts (once per game day, up to 5 before the check-in)"
+0000096A_1.wav,P2-GF-003,Synth Nora,"Some caps. Don't ask where I found them. Actually, it was a mailbox. That's... legal, right?",sad,Guilty laugh,"Gifts (once per game day, up to 5 before the check-in)"
+0000096B_1.wav,P2-GF-004,Synth Nora,"Screws, and some good adhesive. I know you like building things.",neutral,Pleased with herself,"Gifts (once per game day, up to 5 before the check-in)"
+0000096C_1.wav,P2-GF-005,Synth Nora,"I don't know what this is, but it looked important.",happy,"Hopeful, unsure","Gifts (once per game day, up to 5 before the check-in)"
+0000096D_1.wav,P2-CK-001,Synth Nora,Can I ask you something? Am I... doing well? With all of this? I just want to be useful to you.,neutral,"Nervous, wringing her hands","The check-in: ""Am I doing well?"" (after the 5th gift)"
+0000096E_1.wav,P2-CK-020,Synth Nora,"Oh. Okay. Actions, not things. I can do that. I want to do that.",surprise,"Surprised, then lighter (after 010); stress: want","The check-in: ""Am I doing well?"" (after the 5th gift)"
+0000096F_1.wav,P2-CK-021,Synth Nora,Really? Okay! I'll keep looking.,happy,"Bright, relieved (after 011)","The check-in: ""Am I doing well?"" (after the 5th gift)"
+00000970_1.wav,P2-CK-022,Synth Nora,You... thank you. That means more than you know. I'll find you the good stuff. The really good stuff.,neutral,"Moved, smiling through it (after 012)","The check-in: ""Am I doing well?"" (after the 5th gift)"
+00000971_1.wav,P2-CK-023,Synth Nora,...Right. Of course. I'll stick with it.,sad,"Hurt, swallowing it (after 013)","The check-in: ""Am I doing well?"" (after the 5th gift)"
+00000972_1.wav,P2-CK-030,Organic Nora,"That was a good thing you just did, hon.",sad,"Quiet, warm (after 010 or 012)","The check-in: ""Am I doing well?"" (after the 5th gift)"
+00000973_1.wav,P2-CK-031,Organic Nora,"That was cold, Nate. Even for her.",neutral,"Disapproving, low (after 013)","The check-in: ""Am I doing well?"" (after the 5th gift)"
+00000974_1.wav,P2-GF-010,Synth Nora,Found some more for you. Still keeping an eye out!,neutral,Cheerful (after 011),Gifts after the check-in
+00000975_1.wav,P2-GF-020,Synth Nora,"Rare junk, as promised. Gears, and a little bit of circuitry.",neutral,Proud (after 012),Gifts after the check-in
+00000976_1.wav,P2-GF-021,Synth Nora,"Look at this. Nuclear material! Don't worry, I didn't lick it.",neutral,"Teasing, delighted (after 012)",Gifts after the check-in
+00000977_1.wav,P2-GF-030,Synth Nora,Here. It's what I'm good for.,sad,"Flat, sad (after 013)",Gifts after the check-in
+00000978_1.wav,P2-GF-031,Synth Nora,More supplies. I'll get more tomorrow.,sad,"Dutiful, quiet (after 013)",Gifts after the check-in
+00000979_1.wav,P2-N1-001,Organic Nora,"Hon, got a minute? It's about her.",neutral,"Low, pulling him aside",NORA's first talk (2 game days after the check-in)
+0000097A_1.wav,P2-N1-002,Organic Nora,"She's not as bad as I thought. I hate saying it, but I'm starting to enjoy having her around.",neutral,Reluctant honesty,NORA's first talk (2 game days after the check-in)
+0000097B_1.wav,P2-N1-010,Organic Nora,"What you told her about actions, not things? It gave her some confidence. You can see it in how she carries herself.",neutral,Approving (after CK-010),NORA's first talk (2 game days after the check-in)
+0000097C_1.wav,P2-N1-011,Organic Nora,"She's useful, I'll give her that. But I think there's more to her than collecting junk.",neutral,Thoughtful (after CK-011),NORA's first talk (2 game days after the check-in)
+0000097D_1.wav,P2-N1-012,Organic Nora,"You were honest with her, and she lit up like a Christmas tree. I've started helping her look. Don't tell her I said this, but it's kind of fun.",neutral,"Warm, a little embarrassed (after CK-012)",NORA's first talk (2 game days after the check-in)
+0000097E_1.wav,P2-N1-013,Organic Nora,"You were a little rough on her. I get it, believe me. I'm not exactly comfortable either.",neutral,"Fair, measured (after CK-013)",NORA's first talk (2 game days after the check-in)
+0000097F_1.wav,P2-N1-030,Organic Nora,Fair enough. I just think she's got more in her than either of us expected. Room to grow.,neutral,"Understanding, closing the topic",NORA's first talk (2 game days after the check-in)
+00000980_1.wav,P2-GF-040,Organic Nora,She found the gears. I found the screws. Don't let her tell you otherwise.,neutral,"Dry, competitive",NORA's first talk (2 game days after the check-in)
+00000981_1.wav,P2-T2-001,Organic Nora,Left flank. You take it.,neutral,"Brisk, after a fight starts",Ambient: exchanges between them
+00000982_1.wav,P2-T2-002,Synth Nora,On it.,neutral,"Quick, pleased to be trusted",Ambient: exchanges between them
+00000983_1.wav,P2-T2-010,Synth Nora,You were right. It was green. The dress.,neutral,"Wry, peace offering",Ambient: exchanges between them
+00000984_1.wav,P2-T2-011,Organic Nora,I know. ...It looked better on me.,happy,"Dry, the faintest smile",Ambient: exchanges between them
+00000985_1.wav,P2-T2-020,Organic Nora,You can take watch tonight. Wake me at two.,neutral,"Matter-of-fact, a step forward",Ambient: exchanges between them
+00000986_1.wav,P2-T2-021,Synth Nora,I will. Thank you.,neutral,"Touched, trying not to show it",Ambient: exchanges between them
+00000987_1.wav,P2-T2-030,Organic Nora,She covered me back there. I didn't ask her to.,surprise,"Puzzled, softening","Ambient: asked ""Your thoughts?"""
+00000988_1.wav,P2-T2-031,Synth Nora,She let me take watch last night. I know that sounds small. It isn't.,sad,Quietly happy,"Ambient: asked ""Your thoughts?"""
+00000989_1.wav,P2-N2-001,Organic Nora,"Hey, honey. Can I talk to you about... her?",neutral,"Hesitant, glancing toward SYNTH",NORA's tier 2 talk
+0000098A_1.wav,P2-N2-015,Organic Nora,"Oh. Okay. Just get back to me soon, okay?",neutral,Slightly deflated (after 012),NORA's tier 2 talk
+0000098B_1.wav,P2-N2-020,Organic Nora,"We've been traveling together for a while now, the three of us. And she seems... okay. She hasn't hated my company, anyway. I want to know what you think.",neutral,"Open, a little vulnerable",NORA's tier 2 talk
+0000098C_1.wav,P2-N2-040,Organic Nora,Hmm. My thoughts as well.,neutral,Nodding (after 030),NORA's tier 2 talk
+0000098D_1.wav,P2-N2-041,Organic Nora,"I agree. I'm still a little uneasy with her, but I do like her.",neutral,"Warm, honest (after 031)",NORA's tier 2 talk
+0000098E_1.wav,P2-N2-042,Organic Nora,My thoughts exactly. I'll keep an eye on her.,neutral,"Cool, agreeing (after 032)",NORA's tier 2 talk
+0000098F_1.wav,P2-N2-043,Organic Nora,I don't trust her. But I also don't think she's a machine. She's something more.,fear,"Firm, a little shaken (after 033)",NORA's tier 2 talk
+00000990_1.wav,P2-N2-050,Synth Nora,...I heard that. Thank you.,neutral,"Shy, glowing (after 031)",NORA's tier 2 talk
+00000991_1.wav,P2-N2-051,Synth Nora,Arm's length. Okay. I can work with arm's length.,sad,Hurt but trying (after 032),NORA's tier 2 talk
+00000992_1.wav,P2-T3-001,Synth Nora,That was a great shot.,neutral,"Impressed, genuine","Ambient: compliments (rare, at most one per game day)"
+00000993_1.wav,P2-T3-002,Organic Nora,You're not so bad yourself.,neutral,"Dry, warm underneath","Ambient: compliments (rare, at most one per game day)"
+00000994_1.wav,P2-T3-010,Organic Nora,Your hair looks good like that.,surprise,"Offhand, almost surprised she said it","Ambient: compliments (rare, at most one per game day)"
+00000995_1.wav,P2-T3-011,Synth Nora,It's your hair.,neutral,Teasing,"Ambient: compliments (rare, at most one per game day)"
+00000996_1.wav,P2-T3-012,Organic Nora,Then it looks great.,happy,"Deadpan, then a laugh; stress: great","Ambient: compliments (rare, at most one per game day)"
+00000997_1.wav,P2-T3-020,Synth Nora,You're good at this. Talking to people. Getting them to listen.,neutral,Admiring,"Ambient: compliments (rare, at most one per game day)"
+00000998_1.wav,P2-T3-021,Organic Nora,Three years of law school. You'd know.,neutral,"Joking, the first time she's joked about it","Ambient: compliments (rare, at most one per game day)"
+00000999_1.wav,P2-CB-001,Synth Nora,Hold still! Stimpak!,fear,"Urgent, kneeling over her",Combat aid: stimpaks
+0000099A_1.wav,P2-CB-002,Synth Nora,I've got you. I've got you.,fear,"Breathless, in combat",Combat aid: stimpaks
+0000099B_1.wav,P2-CB-010,Organic Nora,Here. Don't you dare die on me.,angry,"Sharp, urgent",Combat aid: stimpaks
+0000099C_1.wav,P2-CB-011,Organic Nora,"Up. Come on, up.",fear,"Hauling her, combat breath",Combat aid: stimpaks
+0000099D_1.wav,P2-CB-020,Synth Nora,Thanks.,neutral,"Winded, grateful (after receiving)",Combat aid: stimpaks
+0000099E_1.wav,P2-CB-021,Organic Nora,...Thanks. I owe you one.,neutral,Winded (after receiving),Combat aid: stimpaks
+0000099F_1.wav,P2-S3-001,Synth Nora,Hello! Can I talk to you?,neutral,"Bright, a little nervous",SYNTH's tier 3 talk
+000009A0_1.wav,P2-S3-015,Synth Nora,"Oh. Okay. Just get back to me soon, okay?",neutral,"Deflated, covering it (after 012)",SYNTH's tier 3 talk
+000009A1_1.wav,P2-S3-016,Synth Nora,Oh. I... s-sorry. I'll be quick.,neutral,"Thrown, stammering (after 013, plays before either branch)",SYNTH's tier 3 talk
+000009A2_1.wav,P2-S3-020,Synth Nora,Hey. I know you... uh. Don't... think that highly of me. But I just want to say thank you. For taking me along with you.,neutral,"Halting, forcing it out",Cruel branch
+000009A3_1.wav,P2-S3-021,Synth Nora,You're... you're still the person I married all those years ago. I love you. But... do you still... even want to be around me?,neutral,Barely holding it together,Cruel branch
+000009A4_1.wav,P2-S3-040,Synth Nora,You... mean that? Okay. Okay. We can work through it. Together.,happy,"Fragile hope, laughing through tears (after 030)",Cruel branch
+000009A5_1.wav,P2-S3-041,Synth Nora,I don't... I don't know what to say. Thank you. I'm going to remember this. I'm good at remembering.,happy,"Overwhelmed, a wet laugh (after 031)",Cruel branch
+000009A6_1.wav,P2-S3-042,Synth Nora,"A poor copy. Right. I'll... I'll keep her alive, then.",sad,"Hollow, very quiet (after 032)",Cruel branch
+000009A7_1.wav,P2-S3-045,Organic Nora,Nate. That's enough.,angry,"Hard, quiet, stepping in",Cruel branch
+000009A8_1.wav,P2-S3-050,Synth Nora,"Thanks! Look, I know it was weird seeing... me. Yeah. Me, twice. And now that I understand this world a little better, I know how big a chance you took on me.",neutral,"Warm, rehearsed but sincere",Kind branch
+000009A9_1.wav,P2-S3-051,Synth Nora,"I don't want that to go unsaid. I still see you as my husband. I don't really know what to think of... the other me. But I've enjoyed her company for a while now, and I want to thank you both.",neutral,"Open, a little shy at the end",Kind branch
+000009AA_1.wav,P2-S3-055,Synth Nora,"Th-thanks. Look, I... I know it was weird seeing... me. Yeah. Me, twice. And now that I, um, understand this world a little better, I know how big a chance you took on me.",neutral,"Stuttered version of 050 (after S3-013), flustered",Kind branch
+000009AB_1.wav,P2-S3-056,Synth Nora,"I don't want that to go... unsaid. I still see you as my husband. I d-don't really know what to think of the other me. But I've enjoyed her company for a while, and I want to... to thank you both.",neutral,"Stuttered version of 051, recovering slowly",Kind branch
+000009AC_1.wav,P2-S3-070,Synth Nora,You trust me. Okay. Good. That's... good.,neutral,"Pleased, steadying (after 060)",Kind branch
+000009AD_1.wav,P2-S3-071,Synth Nora,My own special person. I like the sound of that. I think I'll keep it.,neutral,"Delighted, tearing up a little (after 061)",Kind branch
+000009AE_1.wav,P2-S3-072,Synth Nora,Oh. I thought... never mind what I thought.,fear,"Stunned, closing up (after 062)",Kind branch
+000009AF_1.wav,P2-S3-075,Organic Nora,Where the hell did that come from?,angry,"Angry, disbelieving (after 062)",Kind branch
+000009B0_1.wav,P2-RV-001,Synth Nora,"Then say it. Whatever you're going to do with me, say it. I'd rather know.",fear,"Shaking, standing her ground","""That vault was a mistake"": the Vault 111 choice, re-opened"
+000009B1_1.wav,P2-RV-010,Synth Nora,...You scared me. Don't do that again.,fear,"Shaky relief, half angry","""That vault was a mistake"": the Vault 111 choice, re-opened"
+000009B2_1.wav,P2-RV-011,Organic Nora,You heard him. Let's go.,neutral,"Brisk, protective, glaring at Nate","""That vault was a mistake"": the Vault 111 choice, re-opened"
+000009B3_1.wav,P2-RV-020,Synth Nora,I'll go back to the vault. It's the only place I know to wait.,neutral,"Numb, practical","""That vault was a mistake"": the Vault 111 choice, re-opened"
+000009B4_1.wav,P2-RV-030,Organic Nora,Was that what you wanted? Was it?,fear,"Shaking with anger, not looking at him","""That vault was a mistake"": the Vault 111 choice, re-opened"
+000009B5_1.wav,P2-RV-040,Synth Nora,Okay. I'll go. Take care of her. She's the real thing.,sad,"Composed, crying quietly","""That vault was a mistake"": the Vault 111 choice, re-opened"
+000009B6_1.wav,P2-RV-041,Organic Nora,Nate... no. Not like this.,neutral,"Pleading, too late","""That vault was a mistake"": the Vault 111 choice, re-opened"
+000009B7_1.wav,P2-LV-001,Synth Nora,"I can't keep doing this. Every time I think I've found a place with you, you remind me what I am.",sad,"Tired, past crying",She leaves (hurt counter reaches 3)
+000009B8_1.wav,P2-LV-002,Synth Nora,I'm going. Don't follow me. Please.,sad,"Quiet, final",She leaves (hurt counter reaches 3)
+000009B9_1.wav,P2-LV-003,Organic Nora,Nate. Go after her. ...Nate!,fear,"Urgent, then angry",She leaves (hurt counter reaches 3)
