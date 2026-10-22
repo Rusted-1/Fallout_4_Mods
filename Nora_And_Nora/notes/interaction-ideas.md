@@ -92,7 +92,7 @@ After 5 times of giving you these items you will be prompted with a few diallage
 
 
 
-After 2 in game weeks Organic Nora will want to talk to you about Synth Nora. She will talk about how Synth Nora is not as bad as she thought she was, and that she is starting to enjoy her company. She also mentions the collecting thing that Synth-Nora Does, and will say something different depending on what you said earlier to her.
+After 2 in game days after Synth Nora talks to you, Organic Nora will want to talk to you about Synth Nora. She will talk about how Synth Nora is not as bad as she thought she was, and that she is starting to enjoy her company. She also mentions the collecting thing that Synth-Nora Does, and will say something different depending on what you said earlier to her.
 
 
 
@@ -150,8 +150,8 @@ Player:
 
 
 
-1. She has been very helpful, but I don't fully trust her yet. (Organic likes this) 
-2. She's nice, I've talked to her a few times and I like her, I think we can trust her. (Both Like that) (Decreases Time of Relationship level 3 by one day.) 
+1. She has been very helpful, but I don't fully trust her yet. (Organic likes this)
+2. She's nice, I've talked to her a few times and I like her, I think we can trust her. (Both Like that) (Decreases Time of Relationship level 3 by one day.)
 3. I'm still not convinced she's on our side. I'm keeping her at arms length. (Synth dislikes this, Organic is neutral) (Increases Time of Relationship level 3 by one day.)
 4. She's just a dumb machine, designed to serve, nothing more. (Organic dislikes this, Synth hates this.) (Increases Time of Relationship level 3 by two days.)
 
@@ -168,7 +168,7 @@ Organic Nora: Reponses
 
 
 
-**Relationship Part 3:**They will talk with each other more often, and start to give compliments to one another, they will also aid each other in combat, such as giving each other stimpacks if needed. After 3 days this benchmark is reached. (Can be reached faster or slower depending on you choices). Synth Nora will then approach the player.  "Hello! Can I talk to you?"
+**Relationship Part 3:** They will talk with each other more often, and start to give compliments to one another, they will also aid each other in combat, such as giving each other stimpacks if needed. After 3 days this benchmark is reached. (Can be reached faster or slower depending on you choices). Synth Nora will then approach the player.  "Hello! Can I talk to you?"
 
 
 
@@ -190,9 +190,9 @@ If you choose 4. in R1, and/or 4. In R2. "Hey, I know you...uh. don't...think th
 Player response:
 
 1. I know I've been...mean, but I still want you around. I'm still working through all that has happened in this world. (Organic will like, Synth will love.) (Decreases Time of Relationship level 3 by one day.)
-2. I made a mistake in that vault. I don't even think your worth keeping around. (This will prompt the same lines in the vault.) (Organic will dislike, Synth will hate.) 
+2. I made a mistake in that vault. I don't even think your worth keeping around. (This will prompt the same lines in the vault.) (Organic will dislike, Synth will hate.)
 3. Yeah your a useful machine, you watch my back and keep my wife alive, I think your useful. Other then that your not worth much. Just a poor copy. (Organic will dislike, Synth will hate.) (Increases Time of Relationship level 3 by two days.)
-4. 4\. I've been very cruel to you and I have no excuse for that, I have been very unfair in you treatment and I want to say sorry. You are who you say you are, just a little different. (Organic will like, Synth will love.) (Decreases Time of Relationship level 3 by two days.)
+4. I've been very cruel to you and I have no excuse for that, I have been very unfair in you treatment and I want to say sorry. You are who you say you are, just a little different. (Organic will like, Synth will love.) (Decreases Time of Relationship level 3 by two days.)
 
 
 
@@ -211,19 +211,148 @@ If any other options were chosen: "Thanks! Look I know that it was weird seeing.
 
 
 
-**Relationship Part 4:**
+**Relationship Part 4:** They will talk with each other far more often, and will hang out and stick close to one another too, as well as Nate (The player). They will get truly upset if one of them is downed in combat and Synth Nora will start to flirt with Organic Nora a little and Vise versa. Organic Nora will then approach the player after 4 days, depending on what choices were made.
 
 
 
-They will talk with each other far more often, and will hang out and stick close to one another too, as well as Nate (The player). They will get truly upset if one of them is downed in combat and Synth Nora will start to flirt with Organic Nora a little and Vise versa
+"Hey, sweetie, can I talk to you?"
 
 
 
-**Relationship Part 5:**
+Player response:
+
+1. Everything ok?
+2. Anything for you.
+3. Not right now. (She will ask you again when you talk to her again. She will respond with something along the lines of. "Oh ok, just get back to me soon ok?")
+4. Sure!
 
 
 
-This is when the flirting really cranks up. They will talk about the "Three of them under a streetlight in the park". Synth Nora will start to worry about them being a true family, such as possibly not being able to have a child of her own due to her synth nature. As she understands that she is not the original Nora, she is her own Nora. She will want to start a true family with the three of them after this is all done. Settle down somewhere. Organic Nora will agree and talk about setting up a law office, to try and get some law back into the commonwealth and the want to start hunting. (This part is subject to if Shawn is still alive or not.)
+**If player has been nice to Synth Nora**: Thank you, I've been thinking and from what I've understood from you, you think the same way. I've come to really enjoy her company and I think you have too. I she's a lot like me in a lot of ways. However I've seen her also change too. I see a lot of myself in her but she is becoming her own person as well, her choices and interests are becoming different from my own. I'm still not a fan of asking for a lot of money, but she most defiantly is. I think she's a real keeper. What do you think?
+
+
+
+Player response:
+
+1. Yes, I agree completely. (Both Like)
+2. I'm still a little uneasy around her, but I trust your judgment. (Organic Likes)
+3. Honestly I've come to really enjoy having her around. (Both love) (Decreases Time of Relationship level 5 by one day.)
+4. I'm still thinking through that.
+
+
+
+**If player has been Mean to Synth Nora**: We need to talk, It's about her. I know you don't really see her as a person and I admit I myself have been having second thoughts. It's odd, seeing my own face, my own body. Down to my tattoos, on someone else. However I don't think she is a simple machine. She is something more. I don't think you should be as dismissive to her as you have been. Still, she could be on the institutes side secretly. What do you think?
+
+
+
+Player response:
+
+1. Your right, I think I have been too hard on her, I'll be a little easier on her. (Both like)
+2. I just don't know. She looks like you, she sounds like you, but she's not. I don't really know what to think.
+3. Sweetie she's just a machine, those emotions she's feeling is all just calculate. She's not a person, she's a thing. Useful however (Locks out Relationship Level 5. Synth Nora hates and enters broken phase.)
+4. Your right we cannot trust her, she has seen to much, we need to take her out. (Organic dislikes, Synth hates turns hostile)
+
+
+
+**Relationship Part 5:** This is when the flirting really cranks up. They will talk about the "Three of them under a streetlight in the park".
+
+
+
+Both will now encourage the player and trust them with how well they are doing in the commonwealth. They will also talk about the horrible things they do to one another when the player is not looking and laugh. After Reaching relationship level 5, four days after level 4. Both Nora's will approach the player.
+
+
+
+**Organic:** Hey Honey, can we talk to you?
+
+
+
+**Synth:** Please Honey. It's important.
+
+
+
+Player response:
+
+1. What's up?
+2. Of Course, what do you need?
+3. Anything for you two.
+4. Not right now. (She will ask you again when you talk to her again. She will respond with something along the lines of. "Oh ok, just get back to me soon ok?")
+
+
+
+If the player responds with "Anything for you two", they will get unique speech.
+
+
+
+Synth: Anything huh? Hmm, I can think of a few things.
+
+
+
+Organic: Same, that is what we want to talk about.
+
+
+
+Anything else other then choice for will resalt in the standard "Thank you" From organic Nora.
+
+
+
+Organic: We wanted to talk to you about, well, us.
+
+
+
+Synth: Yeah, the three of us.
+
+
+
+Organic: You see, the more we have been traveling, the more...emotions I feel towards both of you.
+
+
+
+Synth: I feel the same way.
+
+
+
+Organic: These feelings in my heart for you my love (Towards nate) Have never been stronger, with that we have seen, done, and been apart of. Most others would have given up you just kept going, and going. You held your head High and never stoped.
+
+
+
+Player Choices
+
+1. Thank you
+2. I'll withhold judgment until the end.
+3. I love you too.
+4. I understand.
+
+
+
+Organic: Thanks'. However, now. There is another thing. Another room in my heart that opened, not just for the two of us, but for three. (Towards Synth Nora)
+
+
+
+Synth. Same for me. I still love my husband, and that will never, ever change. Now however I love two people at the same time. I love you too Nora, and You, my Nate.
+
+
+
+Organic: I love the both of you as well. It's just that. These emotions, these feelings. I don't know how to fully take them in. Can I love...Nora and you at the same time?
+
+
+
+Player Choices:
+
+1. Oh, uh. I need to think about this. (this will exit the speech)
+
+2\. Of course! I love both of you. I was terrified that I was going to have to chose only one of you. Now I can love you both. (Romance Nora and Nora, separate from romancing them individually, this will unlock the perk **"Eternal Lovers"** perk)
+
+3\. (Question) Wait, you two have fallen in love with each other?
+
+4\. No, I'm sorry. It's too much for me. I don't know if I can do that. (Both will understand and the game will proceed as normal, however like normal companions, the option to romance both will pop up later.)
+
+
+
+The Relationship levels are now completed and new speech will pop up when the two talk to each other:
+
+
+
+Synth Nora will start to worry about them being a true family, such as possibly not being able to have a child of her own due to her synth nature. As she understands that she is not the original Nora, she is her own Nora. She will want to start a true family with the three of them after this is all done. Settle down somewhere. Organic Nora will agree and talk about setting up a law office, to try and get some law back into the commonwealth and the want to start hunting. (This part is subject to if Shawn is still alive or not.)
 
 
 
@@ -233,7 +362,43 @@ This is when the flirting really cranks up. They will talk about the "Three of t
 
 
 
-Both will now encourage the player and trust them with how well they are doing in the commonwealth. They will also talk about the horrible things they do to one another when the player is not looking and laugh.
+They will talk about life, how things are going in the commonwealth
+
+
+
+Here is an example of some of there speech:
+
+
+
+Synth: I want to have a lot of kids.
+
+
+
+Organic: Really? How many?
+
+
+
+Synth: ten, maybe eight.
+
+
+
+Organic: That Many!? Why?
+
+
+
+Synth: The idea of having that many little ones in me, and then running around my feet, it fills my heart with joy.
+
+
+
+Organic: Dang, I just wanted one or three more. You have ambition. 
+
+
+
+Synth: Thanks.
+
+
+
+The new speech is going to involve some lines similar to this. Some about kids, love, etc, Although all of there original speech from Relationship level 3 and above should remain.
 
 
 
@@ -241,7 +406,7 @@ Both will now encourage the player and trust them with how well they are doing i
 
 
 
-Both Nora's will react differently to this news. Synth Nora will now full understand that she is a Synth, and dislike Shawn for filling her with memories and forcing her to realize that she is not the true Nora, although she will still love him because he is still her baby. She will be resntful of the institute as long as Shawn is in control for the rest of the game. (This will tie in later with the Factions ending.
+Both Nora's will react differently to this news. Synth Nora will now full understand that she is a Synth, and dislike Shawn for filling her with memories and forcing her to realize that she is not the true Nora, although she will still love him because he is still her baby. She will be resentful of the institute as long as Shawn is in control for the rest of the game. (This will tie in later with the Factions ending.
 
 
 
@@ -375,5 +540,13 @@ The romance is a big part of the final path of Synth Nora's Relationship with th
 
 
 
-If the player Romances her, she will say something like this. "Yes! YES! I love you too. I know I am not your original love, or am I, gosh this synth thing is so confusing. I will love you no matter what! Lets have the largest family the wasteland has ever seen! I love you so much. (Note if both Nora's relationship level is a 3 or lower, organic Nora will hate this, if it a 4, she will be confused and ask why Nate is marrying Synth Nora. If it is 5, she will love the idea and also promise to help with the large family.
+If the player Romances her, she will say something like this. "Yes! YES! I love you too. I know I am not your original love, or am I, gosh this synth thing is so confusing. I will love you no matter what! Lets have the largest family the wasteland has ever seen! I love you so much. (Note if both Nora's relationship level is a 3 or lower, organic Nora will hate this, if it a 4, she will be confused and ask why Nate is marrying Synth Nora. If it is 5, she will love the idea and also promise to help with the large family. (Note this is her PERSONAL romance, not the duo.)
+
+
+
+**Eternal Lovers perk:**
+
+
+
+This is the final perk in there chain. When the perk is unlocked it says something like this: You understand what love is, no matter what form, where they are from, or who they are. Thanks to you relationship with both Nora's. They gain an additional 100 hit points when traveling with you, and you heal 1 hp per second, with an additional 50% fire, cryo, and poison damage resist.  
 
