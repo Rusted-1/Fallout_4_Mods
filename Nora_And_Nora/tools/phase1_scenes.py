@@ -13,7 +13,8 @@ SL_QUEST=0x000F9B; SL_NORA_NPC=0x000F99; SL_NORA_REF=0x000FB3
 NS_NORA_REF=0x001735; NS_FIRSTMEET=0x001F48
 COMPANION_FACTION=0x00023C01; STAY_PACKAGE=0x00019AA2
 PH1=0x802
-A_SYNTH,A_NORA=0,1
+A_SYNTH,A_NORA,A_VAULT=0,1,2
+SPOUSE_POD=0x0004A012           # Vault 111 cryo pod (objective marker)
 TIF='NN_P1S_TIF'
 # affinity events: Synthetic Love's keywords (registered in Followers by SL) and Nora Spouse's (registered at runtime by NS)
 SL_KW={'Likes':0x26CD,'Loves':0x26CE,'Dislikes':0x26CB,'Hates':0x26CC}
@@ -47,9 +48,9 @@ def tif_script(out):
     def met(f,stage):
         q=f.call('self','GetOwningQuest')
         f.call(SLQ,'SetStage',10);f.call(SLQ,'SetStage',20)                    # Synthetic Love's own recruit stages
-        f.call(SLQ,'SetObjectiveDisplayed',20,False,False)                    # hide "...examine the corpse"
-        f.call(q,'SetStage',stage);f.call(q,'SetObjectiveDisplayed',10,True,False)   # show "Travel with Nora to Vault 111"
+        f.call(q,'SetStage',stage);f.call(q,'SetObjectiveDisplayed',10,True,False)   # show "Go to Vault 111 with both Noras"
         f.callstatic('utility','Wait',2.0)                                    # let her join the companion system first
+        f.call(SLQ,'SetObjectiveDisplayed',20,False,False)                    # hide "...examine the corpse" (after SL's stage 20 fragment has shown it)
         for st,(who,k) in PENDING.items():
             d=f.call(q,'GetStageDone',st);f.jmpf(d,'skip%d'%st);f.callself('React',KW[(who,k)]);f.label('skip%d'%st)
     f=sc.func('Frag_Met',[('akSpeakerRef','objectreference')]);met(f,100)
@@ -221,10 +222,10 @@ def build_records(own,ns_idx,sl_idx,script_md,voice_csv):
     stages=[13,31,32,33,34,41,42,43,44,51,52,53,73,100,110,150,500]
     q=sub('EDID',zs('NN_P1Scenes'))+sub('VMAD',vm)+sub('FULL',zs('Two Noras'))
     q+=sub('DNAM',struct.pack('<HBBII',0x0111,90,0,0,7))+sub('NEXT',b'')
-    q+=b''.join(sub('INDX',struct.pack('<HBB',n,0,0))+sub('QSDT',b'\0') for n in stages)
-    q+=sub('QOBJ',struct.pack('<H',10))+sub('FNAM',struct.pack('<I',0))+sub('NNAM',zs('Travel with Nora to Vault 111'))+sub('QSTA',struct.pack('<iII',A_SYNTH,0,0))
-    q+=sub('ANAM',struct.pack('<I',2))
-    for aid,name,ref in [(A_SYNTH,'SynthNora',(sl_idx<<24)|SL_NORA_REF),(A_NORA,'Nora',(ns_idx<<24)|NS_NORA_REF)]:
+    q+=b''.join(sub('INDX',struct.pack('<HBB',n,0,0))+sub('QSDT',b'\1' if n==500 else b'\0') for n in stages)   # 500 completes the quest
+    q+=sub('QOBJ',struct.pack('<H',10))+sub('FNAM',struct.pack('<I',0))+sub('NNAM',zs('Go to Vault 111 with both Noras'))+sub('QSTA',struct.pack('<iII',A_VAULT,0,0))
+    q+=sub('ANAM',struct.pack('<I',3))
+    for aid,name,ref in [(A_SYNTH,'SynthNora',(sl_idx<<24)|SL_NORA_REF),(A_NORA,'Nora',(ns_idx<<24)|NS_NORA_REF),(A_VAULT,'VaultPods',SPOUSE_POD)]:
         q+=sub('ALST',struct.pack('<I',aid))+sub('ALID',zs(name))+sub('FNAM',struct.pack('<I',0x282))+sub('ALFR',struct.pack('<I',ref))+sub('VTCK',struct.pack('<I',0))+sub('ALED',b'')
     quest=record('QUST',Q,0,q)
     child=D.records()

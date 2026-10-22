@@ -532,7 +532,7 @@ def build_records(own,ns_idx,sl_idx,script_md,voice_csv,p1_script_md,p1_voice_cs
     qprops+=[('SceneEx%d'%(i+1),vm_obj(s.fid)) for i,s in enumerate(exch)]+[(k,vm_obj(v)) for k,v in aid.items()]
     vm=struct.pack('<hhH',6,2,1)+ws(QS)+struct.pack('<BH',0,len(qprops))+b''.join(ws(n)+v for n,v in qprops)
     stg=[10,20,30,40,45,50,51,52,53,54,60,65,66,70,71,72,73,74,75,76,77,78,81,82,83,84,88,89,91,92,93,94]
-    q=sub('EDID',zs('NN_Phase2'))+sub('VMAD',vm)+sub('FULL',zs('Two Noras'))
+    q=sub('EDID',zs('NN_Phase2'))+sub('VMAD',vm)+sub('FULL',zs('Synth Nora'))
     q+=sub('DNAM',struct.pack('<HBBII',0x0111,90,0,0,7))+sub('NEXT',b'')
     q+=b''.join(sub('INDX',struct.pack('<HBB',n,0,0))+sub('QSDT',b'\0') for n in stg)
     q+=sub('QOBJ',struct.pack('<H',20))+sub('FNAM',struct.pack('<I',0))+sub('NNAM',zs('Synth Nora has returned to Vault 111'))+sub('QSTA',struct.pack('<iII',A_SYNTH,0,0))
