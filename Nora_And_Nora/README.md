@@ -9,7 +9,7 @@ interactions and actions from their first meeting to the late game. The full des
 **Needs the original mods.** This repo holds only my own work. It does not include Nora Spouse,
 Synthetic Love, Unlimited Companion Framework, Random Encounter Framework or any of their files.
 
-## Status: v0.6.3 — Phases 1 and 2 playable and voiced
+## Status: v0.7.0 — Phases 1–3 playable and voiced
 - **Done:** Followers quest merge for UCF users (v0.1). Kellogg fix (v0.2). Phase 1 outcome system (v0.3). Battle-site add-on (v0.4). Phase 1 dialogue scenes (v0.5). All 89 Phase 1 lines voiced with xVASynth (v0.5.1). "Synth Nora" name and Phase 1 affinity reactions (v0.5.2). Phase 2: relationship tiers 1–3 with gifts, talks, exchanges, combat aid, cruel path, vault walk-back, leaving, plus the optional test tape (v0.6). Quest audit fixes (v0.6.1). Synth Nora's reactions registered at runtime so they work on existing saves (v0.6.2). All verified at the file level. First in-game test pass: reactions (v0.6.2), test tape giver, Cold Comfort hidden, Vault 111 scene not completing, tier-advance clicks and the post-wait greeting (v0.6.3) fixed; test tape craftable at the chem station (v0.6.4); synth Nora follows you into the Institute (v0.6.5); Phase 3 synth reactions + Subversion add-on, voiced (v0.7.0); retest pending.
 - **Waiting on:** in-game testing.
 - **Planned:** Phase 3 (Shaun and faction reactions, quest reactions from `docs/analysis/06-…`), Phase 4 (tiers 4–5, identity paths, romance).
