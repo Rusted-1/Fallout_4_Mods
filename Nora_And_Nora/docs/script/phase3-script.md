@@ -26,7 +26,7 @@ Getting a Clue: "Don't lie to me, Nick. You're one of them. They made you." (Syn
 |---|---|---|---|
 | P3-SP-010 | SYNTH | He's helped every person in this city, and that's what you lead with? | Angry |
 
-Getting a Clue: "Bullshit. You're a synth, Valentine! Tell me what you know!" (Synth Hates)
+The Enemy of My Enemy: "Bullshit. You're a synth, Valentine! Tell me what you know!" (Synth Hates)
 
 | ID | Speaker | Line | Delivery |
 |---|---|---|---|

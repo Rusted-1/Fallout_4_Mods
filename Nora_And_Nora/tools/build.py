@@ -151,6 +151,7 @@ def build_impatient(outdir):
 
 SCRIPT_MD=None;VOICE_CSV=None          # set by __main__ (phase 1 dialogue source files)
 P2_SCRIPT_MD=None;P2_VOICE_CSV=None;P2_INFO=None
+P3_SCRIPT_MD=None;P3_VOICE_CSV=None
 def build(sl,ns,eff,outdir,ucf):
     masters=['Fallout4.esm','NoraSpouse.esm','p865_SyntheticLove.esp']+(['EFF.esp'] if ucf else [])
     own=len(masters);kglob,gate=kellogg_records(own,2)
@@ -176,9 +177,17 @@ def build(sl,ns,eff,outdir,ucf):
         r=phase2.build_records(own,1,2,P2_SCRIPT_MD,P2_VOICE_CSV,SCRIPT_MD,VOICE_CSV,ns)
         qrecs+=[r['quest'],r['walk']];globs+=r['globs'];flsts=r['flsts'];msgs+=r['msgs'];books+=r['books'];p2count=r['qcount']
         global P2_INFO;P2_INFO=r['info'];print('  phase 2:',{k:v for k,v in r['info'].items() if k!='copies'},'voice copies',len(r['info']['copies']))
+    p3count=0
+    if P3_SCRIPT_MD:
+        import phase3
+        blob3,p3count,info3=phase3.build_records(own,1,2,P3_SCRIPT_MD,P3_VOICE_CSV);qrecs.append(blob3);print('  phase 3:',info3)
+    # SEQ file: start-game-enabled quests that have dialogue (without it their dialogue is missing on a new game)
+    seq=[(own<<24)|q for q in (0x808,0xB03,0xE02 if P3_SCRIPT_MD else None) if q]
+    os.makedirs(os.path.join(outdir,'SEQ'),exist_ok=True)
+    open(os.path.join(outdir,'SEQ',PLUGIN[:-4]+'.seq'),'wb').write(b''.join(struct.pack('<I',x) for x in seq))
     body=grup('GLOB',b''.join(globs))+(grup('FLST',b''.join(flsts)) if flsts else b'')+grup('MESG',b''.join(msgs))+grup('QUST',b''.join(qrecs))+grup('BOOK',b''.join(books))
-    recs=globs+flsts+msgs+qrecs+books+[b'']*max(nscene-1,0)+[b'']*max(p2count-1,0)
-    desc='Nora & Nora 0.6.5 - Nora Spouse + Synthetic Love patch'+(' + UCF' if ucf else '')
+    recs=globs+flsts+msgs+qrecs+books+[b'']*max(nscene-1,0)+[b'']*max(p2count-1,0)+[b'']*max(p3count-1,0)
+    desc='Nora & Nora 0.7.0 - Nora Spouse + Synthetic Love patch'+(' + UCF' if ucf else '')
     os.makedirs(outdir,exist_ok=True)
     p=os.path.join(outdir,PLUGIN)
     open(p,'wb').write(tes4(masters,len(recs),desc,next_id=0xE00)+body)
@@ -188,6 +197,7 @@ if __name__=='__main__':
     sl,ns,eff,out=sys.argv[1:5]
     if len(sys.argv)>6: SCRIPT_MD,VOICE_CSV=sys.argv[5:7]
     if len(sys.argv)>8: P2_SCRIPT_MD,P2_VOICE_CSV=sys.argv[7:9]
+    if len(sys.argv)>10: P3_SCRIPT_MD,P3_VOICE_CSV=sys.argv[9:11]
     print(build(sl,ns,eff,os.path.join(out,'UCF'),True))
     print(build(sl,ns,eff,os.path.join(out,'NoUCF'),False))
     print(build_impatient(os.path.join(out,'Impatient')))

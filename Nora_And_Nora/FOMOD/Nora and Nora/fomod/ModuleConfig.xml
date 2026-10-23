@@ -85,6 +85,27 @@
         </group>
       </optionalFileGroups>
     </installStep>
+    <installStep name="Other mods">
+      <optionalFileGroups order="Explicit">
+        <group name="Patches for other mods" type="SelectAny">
+          <plugins order="Explicit">
+            <plugin name="Subversion - The Institute-Railroad Alliance">
+              <description>Both Noras react to Subversion's choices: sparing the Railroad, freeing the synths, the Directorate meeting, X6-88's memory wipe, replacing Maxson, Danse's reset, the Minutemen taking the Institute and more, with voiced lines. After the synths are freed (relationship tier 2 or higher) synth Nora asks "They're free... am I?". Installs NoraAndNora - Subversion.esp (light plugin). Requires InstituteReformation.esp.</description>
+              <files><folder source="Subversion" destination="" priority="0"/></files>
+              <typeDescriptor>
+                <dependencyType>
+                  <defaultType name="Optional"/>
+                  <patterns>
+                    <pattern><dependencies operator="And"><fileDependency file="InstituteReformation.esp" state="Active"/></dependencies><type name="Recommended"/></pattern>
+                    <pattern><dependencies operator="And"><fileDependency file="InstituteReformation.esp" state="Missing"/></dependencies><type name="NotUsable"/></pattern>
+                  </patterns>
+                </dependencyType>
+              </typeDescriptor>
+            </plugin>
+          </plugins>
+        </group>
+      </optionalFileGroups>
+    </installStep>
     <installStep name="Testing">
       <optionalFileGroups order="Explicit">
         <group name="Testing tools" type="SelectAny">
