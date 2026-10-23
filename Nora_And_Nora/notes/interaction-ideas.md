@@ -248,7 +248,7 @@ Player response:
 Player response:
 
 1. Your right, I think I have been too hard on her, I'll be a little easier on her. (Both like)
-2. I just don't know. She looks like you, she sounds like you, but she's not. I don't really know what to think.
+2. I just don't know. She looks like you, she sounds like you, but she's not. I don't really know what to think. (Neutral) 
 3. Sweetie she's just a machine, those emotions she's feeling is all just calculate. She's not a person, she's a thing. Useful however (Locks out Relationship Level 5. Synth Nora hates and enters broken phase.)
 4. Your right we cannot trust her, she has seen to much, we need to take her out. (Organic dislikes, Synth hates turns hostile)
 
@@ -311,16 +311,16 @@ Synth: I feel the same way.
 
 
 
-Organic: These feelings in my heart for you my love (Towards nate) Have never been stronger, with that we have seen, done, and been apart of. Most others would have given up you just kept going, and going. You held your head High and never stoped.
+Organic: These feelings in my heart for you my love (Towards Nate) Have never been stronger, with that we have seen, done, and been apart of. Most others would have given up you just kept going, and going. You held your head High and never stoped.
 
 
 
 Player Choices
 
-1. Thank you
-2. I'll withhold judgment until the end.
-3. I love you too.
-4. I understand.
+1. Thank you (Organic Likes that)
+2. I'll withhold judgment until the end. (No reaction)
+3. I love you too. (Organic Loves that.)
+4. Where are you going with this. (No reaction)
 
 
 
@@ -343,6 +343,18 @@ Player Choices:
 2\. Of course! I love both of you. I was terrified that I was going to have to chose only one of you. Now I can love you both. (Romance Nora and Nora, separate from romancing them individually, this will unlock the perk **"Eternal Lovers"** perk)
 
 3\. (Question) Wait, you two have fallen in love with each other?
+
+
+
+**Reply:** 
+
+Synth: Yes, we have, I know I'm surprised too, but we didn't fall in love with just us.
+
+
+
+Organic. We Fell in love with the three of us. All of us.
+
+
 
 4\. No, I'm sorry. It's too much for me. I don't know if I can do that. (Both will understand and the game will proceed as normal, however like normal companions, the option to romance both will pop up later.)
 
@@ -390,7 +402,7 @@ Synth: The idea of having that many little ones in me, and then running around m
 
 
 
-Organic: Dang, I just wanted one or three more. You have ambition. 
+Organic: Dang, I just wanted one or three more. You have ambition.
 
 
 
@@ -548,5 +560,5 @@ If the player Romances her, she will say something like this. "Yes! YES! I love 
 
 
 
-This is the final perk in there chain. When the perk is unlocked it says something like this: You understand what love is, no matter what form, where they are from, or who they are. Thanks to you relationship with both Nora's. They gain an additional 100 hit points when traveling with you, and you heal 1 hp per second, with an additional 50% fire, cryo, and poison damage resist.  
+This is the final perk in there chain. When the perk is unlocked it says something like this: You understand what love is, no matter what form, where they are from, or who they are. Thanks to you relationship with both Nora's. They gain an additional 100 hit points when traveling with you, and you heal 1 hp per second, with an additional 50% Less fire, cryo, and poison damage resist.
 
