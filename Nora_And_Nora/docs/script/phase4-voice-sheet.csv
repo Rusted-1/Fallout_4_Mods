@@ -1,0 +1,86 @@
+﻿File name,Line ID,Speaker,Text,Emotion,Delivery,Scene
+00000E60_1.wav,P4-T4-001,Synth Nora,"You know, you're not so bad when you're not glaring at me.",neutral,"Teasing, toward NORA (new)",Ambient (tier 4 and up)
+00000E61_1.wav,P4-T4-002,Organic Nora,Careful. I might start liking you.,neutral,"Dry, smiling (new)",Ambient (tier 4 and up)
+00000E62_1.wav,P4-T4-003,Synth Nora,"Same hair, same freckles. Somehow it looks better on you.",neutral,Flirty (new),Ambient (tier 4 and up)
+00000E63_1.wav,P4-T4-004,Organic Nora,Flatterer. Don't stop.,neutral,Amused (new),Ambient (tier 4 and up)
+00000E64_1.wav,P4-CB-001,Synth Nora,"Nora! No, no, no. Get up. Please get up!",fear,Panicked (new),Combat: when the other one goes down
+00000E65_1.wav,P4-CB-002,Organic Nora,Hey! Stay with me! Don't you dare!,fear,Panicked (new),Combat: when the other one goes down
+00000E66_1.wav,P4-T4-010,Organic Nora,"Hey, sweetie. Can I talk to you?",neutral,"Warm, a little serious",NORA's tier 4 talk
+00000E67_1.wav,P4-T4-015,Organic Nora,"Oh, okay. Just get back to me soon, okay?",neutral,"Disappointed but kind (after ""Not right now"")",NORA's tier 4 talk
+00000E68_1.wav,P4-T4-020,Organic Nora,"Thank you. I've been thinking, and from what I've seen of you, you think the same way.",neutral,Earnest,NORA's tier 4 talk
+00000E69_1.wav,P4-T4-021,Organic Nora,"I've come to really enjoy her company, and I think you have too. She's a lot like me in a lot of ways.",neutral,Fond,NORA's tier 4 talk
+00000E6A_1.wav,P4-T4-022,Organic Nora,"But I've seen her change, too. I see a lot of myself in her, but she's becoming her own person. Her choices, her interests, they're different from mine.",neutral,Thoughtful,NORA's tier 4 talk
+00000E6B_1.wav,P4-T4-023,Organic Nora,"I'm still not a fan of asking for a lot of money, but she most definitely is. I think she's a real keeper. What do you think?",happy,"Laughing, then sincere",NORA's tier 4 talk
+00000E6C_1.wav,P4-T4-034,Organic Nora,I knew it. She'll be glad to hear it.,happy,Happy (after Y or X) (new),NORA's tier 4 talk
+00000E6D_1.wav,P4-T4-035,Organic Nora,That's fair. Give her time. She'll earn it.,neutral,Understanding (after A or B) (new),NORA's tier 4 talk
+00000E6E_1.wav,P4-T4-040,Organic Nora,We need to talk. It's about her.,neutral,Serious,NORA's tier 4 talk
+00000E6F_1.wav,P4-T4-041,Organic Nora,"I know you don't really see her as a person, and I admit I've been having second thoughts myself.",neutral,Careful,NORA's tier 4 talk
+00000E70_1.wav,P4-T4-042,Organic Nora,"It's odd, seeing my own face, my own body, down to my tattoos, on someone else.",neutral,Uneasy,NORA's tier 4 talk
+00000E71_1.wav,P4-T4-043,Organic Nora,But I don't think she's a simple machine. She's something more. I don't think you should be as dismissive of her as you've been.,neutral,Firm,NORA's tier 4 talk
+00000E72_1.wav,P4-T4-044,Organic Nora,"Still... she could be on the Institute's side, secretly. What do you think?",neutral,Doubtful,NORA's tier 4 talk
+00000E73_1.wav,P4-T4-054,Organic Nora,Thank you. That's all I wanted to hear.,happy,Relieved (after Y) (new),NORA's tier 4 talk
+00000E74_1.wav,P4-T4-055,Organic Nora,"Me neither, honestly.",sad,Quiet (after A) (new),NORA's tier 4 talk
+00000E75_1.wav,P4-T4-056,Organic Nora,...If that's what you really think.,angry,"Cold, disappointed (after X) (new)",NORA's tier 4 talk
+00000E76_1.wav,P4-T4-057,Synth Nora,I'm a person! A person!,angry,"Screaming, shaking (after B, she turns hostile)",NORA's tier 4 talk
+00000E77_1.wav,P4-T5-001,Synth Nora,"Remember that night? The three of us, under the streetlight in the park?",neutral,"Dreamy, flirty",Ambient (tier 5)
+00000E78_1.wav,P4-T5-002,Organic Nora,Which one of us are you asking?,neutral,Teasing,Ambient (tier 5)
+00000E79_1.wav,P4-T5-003,Synth Nora,Both of you.,happy,Laughing,Ambient (tier 5)
+00000E7A_1.wav,P4-T5-004,Organic Nora,You know she put a radroach in my bedroll last night.,angry,Mock outrage (new),Ambient (tier 5)
+00000E7B_1.wav,P4-T5-005,Synth Nora,You put my good boots in the river first.,happy,Laughing (new),Ambient (tier 5)
+00000E7C_1.wav,P4-T5-006,Organic Nora,"You're doing good out here, honey. Really good.",neutral,Proud (new),Ambient (tier 5)
+00000E7D_1.wav,P4-T5-007,Synth Nora,We trust you. Both of us. Don't forget that.,neutral,Warm (new),Ambient (tier 5)
+00000E7E_1.wav,P4-T5-010,Organic Nora,"Hey, honey. Can we talk to you?",neutral,"Nervous, warm",NORA and SYNTH's tier 5 talk
+00000E7F_1.wav,P4-T5-011,Synth Nora,"Please, honey. It's important.",neutral,Nervous,NORA and SYNTH's tier 5 talk
+00000E80_1.wav,P4-T5-016,Organic Nora,"Oh, okay. Just get back to us soon, okay?",neutral,"Disappointed (after ""Not right now"")",NORA and SYNTH's tier 5 talk
+00000E81_1.wav,P4-T5-017,Organic Nora,Thank you.,happy,Relieved (after Y or A),NORA and SYNTH's tier 5 talk
+00000E82_1.wav,P4-T5-018,Synth Nora,"Anything, huh? Hmm. I can think of a few things.",neutral,Flirty (after X),NORA and SYNTH's tier 5 talk
+00000E83_1.wav,P4-T5-019,Organic Nora,Same. That's what we want to talk about.,neutral,Flirty (after X),NORA and SYNTH's tier 5 talk
+00000E84_1.wav,P4-T5-020,Organic Nora,"We wanted to talk to you about, well... us.",neutral,Nervous,NORA and SYNTH's tier 5 talk
+00000E85_1.wav,P4-T5-021,Synth Nora,Yeah. The three of us.,neutral,Nervous,NORA and SYNTH's tier 5 talk
+00000E86_1.wav,P4-T5-022,Organic Nora,"You see, the more we've been traveling, the more... emotions I feel toward both of you.",neutral,Vulnerable,NORA and SYNTH's tier 5 talk
+00000E87_1.wav,P4-T5-023,Synth Nora,I feel the same way.,neutral,Soft,NORA and SYNTH's tier 5 talk
+00000E88_1.wav,P4-T5-024,Organic Nora,"These feelings in my heart for you, my love, have never been stronger. With all we've seen, done, and been a part of.",neutral,"Loving, to Nate",NORA and SYNTH's tier 5 talk
+00000E89_1.wav,P4-T5-025,Organic Nora,"Most others would have given up. You just kept going, and going. You held your head high and never stopped.",neutral,"Loving, proud",NORA and SYNTH's tier 5 talk
+00000E8A_1.wav,P4-T5-040,Organic Nora,"Thanks. But now, there's another thing. Another room in my heart opened. Not just for the two of us, but for three.",neutral,Toward SYNTH,NORA and SYNTH's tier 5 talk
+00000E8B_1.wav,P4-T5-041,Synth Nora,"Same for me. I still love my husband, and that will never, ever change.",neutral,Earnest,NORA and SYNTH's tier 5 talk
+00000E8C_1.wav,P4-T5-042,Synth Nora,"But now I love two people at the same time. I love you too, Nora. And you, my Nate.",happy,"Tearful, happy",NORA and SYNTH's tier 5 talk
+00000E8D_1.wav,P4-T5-043,Organic Nora,"I love you both as well. It's just... these emotions, these feelings. I don't know how to take them all in.",neutral,Overwhelmed,NORA and SYNTH's tier 5 talk
+00000E8E_1.wav,P4-T5-044,Organic Nora,"Can I love... Nora, and you, at the same time?",happy,"Hopeful, scared",NORA and SYNTH's tier 5 talk
+00000E8F_1.wav,P4-T5-054,Synth Nora,"Yes, we have. I know, I'm surprised too. But we didn't fall in love with just us.",neutral,"Shy, honest (after A)",NORA and SYNTH's tier 5 talk
+00000E90_1.wav,P4-T5-055,Organic Nora,We fell in love with the three of us. All of us.,neutral,Warm (after A),NORA and SYNTH's tier 5 talk
+00000E91_1.wav,P4-T5-060,Synth Nora,"Really? Oh, Nate.",happy,Overjoyed (after Y) (new),NORA and SYNTH's tier 5 talk
+00000E92_1.wav,P4-T5-061,Organic Nora,Then it's settled. The three of us. Always.,happy,"Tearful, happy (after Y) (new)",NORA and SYNTH's tier 5 talk
+00000E93_1.wav,P4-T5-062,Organic Nora,"We understand. Really, we do.",sad,Sad but kind (after B) (new),NORA and SYNTH's tier 5 talk
+00000E94_1.wav,P4-T5-063,Synth Nora,We're not going anywhere.,neutral,Gentle (after B) (new),NORA and SYNTH's tier 5 talk
+00000E95_1.wav,P4-T5-064,Organic Nora,"Take your time, honey. We'll be here.",neutral,Gentle (after X) (new),NORA and SYNTH's tier 5 talk
+00000E96_1.wav,P4-T5-070,Organic Nora,Honey... have you thought any more about us? All three of us?,happy,"Hopeful, careful (new)",Asked again (12 game days after B or X)
+00000E97_1.wav,P4-T5-071,Synth Nora,We'd understand if the answer's still no.,sad,Quiet (new),Asked again (12 game days after B or X)
+00000E98_1.wav,P4-FU-001,Synth Nora,I want to have a lot of kids.,neutral,Dreamy,After tier 5: talks about the future
+00000E99_1.wav,P4-FU-002,Organic Nora,Really? How many?,neutral,Curious,After tier 5: talks about the future
+00000E9A_1.wav,P4-FU-003,Synth Nora,Ten. Maybe eight.,neutral,Serious,After tier 5: talks about the future
+00000E9B_1.wav,P4-FU-004,Organic Nora,That many!? Why?,happy,"Shocked, laughing",After tier 5: talks about the future
+00000E9C_1.wav,P4-FU-005,Synth Nora,"The idea of that many little ones in me, and then running around my feet... it fills my heart with joy.",neutral,Glowing,After tier 5: talks about the future
+00000E9D_1.wav,P4-FU-006,Organic Nora,"Dang. I just wanted one, or three more. You have ambition.",happy,Laughing,After tier 5: talks about the future
+00000E9E_1.wav,P4-FU-007,Synth Nora,Thanks.,neutral,Proud,After tier 5: talks about the future
+00000E9F_1.wav,P4-FU-010,Synth Nora,"When this is all over, I want us to settle down somewhere. A real family. The three of us.",happy,Hopeful (new),After tier 5: talks about the future
+00000EA0_1.wav,P4-FU-011,Organic Nora,I'd open a law office. Somebody has to bring some law back to the Commonwealth.,neutral,Determined (new),After tier 5: talks about the future
+00000EA1_1.wav,P4-FU-012,Organic Nora,And I want to take up hunting.,neutral,Playful (new),After tier 5: talks about the future
+00000EA2_1.wav,P4-FU-013,Synth Nora,I don't even know if I can have children. What I am...,neutral,Worried (new),After tier 5: talks about the future
+00000EA3_1.wav,P4-FU-014,Organic Nora,Then we'll figure it out together.,neutral,Reassuring (new),After tier 5: talks about the future
+00000EA4_1.wav,P4-FU-020,Organic Nora,I want to find our baby first. Before I can even think about a family again.,neutral,Determined (Shaun still missing) (new),After tier 5: talks about the future
+00000EA5_1.wav,P4-FU-021,Synth Nora,I understand. We'll find him.,neutral,Gentle (Shaun still missing) (new),After tier 5: talks about the future
+00000EA6_1.wav,P4-FU-030,Organic Nora,"I found my baby boy, and he's an old man running the Institute. I don't know how to think about new kids after that.",neutral,"Conflicted (Shaun found, alive) (new)",After tier 5: talks about the future
+00000EA7_1.wav,P4-FU-031,Synth Nora,I understand. I just hope you'll think about it.,happy,"Hopeful (Shaun found, alive) (new)",After tier 5: talks about the future
+00000EA8_1.wav,P4-FU-040,Organic Nora,I think having kids again will take some time. I'm still healing. But when I'm ready... I'd happily have a few.,neutral,Tender (Shaun dead) (new),After tier 5: talks about the future
+00000EA9_1.wav,P4-FU-041,Synth Nora,Me too. A lot of them.,neutral,Warm (Shaun dead) (new),After tier 5: talks about the future
+00000EAA_1.wav,P4-BR-001,Synth Nora,"Yes, sir.",neutral,"Flat, robotic",The broken phase
+00000EAB_1.wav,P4-BR-002,Synth Nora,"Affirmative, sir.",neutral,"Flat, robotic",The broken phase
+00000EAC_1.wav,P4-BR-003,Synth Nora,Understood.,neutral,Flat (new),The broken phase
+00000EAD_1.wav,P4-BR-004,Synth Nora,As you wish.,neutral,Flat (new),The broken phase
+00000EAE_1.wav,P4-BR-005,Synth Nora,Awaiting instructions.,neutral,Flat (new),The broken phase
+00000EAF_1.wav,P4-BR-006,Organic Nora,What did you do to her?,sad,"Horrified, quiet (once, after the broken phase starts) (new)",The broken phase
+00000EB0_1.wav,P4-RO-001,Synth Nora,"Yes! Yes! I love you too. I know I'm not your original love... or am I? Gosh, this synth thing is so confusing.",happy,"Overjoyed, laughing",Synth Nora's own romance (Synthetic Love's romance)
+00000EB1_1.wav,P4-RO-002,Synth Nora,I will love you no matter what. Let's have the largest family the wasteland has ever seen! I love you so much.,happy,Overjoyed,Synth Nora's own romance (Synthetic Love's romance)
+00000EB2_1.wav,P4-RO-010,Organic Nora,You're doing what? With her? No. No!,sad,"Hurt, angry (tier 3 or lower: NORA Hates) (new)",Synth Nora's own romance (Synthetic Love's romance)
+00000EB3_1.wav,P4-RO-011,Organic Nora,Wait... you're marrying her? Why? I'm right here.,surprise,Confused (tier 4) (new),Synth Nora's own romance (Synthetic Love's romance)
+00000EB4_1.wav,P4-RO-012,Organic Nora,"Oh, I love this. And I'll help with that large family. Count me in.",neutral,Delighted (tier 5: NORA Loves),Synth Nora's own romance (Synthetic Love's romance)

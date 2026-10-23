@@ -1,5 +1,5 @@
 # Nora and Nora: Phase 4 Script
-**Relationship tiers 4 and 5, the broken phase, the duo romance and Eternal Lovers.** Draft 1, 2026-10-23, built from
+**Relationship tiers 4 and 5, the broken phase, the duo romance and Eternal Lovers.** Draft 2, 2026-10-23 (your edits), built from
 `notes/interaction-ideas.md` and `notes/phase4-decisions.md`. Your own wording is kept; lines marked **(new)** in the
 Delivery column are mine, to edit or replace.
 
@@ -101,7 +101,7 @@ good at" or tier 2 "Dumb machine", and not cleared by "I'm sorry" in the tier 3 
 | P4-T4-054 | NORA | Thank you. That's all I wanted to hear. | Relieved (after Y) (new) |
 | P4-T4-055 | NORA | Me neither, honestly. | Quiet (after A) (new) |
 | P4-T4-056 | NORA | ...If that's what you really think. | Cold, disappointed (after X) (new) |
-| P4-T4-057 | SYNTH | I heard that. I heard every word. | Shaking, angry (after B, she turns hostile) (new) |
+| P4-T4-057 | SYNTH | I'm a person! A person! | Screaming, shaking (after B, she turns hostile) |
 
 ---
 
@@ -204,7 +204,7 @@ Ambient conversations between the two, at most one per game day. Which "kids" ta
 | P4-FU-002 | NORA | Really? How many? | Curious |
 | P4-FU-003 | SYNTH | Ten. Maybe eight. | Serious |
 | P4-FU-004 | NORA | That many!? Why? | Shocked, laughing |
-| P4-FU-005 | SYNTH | The idea of that many little ones running around my feet... it fills my heart with joy. | Glowing |
+| P4-FU-005 | SYNTH | The idea of that many little ones in me, and then running around my feet... it fills my heart with joy. | Glowing |
 | P4-FU-006 | NORA | Dang. I just wanted one, or three more. You have ambition. | Laughing |
 | P4-FU-007 | SYNTH | Thanks. | Proud |
 | P4-FU-010 | SYNTH | When this is all over, I want us to settle down somewhere. A real family. The three of us. | Hopeful (new) |
@@ -250,7 +250,7 @@ to her the entire time.
 | P4-RO-011 | NORA | Wait... you're marrying her? Why? I'm right here. | Confused (tier 4) (new) |
 | P4-RO-012 | NORA | Oh, I love this. And I'll help with that large family. Count me in. | Delighted (tier 5: NORA Loves) |
 
-## Open questions
-1. "I need to think about this" in the tier 5 talk: same 12 days as declining, or sooner?
-2. Synth Nora's own romance: Synthetic Love's romance needs finding in its files (which stage or scene); the lines above
-   play when it happens. OK to hook it that way?
+## Decided
+1. "I need to think about this" in the tier 5 talk: asked again after 12 game days, the same as declining.
+2. Synth Nora's own romance: hooked into Synthetic Love's romance wherever it happens in its files; the lines above
+   play then.
