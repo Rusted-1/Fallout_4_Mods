@@ -127,8 +127,19 @@ def quest_script(out):
         d=f.call('self','GetStageDone',st);f.jmpt(d,'end')
     f.call('self','SetStage',88);f.op('assign',PEND,Q_LV)
     f.label('end')
+    f=sc.func('P1Waiting',[],'Bool')                                  # waiting in the vault after Phase 1's "I need time" (stage 200)
+    d=f.call(PH,'GetStageDone',200);f.jmpf(d,'no')
+    for st in (100,300,400,410):
+        d=f.call(PH,'GetStageDone',st);f.jmpt(d,'no')
+    f.ret(True);f.label('no');f.ret(False)
     f=sc.func('Outcome',[('aiCode','Int')])                           # Vault 111 choice re-opened: 81-84 (tier 3 talk), 91-94 (at the vault)
     f.call('self','SetStage','aiCode')
+    w1=f.callself('P1Waiting');f.jmpf(w1,'p2')                         # Phase 1 wait: its own stages do the work (100 also starts tier 1)
+    m1=f.tmp('Int');f.op('imod',m1,'aiCode',10)
+    for k,st in ((1,100),(3,300),(4,400)):
+        c=f.cmp('cmp_eq',m1,k);f.jmpf(c,'p1n%d'%k);f.call(PH,'SetStage',st);f.ret();f.label('p1n%d'%k)
+    f.ret()
+    f.label('p2')
     d=f.call('self','GetStageDone',70);f.jmpt(d,'s');f.call('self','SetStage',70)
     f.label('s')
     m=f.tmp('Int');f.op('imod',m,'aiCode',10)
@@ -287,7 +298,11 @@ def quest_script(out):
     f.label('van');f.call(PH,'SetStage',410)
     f.label('end')
     # --- test tape ---
-    f=sc.func('DebugAdvance',[],'Bool')
+    f=sc.func('DebugTalkNow')
+    ok=f.callself('CanTalk');f.jmpf(ok,'later');r=f.callself('TryTalk');f.jmpf(r,'later')
+    f.callstatic('debug','Notification',S('Test tape: playing the next talk.'));f.ret()
+    f.label('later');f.callstatic('debug','Notification',S('Test tape: next talk queued. It plays when that Nora is close and nobody is fighting or in a scene.'))
+    f=sc.func('DebugAdvanceStep',[],'Bool')
     d=f.call('self','GetStageDone',10);f.jmpt(d,'a1');f.callself('BeginTier1');f.ret(True)
     f.label('a1');d=f.call('self','GetStageDone',20);f.jmpt(d,'a2')
     f.call(GV['GiftCount'],'SetValue',5.0);f.op('assign',PEND,Q_CK);f.ret(True)
@@ -297,6 +312,11 @@ def quest_script(out):
     f.label('a5');d=f.call('self','GetStageDone',60);f.jmpt(d,'a6');f.call('self','CancelTimerGameTime',T_TIER3);f.callself('TierThree');f.ret(True)
     f.label('a6');d=f.call('self','GetStageDone',70);f.jmpt(d,'none');f.op('assign',PEND,Q_S3);f.ret(True)
     f.label('none');f.call(NOTHING,'Show',0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0);f.ret(False)
+    f=sc.func('DebugAdvance',[],'Bool')
+    r=f.callself('DebugAdvanceStep');f.jmpf(r,'end');c=f.cmp('cmp_gt',PEND,0);f.jmpf(c,'started')
+    f.callself('DebugTalkNow');f.ret(True)
+    f.label('started');f.callstatic('debug','Notification',S('Test tape: relationship advanced.'));f.ret(True)
+    f.label('end');f.ret(False)
     f=sc.func('DebugSkipWait')
     w=f.call(GV['Waiting'],'GetValue');c=f.cmp('cmp_gt',w,0.0);f.jmpf(c,'lv')
     v=f.call(IMP,'GetValue');c=f.cmp('cmp_gt',v,0.0);f.jmpf(c,'adv')
@@ -499,13 +519,15 @@ def build_records(own,ns_idx,sl_idx,script_md,voice_csv,p1_script_md,p1_voice_cs
         exch.append(sx)
     # ---------- greetings ----------
     syn_is=cond(GetIsID,SLF(SL_NORA_NPC),0,'==',1.0);nora_is=cond(GetIsID,NSF(NS_NORA_NPC),0,'==',1.0)
+    p1=lambda st,val=1.0: cond(GetStageDone,O(PH1),st,'==',val)
     def greet(lid,conds,scene,phase='Start'):
         L_,V_=(L1,V1) if lid.startswith('P1') else (L,V);ln=L_[lid];iid,emo=V_[lid]
         fid=alloc('greet');copies[fid&0xFFFFFF]=iid&0xFFFFFF
         return D.info(fid,ln['text'],emotion_for(ln['delivery'],emo),conds=conds,start_scene=scene.fid,start_phase=phase)
     gre=[greet('P2-N2-001',nora_is+done(45)+done(50,0.0),sn2b,'Main'),
          greet('P2-S3-001',syn_is+done(65)+done(70,0.0),ss3b,'Main'),
-         greet('P1-S3-001',syn_is+g('Waiting','>',0),srw,'RVWChoice')]
+         greet('P1-S3-001',syn_is+g('Waiting','>',0),srw,'RVWChoice'),
+         greet('P1-S3-001',syn_is+p1(200)+p1(100,0.0)+p1(300,0.0)+p1(400,0.0)+p1(410,0.0),srw,'RVWChoice')]
     D.topic(alloc('topic'),'GREE',gre,edid='NN_P2_Greetings',priority=100.0)
     # ---------- idles ----------
     T=O(TIER);tier=lambda n: cond(GetGlobalValue,T,0,'==',float(n))

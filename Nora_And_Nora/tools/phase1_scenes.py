@@ -15,6 +15,7 @@ COMPANION_FACTION=0x00023C01; STAY_PACKAGE=0x00019AA2
 PH1=0x802
 A_SYNTH,A_NORA,A_VAULT=0,1,2
 SPOUSE_POD=0x0004A012           # Vault 111 cryo pod (objective marker)
+VAULT_CRYO=0x000016D8; GetInCell=67   # the vault scene also starts if synth Nora is in the cryo cell (SL's trigger can be missed)
 TIF='NN_P1S_TIF'
 # affinity events: Synthetic Love's keywords (registered in Followers by SL) and Nora Spouse's (registered at runtime by NS)
 SL_KW={'Likes':0x26CD,'Loves':0x26CE,'Dislikes':0x26CB,'Hates':0x26CC}
@@ -48,9 +49,8 @@ def tif_script(out):
     def met(f,stage):
         q=f.call('self','GetOwningQuest')
         f.call(SLQ,'SetStage',10);f.call(SLQ,'SetStage',20)                    # Synthetic Love's own recruit stages
-        f.call(q,'SetStage',stage);f.call(q,'SetObjectiveDisplayed',10,True,False)   # show "Go to Vault 111 with both Noras"
+        f.call(q,'SetStage',stage)            # Cold Comfort's objective 20 ("Go to Vault 111 with both Noras", cold_comfort.py) is the one shown
         f.callstatic('utility','Wait',2.0)                                    # let her join the companion system first
-        f.call(SLQ,'SetObjectiveDisplayed',20,False,False)                    # hide "...examine the corpse" (after SL's stage 20 fragment has shown it)
         for st,(who,k) in PENDING.items():
             d=f.call(q,'GetStageDone',st);f.jmpf(d,'skip%d'%st);f.callself('React',KW[(who,k)]);f.label('skip%d'%st)
     f=sc.func('Frag_Met',[('akSpeakerRef','objectreference')]);met(f,100)
@@ -202,7 +202,7 @@ def build_records(own,ns_idx,sl_idx,script_md,voice_csv):
     g1=D.info(O(V['P1-S1-001'][0]&0xFFFF),L['P1-S1-001']['text'],emotion_for(L['P1-S1-001']['delivery'],V['P1-S1-001'][1]),
               conds=syn_is+cond(GetStage,(sl_idx<<24)|SL_QUEST,0,'<',10.0)+nora_found+done(100,0.0)+done(110,0.0),start_scene=s1.fid,start_phase='Start')
     g2=D.info(O(V['P1-S2-001'][0]&0xFFFF),L['P1-S2-001']['text'],emotion_for(L['P1-S2-001']['delivery'],V['P1-S2-001'][1]),
-              conds=syn_is+cond(GetStage,(sl_idx<<24)|SL_QUEST,0,'==',30.0)+done(100)+done(150,0.0)+nora_with,
+              conds=syn_is+cond(GetStage,(sl_idx<<24)|SL_QUEST,0,'==',30.0,OR=True)+cond(GetInCell,VAULT_CRYO,0,'==',1.0)+done(100)+done(500,0.0)+nora_with,
               vmad=fr('Frag_AtVault'),start_scene=s2.fid,start_phase='Start')
     D.topic(alloc('topic'),'GREE',[g1,g2],edid='NN_P1_Greetings',priority=100.0)
     # ---------- Idle chatter on the road to the vault ----------

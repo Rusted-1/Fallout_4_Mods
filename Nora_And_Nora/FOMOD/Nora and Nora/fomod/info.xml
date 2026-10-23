@@ -2,7 +2,7 @@
 <fomod>
   <Name>Nora and Nora</Name>
   <Author>Rusted-1</Author>
-  <Version>0.6.2</Version>
+  <Version>0.6.3</Version>
   <Description>Compatibility patch and unique interactions between Nora Spouse Companion and Synthetic Love. Works with every Synthetic Love version.</Description>
   <Groups><element>Companions</element><element>Patches</element></Groups>
 </fomod>

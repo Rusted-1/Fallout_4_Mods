@@ -166,6 +166,8 @@ def build(sl,ns,eff,outdir,ucf):
     msgs,nq=names.records(own,2);qrecs.append(nq)
     import affinity_setup
     qrecs.append(affinity_setup.record_(own,2))
+    import cold_comfort
+    qrecs.append(cold_comfort.record_(sl,2))
     globs=[kglob]+pglobs;flsts=[];p2count=0
     if P2_SCRIPT_MD:
         import phase2
@@ -174,7 +176,7 @@ def build(sl,ns,eff,outdir,ucf):
         global P2_INFO;P2_INFO=r['info'];print('  phase 2:',{k:v for k,v in r['info'].items() if k!='copies'},'voice copies',len(r['info']['copies']))
     body=grup('GLOB',b''.join(globs))+(grup('FLST',b''.join(flsts)) if flsts else b'')+grup('MESG',b''.join(msgs))+grup('QUST',b''.join(qrecs))+grup('BOOK',b''.join(books))
     recs=globs+flsts+msgs+qrecs+books+[b'']*max(nscene-1,0)+[b'']*max(p2count-1,0)
-    desc='Nora & Nora 0.6.2 - Nora Spouse + Synthetic Love patch'+(' + UCF' if ucf else '')
+    desc='Nora & Nora 0.6.3 - Nora Spouse + Synthetic Love patch'+(' + UCF' if ucf else '')
     os.makedirs(outdir,exist_ok=True)
     p=os.path.join(outdir,PLUGIN)
     open(p,'wb').write(tes4(masters,len(recs),desc,next_id=0xE00)+body)

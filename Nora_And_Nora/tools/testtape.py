@@ -7,10 +7,10 @@ import sys,os,struct
 sys.path.insert(0,os.path.dirname(os.path.abspath(__file__)))
 from build import sub,record,grup,zs,vm_obj,book,tes4
 from scenes_lib import ws
-from pexasm import Script
+from pexasm import Script,S
 import pexw,phase2
 MAIN=1                                            # NoraAndNora.esp master index
-TAPE,MENU,TIERMENU,STATUS,GIVER=0x800,0x801,0x802,0x803,0x804
+TAPE,MENU,TIERMENU,STATUS,GIVER,GIVER2=0x800,0x801,0x802,0x803,0x804,0x805
 TAPE_TEXT=("NORA AND NORA - TEST TAPE\r\n\r\nFor testing the mod. Close the Pip-Boy after reading this and the menu opens.\r\n\r\n"
            "Status: current tier, gifts, answers and when the next event is due.\r\nAdvance to next tier: plays the next relationship talk now.\r\n"
            "Set tier: jumps to a tier, skipping the talks.\r\nSkip current wait: ends the current timer (patience, battle site, or the next tier).\r\n"
@@ -47,12 +47,20 @@ def scripts(outdir):
     f.label('reset');f.call(P2,'DebugReset')
     f=sc.func('OnRead');f.callself('Menu')
     pexw.write(sc.module(),os.path.join(outdir,'NN_TestTapeScript.pex'))
-    g=Script('NN_TestTapeGiverScript','Quest','Nora and Nora: puts the test tape in your inventory once.')
+    # v0.6.3: a new giver quest (GIVER2). The first one (GIVER, flagged Run Once, OnQuestInit) did not hand the note over
+    # on an existing save and could not be restarted. This one gives it 5 s after the game is running, and again on
+    # each load if it is missing.
+    g=Script('NN_TestTapeGiver2Script','Quest','Nora and Nora: puts the test tape in your inventory (again on load if it is missing).')
     T=g.prop('Tape','book')
-    f=g.func('OnQuestInit')
+    f=g.func('Give')
     pl=f.callstatic('game','GetPlayer');k=f.call(pl,'GetItemCount',T);c=f.cmp('cmp_gt',k,0);f.jmpt(c,'end')
     f.call(pl,'AddItem',T,1,False);f.label('end')
-    pexw.write(g.module(),os.path.join(outdir,'NN_TestTapeGiverScript.pex'))
+    f=g.func('OnInit')
+    pl=f.callstatic('game','GetPlayer');so=f.cast(pl,'ScriptObject');f.call('self','RegisterForRemoteEvent',so,S('OnPlayerLoadGame'))
+    f.call('self','StartTimer',5.0,1)
+    f=g.func('::remote_Actor_OnPlayerLoadGame',[('akSender','actor')]);f.call('self','StartTimer',5.0,1)
+    f=g.func('OnTimer',[('aiTimerID','Int')]);f.callself('Give')
+    pexw.write(g.module(),os.path.join(outdir,'NN_TestTapeGiver2Script.pex'))
 def build(ns_path,outdir):
     os.makedirs(os.path.join(outdir,'Scripts'),exist_ok=True);scripts(os.path.join(outdir,'Scripts'))
     O=lambda i:(2<<24)|i;M_=lambda i:(MAIN<<24)|i
@@ -65,12 +73,14 @@ def build(ns_path,outdir):
           msgbox(O(TIERMENU),'NN_TestTapeTierMenu','Set tier','Jump straight to a tier (the talks before it are skipped).',
                  ['Tier 1','Tier 2','Tier 3','Tier 4','Tier 5','Back']),
           msgbox(O(STATUS),'NN_TestTapeStatus','Two Noras: status',STATUS_TEXT,['OK'])]
-    gvm=struct.pack('<hhH',6,2,1)+ws('NN_TestTapeGiverScript')+struct.pack('<BH',0,1)+ws('Tape')+vm_obj(O(TAPE))
-    giver=record('QUST',O(GIVER),0,sub('EDID',zs('NN_TestTapeGiver'))+sub('VMAD',gvm)+sub('DNAM',bytes.fromhex('110100000000000000000000'))
+    giver=record('QUST',O(GIVER),0,sub('EDID',zs('NN_TestTapeGiver'))+sub('DNAM',bytes(12))     # retired: no script, not started
                  +sub('NEXT',b'')+sub('ANAM',struct.pack('<I',0)))
-    body=grup('MESG',b''.join(msgs))+grup('QUST',giver)+grup('BOOK',tape)
+    gvm=struct.pack('<hhH',6,2,1)+ws('NN_TestTapeGiver2Script')+struct.pack('<BH',0,1)+ws('Tape')+vm_obj(O(TAPE))
+    giver2=record('QUST',O(GIVER2),0,sub('EDID',zs('NN_TestTapeGiver2'))+sub('VMAD',gvm)+sub('DNAM',bytes.fromhex('110000000000000000000000'))
+                 +sub('NEXT',b'')+sub('ANAM',struct.pack('<I',0)))
+    body=grup('MESG',b''.join(msgs))+grup('QUST',giver+giver2)+grup('BOOK',tape)
     p=os.path.join(outdir,'NoraAndNora - Test Tape.esp')
-    open(p,'wb').write(tes4(['Fallout4.esm','NoraAndNora.esp'],5,'Nora & Nora option: test tape (testing menu)',next_id=0x805)+body)
+    open(p,'wb').write(tes4(['Fallout4.esm','NoraAndNora.esp'],6,'Nora & Nora option: test tape (testing menu)',next_id=0x806)+body)
     return p
 if __name__=='__main__':
     print(build(sys.argv[1],sys.argv[2]))
