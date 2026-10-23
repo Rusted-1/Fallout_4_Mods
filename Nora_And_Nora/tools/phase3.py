@@ -37,13 +37,14 @@ M={'SP001':(10,'Dislikes',['P3-SP-001'],None,False),'SP010':(20,'Hates',['P3-SP-
    'SH':(100,None,['P3-SH-001','P3-SH-002','P3-SH-003','P3-SH-004'],None,True),
    'FC001':(200,'Likes',['P3-FC-001'],None,False),'FC002':(210,'Loves',['P3-FC-002','P3-FC-003'],'INSTD',False),
    'FC010':(220,'Loves',['P3-FC-010'],None,False),'FC011':(230,'Loves',['P3-FC-011','P3-FC-012'],'INSTD',False),
-   'FC020':(240,'Dislikes',['P3-FC-020','P3-FC-021'],None,False),'FC022':(250,'Dislikes',['P3-FC-022','P3-FC-023'],'INSTD',False),
+   'FC020':(240,'Dislikes',['P3-FC-020','P3-FC-021'],None,False),'FC022':(250,'Dislikes',['P3-FC-022','P3-FC-023'],None,False),
    'FC030':(260,'Likes',['P3-FC-030','P3-FC-031'],None,False),'FC040':(270,'Likes',['P3-FC-040','P3-FC-041'],None,False),
    'INSTD':(280,None,['P3-FC-050','P3-FC-051'],None,False),
    'HU001':(300,'Loves',['P3-HU-001'],None,False),'HU002':(310,'Hates',['P3-HU-002'],None,False),
    'HU010':(320,'Loves',['P3-HU-010'],None,False),'HU011':(330,'Hates',['P3-HU-011'],None,False),
    'HU020':(340,'Dislikes',['P3-HU-020'],None,False)}
 TIER3_ONLY={'P3-FC-023'}
+BEFORE={'FC022':'INSTD'}   # Brotherhood ending: "better without them" first, then "at what cost?"
 BUMPS=[('BunkerHill',1,'SP001'),('MQ105',1,'SP010'),('MQ201',1,'SP011'),('MQ201',5,'SP011'),('RR101',1,'SP020'),('RR102',8,'SP021')]
 STAGES=[('MQ207',150,'SH'),('MQ207',180,'SH'),('MinRecruit00',50,'FC001'),('MQ302Min',1900,'FC002'),('RR102',800,'FC010'),
         ('MQ302RR',900,'FC011'),('BoS101',555,'FC020'),('MQ302BoS',900,'FC022'),('Inst308',200,'FC030'),
@@ -80,6 +81,7 @@ def quest_script(out,script_md):
         if wait: f.op('assign',PENDING,True);f.call('self','StartTimerGameTime',0.1,T_SHAUN)
         f.ret()
         f.label('go');f.call('self','SetStage',st)
+        if name in BEFORE: f.callself('M_'+BEFORE[name])
         if react: f.callself('React',KW[react]);f.callstatic('utility','Wait',1.5)
         for i,lid in enumerate(lids):
             who=SYN if L[lid]['speaker']=='SYNTH' else NOR

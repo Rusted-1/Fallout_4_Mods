@@ -81,7 +81,7 @@ of the Institute while Shaun runs it. Plays once, after meeting Father.
 | P3-FC-031 | NORA | For both of us. | Quiet |
 | P3-FC-040 | SYNTH | There were good people up there. I still feel safer. | Conflicted (Brotherhood destroyed, Synth Likes) |
 | P3-FC-041 | NORA | A lot of good people. | Sad |
-| P3-FC-050 | SYNTH | The Commonwealth will be better without them. | Relieved (Institute destroyed, Synth Loves) |
+| P3-FC-050 | SYNTH | The Commonwealth will be better without them. | Relieved (Institute destroyed; plays after the Minutemen and Railroad endings, before the Brotherhood ending's line) |
 | P3-FC-051 | NORA | It will. | Agreeing |
 
 ## 4. Synth-hunting moments
