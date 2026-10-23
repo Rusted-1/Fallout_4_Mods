@@ -1,0 +1,33 @@
+﻿File name,Line ID,Speaker,Text,Emotion,Delivery,Scene
+00000E10_1.wav,P3-SP-001,Synth Nora,Weapons. Is that what you think I am?,sad,"Hurt, quiet",1. Synths as people (vanilla quests)
+00000E11_1.wav,P3-SP-010,Synth Nora,"He's helped every person in this city, and that's what you lead with?",angry,Angry,1. Synths as people (vanilla quests)
+00000E12_1.wav,P3-SP-011,Synth Nora,He's trying to help us. Stop it.,angry,"Cold, sharp",1. Synths as people (vanilla quests)
+00000E13_1.wav,P3-SP-020,Synth Nora,Thank you.,neutral,"Moved, soft",1. Synths as people (vanilla quests)
+00000E14_1.wav,P3-SP-021,Synth Nora,Somebody had to say it out loud. Thank you.,neutral,Warm,1. Synths as people (vanilla quests)
+00000E15_1.wav,P3-SP-030,Synth Nora,Get them out. All of them. Even the ones who'd never do the same for me.,fear,Urgent,1. Synths as people (vanilla quests)
+00000E16_1.wav,P3-SP-031,Synth Nora,There were synths down there who never chose any of this.,fear,Shaken,1. Synths as people (vanilla quests)
+00000E17_1.wav,P3-SH-001,Synth Nora,He made me. He picked which memories I'd get. He picked you.,neutral,Numb,2. Shaun (Institutionalized)
+00000E18_1.wav,P3-SH-002,Synth Nora,And I still want to hold him. How is that fair?,neutral,Breaking,2. Shaun (Institutionalized)
+00000E19_1.wav,P3-SH-003,Organic Nora,Because he's yours too. Whatever that means now.,neutral,Gentle,2. Shaun (Institutionalized)
+00000E1A_1.wav,P3-SH-004,Synth Nora,I'm not setting foot in that place again unless I have to. Not while he's in charge.,neutral,Resolved,2. Shaun (Institutionalized)
+00000E1B_1.wav,P3-FC-001,Synth Nora,People helping people. I can get behind that.,neutral,"Warm (join the Minutemen, Synth Likes)",3. Faction choices
+00000E1C_1.wav,P3-FC-002,Synth Nora,This was the right choice. Out of all of them.,happy,"Relieved (Minutemen ending, Synth Loves)",3. Faction choices
+00000E1D_1.wav,P3-FC-003,Organic Nora,It really was.,neutral,Agreeing,3. Faction choices
+00000E1E_1.wav,P3-FC-010,Synth Nora,They don't even ask what I am. They just ask if I'm safe.,neutral,"Moved (join the Railroad, Synth Loves)",3. Faction choices
+00000E1F_1.wav,P3-FC-011,Synth Nora,Synths like me get to choose now. Rights. Freedom. Imagine that.,happy,"Hopeful (Railroad ending, Synth Loves)",3. Faction choices
+00000E20_1.wav,P3-FC-012,Organic Nora,She's right. They're good people.,neutral,Agreeing,3. Faction choices
+00000E21_1.wav,P3-FC-020,Synth Nora,"They'd shoot me on sight if they knew. You know that, right?",neutral,"Worried (join the Brotherhood, Synth Dislikes)",3. Faction choices
+00000E22_1.wav,P3-FC-021,Organic Nora,They're our best chance at finding Shaun.,neutral,Firm,3. Faction choices
+00000E23_1.wav,P3-FC-022,Synth Nora,A steel hand. Sure. But at what cost?,angry,"Bitter (Brotherhood ending, Synth Dislikes)",3. Faction choices
+00000E24_1.wav,P3-FC-023,Organic Nora,Nobody's touching you. Not while I'm here.,neutral,Protective (tier 3 or higher only),3. Faction choices
+00000E25_1.wav,P3-FC-030,Synth Nora,"Better you than him. It still hurts, though.",sad,"Sad (Institute ending, Synth Likes)",3. Faction choices
+00000E26_1.wav,P3-FC-031,Organic Nora,For both of us.,sad,Quiet,3. Faction choices
+00000E27_1.wav,P3-FC-040,Synth Nora,There were good people up there. I still feel safer.,neutral,"Conflicted (Brotherhood destroyed, Synth Likes)",3. Faction choices
+00000E28_1.wav,P3-FC-041,Organic Nora,A lot of good people.,sad,Sad,3. Faction choices
+00000E29_1.wav,P3-FC-050,Synth Nora,The Commonwealth will be better without them.,happy,"Relieved (Institute destroyed, Synth Loves)",3. Faction choices
+00000E2A_1.wav,P3-FC-051,Organic Nora,It will.,neutral,Agreeing,3. Faction choices
+00000E2B_1.wav,P3-HU-001,Synth Nora,He didn't know either. Thank you for not making him pay for it.,neutral,"Grateful (Blind Betrayal: spare Danse, Synth Loves)",4. Synth-hunting moments
+00000E2C_1.wav,P3-HU-002,Synth Nora,He served them his whole life. This is how they repay him.,angry,"Bitter (Blind Betrayal: execute Danse, Synth Hates)",4. Synth-hunting moments
+00000E2D_1.wav,P3-HU-010,Synth Nora,"Good job, sweetie.",neutral,"Proud, warm (Human Error: free Amelia Stockton, Synth Loves)",4. Synth-hunting moments
+00000E2E_1.wav,P3-HU-011,Synth Nora,You let them keep her. You let them keep testing.,angry,"Cold (Human Error: side with Dr. Chambers, Synth Hates)",4. Synth-hunting moments
+00000E2F_1.wav,P3-HU-020,Synth Nora,He ran. I'd have run too.,sad,"Sad (Synth Retention: return the escaped synth, Synth Dislikes)",4. Synth-hunting moments
