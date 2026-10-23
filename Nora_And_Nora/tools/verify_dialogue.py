@@ -20,7 +20,7 @@ def check(plugin,scripts_dir,voice_csv):
             tifc=struct.unpack('<I',dict(s)['TIFC'])[0]
             if tifc!=len(dial_infos[f]): probs.append('DIAL %08X TIFC %d but %d infos'%(f,tifc,len(dial_infos[f])))
     QST={f:{struct.unpack_from('<H',x)[0] for k,x in s if k=='INDX'} for f,(t,s) in by.items()
-         if t=='QUST' and z(dict(s).get('EDID',b'')) in ('NN_P1Scenes','NN_Phase2')}
+         if t=='QUST' and z(dict(s).get('EDID',b'')) in ('NN_P1Scenes','NN_Phase2','NN_Phase4')}
     qstages=set().union(*QST.values())
     TIFS={}
     for fn_ in os.listdir(scripts_dir):
@@ -63,7 +63,8 @@ def check(plugin,scripts_dir,voice_csv):
                 if bad: probs.append('INFO %08X condition on missing stage %d'%(f,st))
         if 'TSCE' in d:
             sc=struct.unpack('<I',d['TSCE'])[0];ph=z(d['NAM0'])
-            if sc not in scenes: probs.append('INFO %08X starts missing scene'%f)
+            if sc>>24!=own: pass                      # another plugin's scene (checked by verify_refs)
+            elif sc not in scenes: probs.append('INFO %08X starts missing scene'%f)
             elif ph not in scenes[sc]: probs.append('INFO %08X starts at unknown phase %r'%(f,ph))
         if 'VMAD' in d:
             v=d['VMAD'];i=6+2;n=struct.unpack_from('<H',v,i)[0];name=v[i+2:i+2+n].decode();i+=2+n

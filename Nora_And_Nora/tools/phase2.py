@@ -39,7 +39,7 @@ A_SYNTH,A_NORA=0,1
 TIF='NN_P2S_TIF'; QS='NN_Phase2Script'
 LEAVE_TEXT="Don't look for me.\r\n\r\nI know what I am to you. I'm going to go be something to somebody else.\r\n\r\nKeep her safe."
 RETURNED_TEXT='Synth Nora has gone back to Vault 111.'
-NOTHING_TEXT='Nothing more to advance yet. Tiers 4 and 5 come in a later phase.'
+NOTHING_TEXT='Nothing more to advance right now.'
 
 # timer IDs (game time unless noted)
 T_GIFT,T_NGIFT,T_N1,T_TIER2,T_TIER3,T_EXCH,T_POLL,T_LEAVE,T_PATIENCE,T_VANISH=1,2,3,4,5,6,7,8,9,10
@@ -311,7 +311,7 @@ def quest_script(out):
     f.label('a4');d=f.call('self','GetStageDone',50);f.jmpt(d,'a5');f.op('assign',PEND,Q_N2);f.ret(True)
     f.label('a5');d=f.call('self','GetStageDone',60);f.jmpt(d,'a6');f.call('self','CancelTimerGameTime',T_TIER3);f.callself('TierThree');f.ret(True)
     f.label('a6');d=f.call('self','GetStageDone',70);f.jmpt(d,'none');f.op('assign',PEND,Q_S3);f.ret(True)
-    f.label('none');f.call(NOTHING,'Show',0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0);f.ret(False)
+    f.label('none');f.ret(False)                                   # tiers 4-5: NN_Phase4Script.DebugAdvance takes over
     f=sc.func('DebugAdvance',[],'Bool')
     r=f.callself('DebugAdvanceStep');f.jmpf(r,'end');c=f.cmp('cmp_gt',PEND,0);f.jmpf(c,'started')
     f.callself('DebugTalkNow');f.ret(True)
@@ -537,8 +537,9 @@ def build_records(own,ns_idx,sl_idx,script_md,voice_csv,p1_script_md,p1_voice_cs
     D.topic(alloc('topic'),'IDLE',idles,edid='NN_P2_Idles')
     # ---------- combat aid barks (Say) ----------
     aid={}
-    for k,lids,who in [('TopicAidSynth',('P2-CB-001','P2-CB-002'),syn_is),('TopicAidNora',('P2-CB-010','P2-CB-011'),nora_is),
-                       ('TopicThanksSynth',('P2-CB-020',),syn_is),('TopicThanksNora',('P2-CB-021',),nora_is)]:
+    syn_ok=syn_is+cond(GetGlobalValue,O(0xEB8),0,'==',0.0)          # NN_P4Broken: no comments in the broken phase
+    for k,lids,who in [('TopicAidSynth',('P2-CB-001','P2-CB-002'),syn_ok),('TopicAidNora',('P2-CB-010','P2-CB-011'),nora_is),
+                       ('TopicThanksSynth',('P2-CB-020',),syn_ok),('TopicThanksNora',('P2-CB-021',),nora_is)]:
         aid[k]=D.topic(alloc('topic'),'SCEN',[line_info(l,conds=who,flags=0x0002) for l in lids],edid='NN_P2_'+k[5:])
     D.scenes=[s.build() for s in scenes]
     # ---------- quest NN_Phase2 ----------

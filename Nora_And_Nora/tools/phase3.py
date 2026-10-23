@@ -22,7 +22,7 @@ P3Q=0xE02; TOPIC_FIRST=0xE30; NEXT_FREE=0xE60
 QS='NN_Phase3Script'
 SL_NORA_REF=0x000FB3; SL_NORA_NPC=0x000F99; NS_NORA_REF=0x001735; NS_NORA_NPC=0x000F9A
 SL_KW={'Likes':0x26CD,'Loves':0x26CE,'Dislikes':0x26CB,'Hates':0x26CC}
-CURRENT_COMPANION=0x00023C01; TIER=0x804; HURT=0xB08
+CURRENT_COMPANION=0x00023C01; TIER=0x804; HURT=0xB08; BROKEN=0xEB8   # NN_P4Broken (Phase 4)
 CAEQ=0x001C5099
 EVAC,NOEVAC=0x0019B647,0x0019B648
 Q={'BunkerHill':0x00019955,'MQ105':0x000229E6,'MQ201':0x000229E8,'RR101':0x000459D2,'RR102':0x0006FA37,
@@ -58,7 +58,7 @@ def quest_script(out,script_md):
     L=load_lines(script_md);dur=json.load(open(os.path.join(HERE,'phase3_durations.json')))
     sc=Script(QS,'Quest','Nora and Nora: Phase 3, synth Nora on synth-related moments.')
     SYN=sc.prop('SynthNoraRef','objectreference');NOR=sc.prop('NoraRef','objectreference');FAC=sc.prop('CompanionFaction','faction')
-    TIERG=sc.prop('Tier','globalvariable');CA=sc.prop('CompanionAffinity','companionaffinityeventquestscript')
+    TIERG=sc.prop('Tier','globalvariable');BRK=sc.prop('Broken','globalvariable');CA=sc.prop('CompanionAffinity','companionaffinityeventquestscript')
     KW={k:sc.prop('Synth'+k,'keyword') for k in SL_KW};EV=sc.prop('EvacuateKW','keyword');NEV=sc.prop('DoNotEvacuateKW','keyword')
     QP={k:sc.prop('Q_'+k,'quest') for k in Q}
     TP={lid:sc.prop('T_'+lid.replace('-','_'),'topic') for m in M.values() for lid in m[2]}
@@ -77,7 +77,8 @@ def quest_script(out,script_md):
         st,react,lids,then,wait=M[name]
         f=sc.func('M_'+name)
         d=f.call('self','GetStageDone',st);f.jmpt(d,'end')
-        r=f.callself('Ready',SYN);f.jmpt(r,'go')
+        b=f.call(BRK,'GetValue');c=f.cmp('cmp_gt',b,0.0);f.jmpf(c,'ok');f.call('self','SetStage',st);f.ret()   # broken phase: no reactions
+        f.label('ok');r=f.callself('Ready',SYN);f.jmpt(r,'go')
         if wait: f.op('assign',PENDING,True);f.call('self','StartTimerGameTime',0.1,T_SHAUN)
         f.ret()
         f.label('go');f.call('self','SetStage',st)
@@ -129,7 +130,7 @@ def build_records(own,ns_idx,sl_idx,script_md,voice_csv):
             tid=O(nxt[0]);nxt[0]+=1;assert nxt[0]<=NEXT_FREE
             topics[lid]=D.topic(tid,'SCEN',[info],edid='NN_P3_'+lid.replace('-','_'))
     props=[('SynthNoraRef',vm_obj((sl_idx<<24)|SL_NORA_REF)),('NoraRef',vm_obj((ns_idx<<24)|NS_NORA_REF)),('CompanionFaction',vm_obj(CURRENT_COMPANION)),
-           ('Tier',vm_obj(O(TIER))),('CompanionAffinity',vm_obj(CAEQ)),('EvacuateKW',vm_obj(EVAC)),('DoNotEvacuateKW',vm_obj(NOEVAC))]
+           ('Tier',vm_obj(O(TIER))),('Broken',vm_obj(O(BROKEN))),('CompanionAffinity',vm_obj(CAEQ)),('EvacuateKW',vm_obj(EVAC)),('DoNotEvacuateKW',vm_obj(NOEVAC))]
     props+=[('Synth'+k,vm_obj((sl_idx<<24)|v)) for k,v in SL_KW.items()]+[('Q_'+k,vm_obj(v)) for k,v in Q.items()]
     props+=[('T_'+lid.replace('-','_'),vm_obj(t)) for lid,t in topics.items()]
     vm=struct.pack('<hhH',6,2,1)+ws(QS)+struct.pack('<BH',0,len(props))+b''.join(ws(n)+v for n,v in props)

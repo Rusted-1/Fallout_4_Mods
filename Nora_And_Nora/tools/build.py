@@ -152,6 +152,7 @@ def build_impatient(outdir):
 SCRIPT_MD=None;VOICE_CSV=None          # set by __main__ (phase 1 dialogue source files)
 P2_SCRIPT_MD=None;P2_VOICE_CSV=None;P2_INFO=None
 P3_SCRIPT_MD=None;P3_VOICE_CSV=None
+P4_SCRIPT_MD=None;P4_VOICE_CSV=None;P4_INFO=None
 def build(sl,ns,eff,outdir,ucf):
     masters=['Fallout4.esm','NoraSpouse.esm','p865_SyntheticLove.esp']+(['EFF.esp'] if ucf else [])
     own=len(masters);kglob,gate=kellogg_records(own,2)
@@ -181,16 +182,24 @@ def build(sl,ns,eff,outdir,ucf):
     if P3_SCRIPT_MD:
         import phase3
         blob3,p3count,info3=phase3.build_records(own,1,2,P3_SCRIPT_MD,P3_VOICE_CSV);qrecs.append(blob3);print('  phase 3:',info3)
+    p4count=0;spells=[];perks=[];next_id=0xE60
+    if P4_SCRIPT_MD:
+        import phase4
+        r4=phase4.build_records(own,1,2,P4_SCRIPT_MD,P4_VOICE_CSV)
+        qrecs.append(r4['quest']);globs+=r4['globs'];spells=r4['spells'];perks=r4['perks'];msgs+=r4['msgs'];p4count=r4['qcount']
+        global P4_INFO;P4_INFO=r4['info'];next_id=r4['info']['next_id']
+        print('  phase 4:',{k:v for k,v in r4['info'].items() if k!='copies'},'voice copies',len(r4['info']['copies']))
     # SEQ file: start-game-enabled quests that have dialogue (without it their dialogue is missing on a new game)
-    seq=[(own<<24)|q for q in (0x808,0xB03,0xE02 if P3_SCRIPT_MD else None) if q]
+    seq=[(own<<24)|q for q in (0x808,0xB03,0xE02 if P3_SCRIPT_MD else None,0xEB5 if P4_SCRIPT_MD else None) if q]
     os.makedirs(os.path.join(outdir,'SEQ'),exist_ok=True)
     open(os.path.join(outdir,'SEQ',PLUGIN[:-4]+'.seq'),'wb').write(b''.join(struct.pack('<I',x) for x in seq))
-    body=grup('GLOB',b''.join(globs))+(grup('FLST',b''.join(flsts)) if flsts else b'')+grup('MESG',b''.join(msgs))+grup('QUST',b''.join(qrecs))+grup('BOOK',b''.join(books))
-    recs=globs+flsts+msgs+qrecs+books+[b'']*max(nscene-1,0)+[b'']*max(p2count-1,0)+[b'']*max(p3count-1,0)
-    desc='Nora & Nora 0.7.0 - Nora Spouse + Synthetic Love patch'+(' + UCF' if ucf else '')
+    body=grup('GLOB',b''.join(globs))+(grup('SPEL',b''.join(spells)) if spells else b'')+(grup('FLST',b''.join(flsts)) if flsts else b'')
+    body+=(grup('PERK',b''.join(perks)) if perks else b'')+grup('MESG',b''.join(msgs))+grup('QUST',b''.join(qrecs))+grup('BOOK',b''.join(books))
+    recs=globs+spells+flsts+perks+msgs+qrecs+books+[b'']*max(nscene-1,0)+[b'']*max(p2count-1,0)+[b'']*max(p3count-1,0)+[b'']*max(p4count-1,0)
+    desc='Nora & Nora 0.8.0 - Nora Spouse + Synthetic Love patch'+(' + UCF' if ucf else '')
     os.makedirs(outdir,exist_ok=True)
     p=os.path.join(outdir,PLUGIN)
-    open(p,'wb').write(tes4(masters,len(recs),desc,next_id=0xE00)+body)
+    open(p,'wb').write(tes4(masters,len(recs),desc,next_id=next_id)+body)
     return p
 
 if __name__=='__main__':
@@ -198,6 +207,7 @@ if __name__=='__main__':
     if len(sys.argv)>6: SCRIPT_MD,VOICE_CSV=sys.argv[5:7]
     if len(sys.argv)>8: P2_SCRIPT_MD,P2_VOICE_CSV=sys.argv[7:9]
     if len(sys.argv)>10: P3_SCRIPT_MD,P3_VOICE_CSV=sys.argv[9:11]
+    if len(sys.argv)>12: P4_SCRIPT_MD,P4_VOICE_CSV=sys.argv[11:13]
     print(build(sl,ns,eff,os.path.join(out,'UCF'),True))
     print(build(sl,ns,eff,os.path.join(out,'NoUCF'),False))
     print(build_impatient(os.path.join(out,'Impatient')))

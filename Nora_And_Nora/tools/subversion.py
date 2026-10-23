@@ -20,7 +20,7 @@ QUEST=0x81B; TOPIC_FIRST=0x820; NATE_FIRST=0x850; SCENE_ID=0x860; NEXT_ID=0x861
 QS='NN_SubversionScript'; TIF='NN_SV_TIF'
 SL_NORA_REF=0x000FB3; SL_NORA_NPC=0x000F99; NS_NORA_REF=0x001735; NS_NORA_NPC=0x000F9A
 SL_KW={'Likes':0x26CD,'Loves':0x26CE,'Dislikes':0x26CB,'Hates':0x26CC}
-CURRENT_COMPANION=0x00023C01; TIER=0x804; P2Q=0xB03
+CURRENT_COMPANION=0x00023C01; TIER=0x804; P2Q=0xB03; BROKEN=0xEB8   # NN_P4Broken in NoraAndNora.esp
 SQ={'ReformQuest':0x004C6A,'March':0x006B8B,'Director':0x00B896,'Piper':0x00C10C,'Hope':0x00D9DB,'NextLevel':0x00D6A7,
     'SAllGoodMan':0x00D06B,'InstantKarma':0x00D9C9}
 # name: (own stage, reaction, line IDs); pending marker = stage+1
@@ -40,7 +40,7 @@ def quest_script(out,L):
     dur=json.load(open(os.path.join(HERE,'phase3_durations.json')))
     sc=Script(QS,'Quest','Nora and Nora: both Noras react to Subversion.')
     SYN=sc.prop('SynthNoraRef','objectreference');NOR=sc.prop('NoraRef','objectreference');FAC=sc.prop('CompanionFaction','faction')
-    TIERG=sc.prop('Tier','globalvariable');AMIS=sc.prop('SceneAmI','scene')
+    TIERG=sc.prop('Tier','globalvariable');BRK=sc.prop('Broken','globalvariable');AMIS=sc.prop('SceneAmI','scene')
     KW={k:sc.prop('Synth'+k,'keyword') for k in SL_KW};QP={k:sc.prop('Q_'+k,'quest') for k in SQ}
     TP={lid:sc.prop('T_'+lid.replace('-','_'),'topic') for m in M.values() for lid in m[2]}
     f=sc.func('Ready',[('akRef','objectreference')],'Bool')
@@ -61,13 +61,15 @@ def quest_script(out,L):
     f.call('self','SetStage','aiPendingStage');f.call('self','StartTimerGameTime',0.1,T_POLL)
     f=sc.func('M_AMI')
     d=f.call('self','GetStageDone',AMI);f.jmpt(d,'end')
-    ok=f.callself('CanPlay');f.jmpt(ok,'go');f.callself('Defer',AMI+1);f.ret()
+    b=f.call(BRK,'GetValue');c=f.cmp('cmp_gt',b,0.0);f.jmpf(c,'ok');f.call('self','SetStage',AMI);f.ret()
+    f.label('ok');ok=f.callself('CanPlay');f.jmpt(ok,'go');f.callself('Defer',AMI+1);f.ret()
     f.label('go');f.call('self','SetStage',AMI);f.call(AMIS,'Start')
     f.label('end')
     for name,(st,react,lids) in M.items():
         f=sc.func('M_'+name)
         d=f.call('self','GetStageDone',st);f.jmpt(d,'end')
-        ok=f.callself('CanPlay');f.jmpt(ok,'go');f.callself('Defer',st+1);f.ret()
+        b=f.call(BRK,'GetValue');c=f.cmp('cmp_gt',b,0.0);f.jmpf(c,'ok');f.call('self','SetStage',st);f.ret()   # broken phase: no reactions
+        f.label('ok');ok=f.callself('CanPlay');f.jmpt(ok,'go');f.callself('Defer',st+1);f.ret()
         f.label('go');f.call('self','SetStage',st)
         f.callself('React',KW[react]);f.callstatic('utility','Wait',1.5)
         for i,lid in enumerate(lids):
@@ -135,7 +137,7 @@ def build(outdir,script_md,voice_csv):
     for a in (A_SYNTH,A_NORA): s.package(a,0x00019AA2,0,len(s.phases)-1)
     D.scenes=[s.build()]
     props=[('SynthNoraRef',vm_obj(SLF(SL_NORA_REF))),('NoraRef',vm_obj(NSF(NS_NORA_REF))),('CompanionFaction',vm_obj(CURRENT_COMPANION)),
-           ('Tier',vm_obj((MAIN<<24)|TIER)),('SceneAmI',vm_obj(O(SCENE_ID)))]
+           ('Tier',vm_obj((MAIN<<24)|TIER)),('Broken',vm_obj((MAIN<<24)|BROKEN)),('SceneAmI',vm_obj(O(SCENE_ID)))]
     props+=[('Synth'+k,vm_obj(SLF(v))) for k,v in SL_KW.items()]+[('Q_'+k,vm_obj((SUBV<<24)|v)) for k,v in SQ.items()]
     props+=[('T_'+lid.replace('-','_'),vm_obj(t)) for lid,t in topics.items()]
     vm=struct.pack('<hhH',6,2,1)+ws(QS)+struct.pack('<BH',0,len(props))+b''.join(ws(n)+v for n,v in props)
