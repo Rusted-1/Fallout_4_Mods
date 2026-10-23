@@ -10,7 +10,8 @@ from scenes_lib import ws
 from pexasm import Script,S
 import pexw,phase2
 MAIN=1                                            # NoraAndNora.esp master index
-TAPE,MENU,TIERMENU,STATUS,GIVER,GIVER2=0x800,0x801,0x802,0x803,0x804,0x805
+TAPE,MENU,TIERMENU,STATUS,GIVER,GIVER2,RECIPE=0x800,0x801,0x802,0x803,0x804,0x805,0x806
+CHEMLAB=0x00102158; RECIPE_UTILITY=0x0006980C; GetItemCount=47
 TAPE_TEXT=("NORA AND NORA - TEST TAPE\r\n\r\nFor testing the mod. Close the Pip-Boy after reading this and the menu opens.\r\n\r\n"
            "Status: current tier, gifts, answers and when the next event is due.\r\nAdvance to next tier: plays the next relationship talk now.\r\n"
            "Set tier: jumps to a tier, skipping the talks.\r\nSkip current wait: ends the current timer (patience, battle site, or the next tier).\r\n"
@@ -78,9 +79,13 @@ def build(ns_path,outdir):
     gvm=struct.pack('<hhH',6,2,1)+ws('NN_TestTapeGiver2Script')+struct.pack('<BH',0,1)+ws('Tape')+vm_obj(O(TAPE))
     giver2=record('QUST',O(GIVER2),0,sub('EDID',zs('NN_TestTapeGiver2'))+sub('VMAD',gvm)+sub('DNAM',bytes.fromhex('110000000000000000000000'))
                  +sub('NEXT',b'')+sub('ANAM',struct.pack('<I',0)))
-    body=grup('MESG',b''.join(msgs))+grup('QUST',giver+giver2)+grup('BOOK',tape)
+    # v0.6.4: free chem station recipe (Utility), shown while you don't have the note
+    cobj=record('COBJ',O(RECIPE),0,sub('EDID',zs('NN_co_TestTape'))+sub('DESC',b'\0'*4)
+                +sub('CTDA',struct.pack('<B3xfH2xIIIIi',0,0.0,GetItemCount,O(TAPE),0,0,0,-1))
+                +sub('CNAM',struct.pack('<I',O(TAPE)))+sub('BNAM',struct.pack('<I',CHEMLAB))+sub('FNAM',struct.pack('<I',RECIPE_UTILITY))+sub('INTV',struct.pack('<HH',1,0)))
+    body=grup('MESG',b''.join(msgs))+grup('QUST',giver+giver2)+grup('BOOK',tape)+grup('COBJ',cobj)
     p=os.path.join(outdir,'NoraAndNora - Test Tape.esp')
-    open(p,'wb').write(tes4(['Fallout4.esm','NoraAndNora.esp'],6,'Nora & Nora option: test tape (testing menu)',next_id=0x806)+body)
+    open(p,'wb').write(tes4(['Fallout4.esm','NoraAndNora.esp'],7,'Nora & Nora option: test tape (testing menu)',next_id=0x807)+body)
     return p
 if __name__=='__main__':
     print(build(sys.argv[1],sys.argv[2]))
